@@ -1,46 +1,74 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import SearchFilter from "./components/SearchFilter";
 import FormPerson from "./components/FormPerson";
 import Persons from "./components/Persons";
+import contactService from "./services/contacts";
 
 export default function App() {
   const [persons, setPersons] = useState([]);
   const [searchName, setSearchName] = useState("");
   const [newContact, setNewContact] = useState({
     newName: "",
-    newValue: "",
+    newNumber: "",
   });
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/persons")
-      .then((res) => setPersons(res.data))
-      .catch((err) => console.log(err));
+    contactService.getContacts().then((response) => {
+      setPersons(response.data);
+    });
   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setNewContact({ ...newContact, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const contactObject = {
+      name: newContact.newName,
+      number: newContact.newNumber,
+    };
+
     if (persons.some((person) => person.name === newContact.newName)) {
-      alert(`${newContact.newName} is already added to phonebook`);
+      if (
+        window.confirm(
+          `${newContact.newName} is already added to phonebook do you want to change the number?`
+        )
+      ) {
+        const person = persons.find(
+          (person) => person.name === newContact.newName
+        );
+        contactService.update(person.id, contactObject).then((res) => {
+          return setPersons(persons.map((p) => (p.id !== person.id ? p : res)));
+        });
+        setNewContact({ newName: "", newNumber: "" });
+      }
       return;
     }
 
-    setPersons([
-      ...persons,
-      { name: newContact.newName, number: newContact.newNumber },
-    ]);
-    setNewContact({ newName: "", newValue: "" });
+    contactService
+      .create(contactObject)
+      .then((response) => setPersons(persons.concat(response)))
+      .catch((err) => console.log(err));
+
+    setNewContact({ newName: "", newNumber: "" });
+  };
+
+  const delContact = (id) => {
+    contactService
+      .delContact(id)
+      .then(() => {
+        setPersons(persons.filter((person) => person.id !== id));
+      })
+      .catch((err) => console.log(err));
+    console.log(id);
   };
 
   const handleSearch = (e) => {
-    setSearchName(e.target.value);
+    return setSearchName(e.target.value);
   };
 
   const filteredPersons = persons.filter((person) =>
@@ -60,7 +88,7 @@ export default function App() {
       />
 
       <h2>Numbers</h2>
-      <Persons filteredPersons={filteredPersons} />
+      <Persons filteredPersons={filteredPersons} delContact={delContact} />
     </div>
   );
 }
