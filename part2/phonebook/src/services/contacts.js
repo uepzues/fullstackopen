@@ -10,16 +10,12 @@ const getContacts = () =>
 
 const create = (data) => {
   const request = axios.post(baseUrl, data);
-  return request
-    .then((res) => res.data)
-    .catch((err) => console.log(err.message, err.request));
+  return request.then((res) => res.data);
 };
 
 const update = (id, data) => {
-  const request = axios.put(`${baseUrl}/${id}`, data);
-  return request
-    .then((res) => res.data)
-    .catch((err) => console.log(err.message));
+  const request = axios.patch(`${baseUrl}/${id}`, data);
+  return request.then((res) => res.data);
 };
 
 const delContact = (id) => {

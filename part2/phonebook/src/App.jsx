@@ -3,6 +3,7 @@ import SearchFilter from "./components/SearchFilter";
 import FormPerson from "./components/FormPerson";
 import Persons from "./components/Persons";
 import contactService from "./services/contacts";
+import Notification from "./components/Notification";
 
 export default function App() {
   const [persons, setPersons] = useState([]);
@@ -11,6 +12,8 @@ export default function App() {
     newName: "",
     newNumber: "",
   });
+  const [notif, setNotif] = useState(null);
+  const [errNotif, setErrNotif] = useState(null);
 
   useEffect(() => {
     contactService.getContacts().then((response) => {
@@ -41,9 +44,29 @@ export default function App() {
         const person = persons.find(
           (person) => person.name === newContact.newName
         );
-        contactService.update(person.id, contactObject).then((res) => {
-          return setPersons(persons.map((p) => (p.id !== person.id ? p : res)));
-        });
+        contactService
+          .update(person.id, contactObject)
+          .then((res) => {
+            setPersons(
+              persons.map((per) => (per.id !== person.id ? per : res))
+            );
+            setNotif(`Changed ${newContact.newName}'s number`);
+            setTimeout(() => {
+              setNotif(null);
+            }, 5000);
+          })
+          .catch((err) => {
+            console.log(err.message);
+            setErrNotif(
+              `Information of ${newContact.newName} has already been removed from server`
+            );
+            setTimeout(() => {
+              setErrNotif(null);
+            }, 5000);
+            setPersons(
+              persons.filter((person) => person.name !== newContact.newName)
+            );
+          });
         setNewContact({ newName: "", newNumber: "" });
       }
       return;
@@ -51,20 +74,43 @@ export default function App() {
 
     contactService
       .create(contactObject)
-      .then((response) => setPersons(persons.concat(response)))
-      .catch((err) => console.log(err));
+      .then((response) => {
+        setPersons(persons.concat(response));
+
+        setNotif(`Added ${newContact.newName}`);
+        setTimeout(() => {
+          setNotif(null);
+        }, 5000);
+      })
+      .catch((err) => {
+        console.log(err);
+        setErrNotif("An error occurred while adding the contact.");
+        setTimeout(() => {
+          setErrNotif(null);
+        }, 5000);
+      });
 
     setNewContact({ newName: "", newNumber: "" });
   };
 
   const delContact = (id) => {
-    contactService
-      .delContact(id)
-      .then(() => {
-        setPersons(persons.filter((person) => person.id !== id));
-      })
-      .catch((err) => console.log(err));
-    console.log(id);
+    if (window.confirm("Do you want to delete the entry?")) {
+      contactService
+        .delContact(id)
+        .then(() => {
+          setPersons(persons.filter((person) => person.id !== id));
+        })
+        .then(() => {
+          const foundPerson = persons.find((person) => person.id === id);
+          setNotif(`Deleted ${foundPerson.name}`);
+          setTimeout(() => {
+            setNotif(null);
+          }, 5000);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   const handleSearch = (e) => {
@@ -72,15 +118,17 @@ export default function App() {
   };
 
   const filteredPersons = persons.filter((person) =>
-    person.name.toLowerCase().includes(searchName.toLowerCase())
+    person?.name.toLowerCase().includes(searchName.toLowerCase())
   );
 
   return (
-    <div>
-      <h2>Phonebook</h2>
+    <div className="container">
+      <h1>Phonebook</h1>
+      <Notification message={notif} notification="notification" />
+      <Notification message={errNotif} notification="error" />
       <SearchFilter onChange={handleSearch} />
 
-      <h2>Add a new</h2>
+      <h2>Add new</h2>
       <FormPerson
         onSubmit={handleSubmit}
         onChange={handleChange}

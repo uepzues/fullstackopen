@@ -1,10 +1,10 @@
 export default function Persons({ filteredPersons, delContact }) {
   return (
-    <div>
+    <div className="persons">
       {filteredPersons.map((person) => (
         <div key={person.name}>
           {person.name} : {person.number}
-          <button onClick={() => delContact(person.id)}>delete</button>
+          <button onClick={() => delContact(person.id)}>del</button>
         </div>
       ))}
       
