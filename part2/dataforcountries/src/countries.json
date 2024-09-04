@@ -1,0 +1,5649 @@
+{
+  "places": [
+    { "id": 1, "country": "Ukraine", "capital": "Rivne", "country code": "UA" },
+    {
+      "id": 2,
+      "country": "Lithuania",
+      "capital": "Kupiskis",
+      "country code": "LT"
+    },
+    {
+      "id": 3,
+      "country": "United States",
+      "capital": "Murfreesboro",
+      "country code": "US"
+    },
+    {
+      "id": 4,
+      "country": "Indonesia",
+      "capital": "Mandala",
+      "country code": "ID"
+    },
+    {
+      "id": 5,
+      "country": "Philippines",
+      "capital": "Rogongon",
+      "country code": "PH"
+    },
+    {
+      "id": 6,
+      "country": "Colombia",
+      "capital": "Guachucal",
+      "country code": "CO"
+    },
+    {
+      "id": 7,
+      "country": "Armenia",
+      "capital": "Shaghat",
+      "country code": "AM"
+    },
+    {
+      "id": 8,
+      "country": "Czech Republic",
+      "capital": "Zdiby",
+      "country code": "CZ"
+    },
+    {
+      "id": 9,
+      "country": "Indonesia",
+      "capital": "Gununglarang",
+      "country code": "ID"
+    },
+    {
+      "id": 10,
+      "country": "Albania",
+      "capital": "Proptisht",
+      "country code": "AL"
+    },
+    {
+      "id": 11,
+      "country": "Ukraine",
+      "capital": "Manevychi",
+      "country code": "UA"
+    },
+    {
+      "id": 12,
+      "country": "Kazakhstan",
+      "capital": "Koktal",
+      "country code": "KZ"
+    },
+    {
+      "id": 13,
+      "country": "Poland",
+      "capital": "Rawa Mazowiecka",
+      "country code": "PL"
+    },
+    {
+      "id": 14,
+      "country": "Afghanistan",
+      "capital": "Qarchī Gak",
+      "country code": "AF"
+    },
+    {
+      "id": 15,
+      "country": "Guatemala",
+      "capital": "San Luis",
+      "country code": "GT"
+    },
+    {
+      "id": 16,
+      "country": "Brazil",
+      "capital": "Gravataí",
+      "country code": "BR"
+    },
+    {
+      "id": 17,
+      "country": "Albania",
+      "capital": "Korçë",
+      "country code": "AL"
+    },
+    { "id": 18, "country": "China", "capital": "Xiache", "country code": "CN" },
+    {
+      "id": 19,
+      "country": "Brazil",
+      "capital": "Pinheiral",
+      "country code": "BR"
+    },
+    {
+      "id": 20,
+      "country": "Russia",
+      "capital": "Snegiri",
+      "country code": "RU"
+    },
+    {
+      "id": 21,
+      "country": "France",
+      "capital": "Levallois-Perret",
+      "country code": "FR"
+    },
+    {
+      "id": 22,
+      "country": "Ukraine",
+      "capital": "Dvorichna",
+      "country code": "UA"
+    },
+    {
+      "id": 23,
+      "country": "Poland",
+      "capital": "Brzeźnica",
+      "country code": "PL"
+    },
+    {
+      "id": 24,
+      "country": "Iceland",
+      "capital": "Neskaupstaður",
+      "country code": "IS"
+    },
+    { "id": 25, "country": "China", "capital": "Qili", "country code": "CN" },
+    {
+      "id": 26,
+      "country": "Colombia",
+      "capital": "Curumaní",
+      "country code": "CO"
+    },
+    {
+      "id": 27,
+      "country": "Croatia",
+      "capital": "Bošnjaci",
+      "country code": "HR"
+    },
+    {
+      "id": 28,
+      "country": "Indonesia",
+      "capital": "Ciranca",
+      "country code": "ID"
+    },
+    {
+      "id": 29,
+      "country": "China",
+      "capital": "Xiaojiang",
+      "country code": "CN"
+    },
+    {
+      "id": 30,
+      "country": "Philippines",
+      "capital": "Manlucahoc",
+      "country code": "PH"
+    },
+    {
+      "id": 31,
+      "country": "Indonesia",
+      "capital": "Sangatta",
+      "country code": "ID"
+    },
+    { "id": 32, "country": "China", "capital": "Hongxi", "country code": "CN" },
+    { "id": 33, "country": "Peru", "capital": "Tibillo", "country code": "PE" },
+    {
+      "id": 34,
+      "country": "Colombia",
+      "capital": "Dos Quebradas",
+      "country code": "CO"
+    },
+    {
+      "id": 35,
+      "country": "Mongolia",
+      "capital": "Dundbürd",
+      "country code": "MN"
+    },
+    {
+      "id": 36,
+      "country": "Philippines",
+      "capital": "Luna",
+      "country code": "PH"
+    },
+    {
+      "id": 37,
+      "country": "Russia",
+      "capital": "Trubchevsk",
+      "country code": "RU"
+    },
+    {
+      "id": 38,
+      "country": "Brazil",
+      "capital": "Santo Antônio do Monte",
+      "country code": "BR"
+    },
+    {
+      "id": 39,
+      "country": "Indonesia",
+      "capital": "Cinyumput",
+      "country code": "ID"
+    },
+    {
+      "id": 40,
+      "country": "China",
+      "capital": "Wenquan",
+      "country code": "CN"
+    },
+    {
+      "id": 41,
+      "country": "Indonesia",
+      "capital": "Kebon",
+      "country code": "ID"
+    },
+    {
+      "id": 42,
+      "country": "Indonesia",
+      "capital": "Tanjungsari Barat",
+      "country code": "ID"
+    },
+    {
+      "id": 43,
+      "country": "China",
+      "capital": "Banqiao",
+      "country code": "CN"
+    },
+    {
+      "id": 44,
+      "country": "Indonesia",
+      "capital": "Bonsari",
+      "country code": "ID"
+    },
+    {
+      "id": 45,
+      "country": "Indonesia",
+      "capital": "Kedungsumurkrajan",
+      "country code": "ID"
+    },
+    { "id": 46, "country": "Peru", "capital": "Choros", "country code": "PE" },
+    {
+      "id": 47,
+      "country": "France",
+      "capital": "Orléans",
+      "country code": "FR"
+    },
+    { "id": 48, "country": "China", "capital": "Beitan", "country code": "CN" },
+    {
+      "id": 49,
+      "country": "Indonesia",
+      "capital": "Rikitgaib",
+      "country code": "ID"
+    },
+    {
+      "id": 50,
+      "country": "Russia",
+      "capital": "Yur’yev-Pol’skiy",
+      "country code": "RU"
+    },
+    {
+      "id": 51,
+      "country": "Russia",
+      "capital": "Novosmolinskiy",
+      "country code": "RU"
+    },
+    {
+      "id": 52,
+      "country": "Canada",
+      "capital": "Montague",
+      "country code": "CA"
+    },
+    {
+      "id": 53,
+      "country": "Brazil",
+      "capital": "Nerópolis",
+      "country code": "BR"
+    },
+    {
+      "id": 54,
+      "country": "Latvia",
+      "capital": "Viļaka",
+      "country code": "LV"
+    },
+    {
+      "id": 55,
+      "country": "Russia",
+      "capital": "Loukhi",
+      "country code": "RU"
+    },
+    { "id": 56, "country": "Japan", "capital": "Kawage", "country code": "JP" },
+    { "id": 57, "country": "Poland", "capital": "Suraż", "country code": "PL" },
+    { "id": 58, "country": "China", "capital": "Yunxi", "country code": "CN" },
+    {
+      "id": 59,
+      "country": "Israel",
+      "capital": "West Jerusalem",
+      "country code": "IL"
+    },
+    { "id": 60, "country": "Iran", "capital": "Varāmīn", "country code": "IR" },
+    {
+      "id": 61,
+      "country": "United States",
+      "capital": "Round Rock",
+      "country code": "US"
+    },
+    {
+      "id": 62,
+      "country": "Russia",
+      "capital": "Sokolovo",
+      "country code": "RU"
+    },
+    {
+      "id": 63,
+      "country": "Malaysia",
+      "capital": "Alor Setar",
+      "country code": "MY"
+    },
+    {
+      "id": 64,
+      "country": "Malawi",
+      "capital": "Nkhotakota",
+      "country code": "MW"
+    },
+    {
+      "id": 65,
+      "country": "Venezuela",
+      "capital": "Encontrados",
+      "country code": "VE"
+    },
+    {
+      "id": 66,
+      "country": "Thailand",
+      "capital": "Bang Kho Laem",
+      "country code": "TH"
+    },
+    {
+      "id": 67,
+      "country": "Iran",
+      "capital": "Dīvāndarreh",
+      "country code": "IR"
+    },
+    {
+      "id": 68,
+      "country": "Thailand",
+      "capital": "Roi Et",
+      "country code": "TH"
+    },
+    {
+      "id": 69,
+      "country": "Palestinian Territory",
+      "capital": "‘Aşīrah al Qiblīyah",
+      "country code": "PS"
+    },
+    {
+      "id": 70,
+      "country": "Greece",
+      "capital": "Thessaloníki",
+      "country code": "GR"
+    },
+    {
+      "id": 71,
+      "country": "Poland",
+      "capital": "Piastów",
+      "country code": "PL"
+    },
+    { "id": 72, "country": "China", "capital": "Hongqi", "country code": "CN" },
+    {
+      "id": 73,
+      "country": "Greece",
+      "capital": "Asopía",
+      "country code": "GR"
+    },
+    {
+      "id": 74,
+      "country": "Poland",
+      "capital": "Latowicz",
+      "country code": "PL"
+    },
+    {
+      "id": 75,
+      "country": "Palestinian Territory",
+      "capital": "Far‘ūn",
+      "country code": "PS"
+    },
+    {
+      "id": 76,
+      "country": "China",
+      "capital": "Qianzhou",
+      "country code": "CN"
+    },
+    {
+      "id": 77,
+      "country": "Kosovo",
+      "capital": "Mitrovicë",
+      "country code": "XK"
+    },
+    {
+      "id": 78,
+      "country": "Finland",
+      "capital": "Otaniemi",
+      "country code": "FI"
+    },
+    {
+      "id": 79,
+      "country": "Honduras",
+      "capital": "Potrerillos",
+      "country code": "HN"
+    },
+    {
+      "id": 80,
+      "country": "Russia",
+      "capital": "Rybnoye",
+      "country code": "RU"
+    },
+    {
+      "id": 81,
+      "country": "Vietnam",
+      "capital": "Dầu Tiếng",
+      "country code": "VN"
+    },
+    {
+      "id": 82,
+      "country": "China",
+      "capital": "Chengbei",
+      "country code": "CN"
+    },
+    {
+      "id": 83,
+      "country": "China",
+      "capital": "Hezhang",
+      "country code": "CN"
+    },
+    {
+      "id": 84,
+      "country": "China",
+      "capital": "Miaogou",
+      "country code": "CN"
+    },
+    {
+      "id": 85,
+      "country": "Chile",
+      "capital": "Río Bueno",
+      "country code": "CL"
+    },
+    {
+      "id": 86,
+      "country": "Brazil",
+      "capital": "Carlos Barbosa",
+      "country code": "BR"
+    },
+    {
+      "id": 87,
+      "country": "Sweden",
+      "capital": "Lidköping",
+      "country code": "SE"
+    },
+    {
+      "id": 88,
+      "country": "Indonesia",
+      "capital": "Pakisaji",
+      "country code": "ID"
+    },
+    {
+      "id": 89,
+      "country": "China",
+      "capital": "Beizhang",
+      "country code": "CN"
+    },
+    {
+      "id": 90,
+      "country": "Indonesia",
+      "capital": "Oekero",
+      "country code": "ID"
+    },
+    { "id": 91, "country": "China", "capital": "Sanjia", "country code": "CN" },
+    { "id": 92, "country": "Russia", "capital": "Tomsk", "country code": "RU" },
+    {
+      "id": 93,
+      "country": "Indonesia",
+      "capital": "Liliba",
+      "country code": "ID"
+    },
+    {
+      "id": 94,
+      "country": "Philippines",
+      "capital": "Nagrumbuan",
+      "country code": "PH"
+    },
+    {
+      "id": 95,
+      "country": "Brazil",
+      "capital": "Brasília",
+      "country code": "BR"
+    },
+    {
+      "id": 96,
+      "country": "Venezuela",
+      "capital": "San Cristóbal",
+      "country code": "VE"
+    },
+    {
+      "id": 97,
+      "country": "Philippines",
+      "capital": "Daguma",
+      "country code": "PH"
+    },
+    {
+      "id": 98,
+      "country": "Kenya",
+      "capital": "Eldoret",
+      "country code": "KE"
+    },
+    {
+      "id": 99,
+      "country": "Russia",
+      "capital": "Obsharovka",
+      "country code": "RU"
+    },
+    {
+      "id": 100,
+      "country": "Russia",
+      "capital": "Demyansk",
+      "country code": "RU"
+    },
+    {
+      "id": 101,
+      "country": "Russia",
+      "capital": "Mikhaylov",
+      "country code": "RU"
+    },
+    {
+      "id": 102,
+      "country": "China",
+      "capital": "Huaqiao",
+      "country code": "CN"
+    },
+    {
+      "id": 103,
+      "country": "Uganda",
+      "capital": "Kitamilo",
+      "country code": "UG"
+    },
+    {
+      "id": 104,
+      "country": "Finland",
+      "capital": "Nastola",
+      "country code": "FI"
+    },
+    {
+      "id": 105,
+      "country": "Russia",
+      "capital": "Mikhaylovsk",
+      "country code": "RU"
+    },
+    {
+      "id": 106,
+      "country": "Italy",
+      "capital": "Livorno",
+      "country code": "IT"
+    },
+    {
+      "id": 107,
+      "country": "Russia",
+      "capital": "Tol’yatti",
+      "country code": "RU"
+    },
+    {
+      "id": 108,
+      "country": "Brazil",
+      "capital": "Betim",
+      "country code": "BR"
+    },
+    {
+      "id": 109,
+      "country": "Spain",
+      "capital": "Pontevedra",
+      "country code": "ES"
+    },
+    {
+      "id": 110,
+      "country": "China",
+      "capital": "Laocheng",
+      "country code": "CN"
+    },
+    {
+      "id": 111,
+      "country": "China",
+      "capital": "Rendui",
+      "country code": "CN"
+    },
+    {
+      "id": 112,
+      "country": "Thailand",
+      "capital": "Pathum Rat",
+      "country code": "TH"
+    },
+    {
+      "id": 113,
+      "country": "Serbia",
+      "capital": "Banatsko Karađorđevo",
+      "country code": "RS"
+    },
+    {
+      "id": 114,
+      "country": "China",
+      "capital": "Haoxin",
+      "country code": "CN"
+    },
+    {
+      "id": 115,
+      "country": "Indonesia",
+      "capital": "Sumberdangdang",
+      "country code": "ID"
+    },
+    {
+      "id": 116,
+      "country": "Brazil",
+      "capital": "Santo Estêvão",
+      "country code": "BR"
+    },
+    { "id": 117, "country": "Japan", "capital": "Ikoma", "country code": "JP" },
+    {
+      "id": 118,
+      "country": "Russia",
+      "capital": "Nikol’skoye",
+      "country code": "RU"
+    },
+    {
+      "id": 119,
+      "country": "Serbia",
+      "capital": "Klenje",
+      "country code": "RS"
+    },
+    {
+      "id": 120,
+      "country": "Venezuela",
+      "capital": "Naguanagua",
+      "country code": "VE"
+    },
+    {
+      "id": 121,
+      "country": "Russia",
+      "capital": "Rasshevatskaya",
+      "country code": "RU"
+    },
+    {
+      "id": 122,
+      "country": "Poland",
+      "capital": "Tuchola",
+      "country code": "PL"
+    },
+    {
+      "id": 123,
+      "country": "Brazil",
+      "capital": "Tapiramutá",
+      "country code": "BR"
+    },
+    {
+      "id": 124,
+      "country": "Portugal",
+      "capital": "Sangalhos",
+      "country code": "PT"
+    },
+    {
+      "id": 125,
+      "country": "Cameroon",
+      "capital": "Belo",
+      "country code": "CM"
+    },
+    {
+      "id": 126,
+      "country": "Sweden",
+      "capital": "Bollstabruk",
+      "country code": "SE"
+    },
+    {
+      "id": 127,
+      "country": "Brazil",
+      "capital": "Curitiba",
+      "country code": "BR"
+    },
+    {
+      "id": 128,
+      "country": "China",
+      "capital": "Gaoqiao",
+      "country code": "CN"
+    },
+    {
+      "id": 129,
+      "country": "Thailand",
+      "capital": "Surin",
+      "country code": "TH"
+    },
+    { "id": 130, "country": "China", "capital": "Yaxi", "country code": "CN" },
+    {
+      "id": 131,
+      "country": "Philippines",
+      "capital": "Labuan",
+      "country code": "PH"
+    },
+    {
+      "id": 132,
+      "country": "China",
+      "capital": "Shinaihai",
+      "country code": "CN"
+    },
+    {
+      "id": 133,
+      "country": "Poland",
+      "capital": "Lubenia",
+      "country code": "PL"
+    },
+    {
+      "id": 134,
+      "country": "Sierra Leone",
+      "capital": "Lunsar",
+      "country code": "SL"
+    },
+    {
+      "id": 135,
+      "country": "Pakistan",
+      "capital": "Dokri",
+      "country code": "PK"
+    },
+    {
+      "id": 136,
+      "country": "Jordan",
+      "capital": "Mādabā",
+      "country code": "JO"
+    },
+    {
+      "id": 137,
+      "country": "Guatemala",
+      "capital": "San Juan Ixcoy",
+      "country code": "GT"
+    },
+    {
+      "id": 138,
+      "country": "Indonesia",
+      "capital": "Barabedang",
+      "country code": "ID"
+    },
+    {
+      "id": 139,
+      "country": "Japan",
+      "capital": "Hanamaki",
+      "country code": "JP"
+    },
+    {
+      "id": 140,
+      "country": "China",
+      "capital": "Hoit Taria",
+      "country code": "CN"
+    },
+    {
+      "id": 141,
+      "country": "Brazil",
+      "capital": "Goiás",
+      "country code": "BR"
+    },
+    {
+      "id": 142,
+      "country": "China",
+      "capital": "Wanshan",
+      "country code": "CN"
+    },
+    {
+      "id": 143,
+      "country": "Sweden",
+      "capital": "Enköping",
+      "country code": "SE"
+    },
+    {
+      "id": 144,
+      "country": "China",
+      "capital": "Shangqiu",
+      "country code": "CN"
+    },
+    {
+      "id": 145,
+      "country": "Belarus",
+      "capital": "Dowsk",
+      "country code": "BY"
+    },
+    {
+      "id": 146,
+      "country": "Russia",
+      "capital": "Verbilki",
+      "country code": "RU"
+    },
+    {
+      "id": 147,
+      "country": "Sweden",
+      "capital": "Eksjö",
+      "country code": "SE"
+    },
+    {
+      "id": 148,
+      "country": "Ukraine",
+      "capital": "Lazi",
+      "country code": "UA"
+    },
+    {
+      "id": 149,
+      "country": "Mexico",
+      "capital": "La Purisima",
+      "country code": "MX"
+    },
+    {
+      "id": 150,
+      "country": "Thailand",
+      "capital": "Ko Si Chang",
+      "country code": "TH"
+    },
+    {
+      "id": 151,
+      "country": "Sweden",
+      "capital": "Söderhamn",
+      "country code": "SE"
+    },
+    {
+      "id": 152,
+      "country": "China",
+      "capital": "Shatian",
+      "country code": "CN"
+    },
+    {
+      "id": 153,
+      "country": "Indonesia",
+      "capital": "Barat",
+      "country code": "ID"
+    },
+    {
+      "id": 154,
+      "country": "Ukraine",
+      "capital": "Kozyatyn",
+      "country code": "UA"
+    },
+    {
+      "id": 155,
+      "country": "China",
+      "capital": "Xinhua",
+      "country code": "CN"
+    },
+    {
+      "id": 156,
+      "country": "Indonesia",
+      "capital": "Sedayu",
+      "country code": "ID"
+    },
+    {
+      "id": 157,
+      "country": "Panama",
+      "capital": "Las Minas",
+      "country code": "PA"
+    },
+    {
+      "id": 158,
+      "country": "China",
+      "capital": "Qiubin",
+      "country code": "CN"
+    },
+    {
+      "id": 159,
+      "country": "Indonesia",
+      "capital": "Madura",
+      "country code": "ID"
+    },
+    {
+      "id": 160,
+      "country": "Croatia",
+      "capital": "Markušica",
+      "country code": "HR"
+    },
+    {
+      "id": 161,
+      "country": "Indonesia",
+      "capital": "Kertanegla",
+      "country code": "ID"
+    },
+    {
+      "id": 162,
+      "country": "Trinidad and Tobago",
+      "capital": "Peñal",
+      "country code": "TT"
+    },
+    {
+      "id": 163,
+      "country": "Thailand",
+      "capital": "Samut Songkhram",
+      "country code": "TH"
+    },
+    {
+      "id": 164,
+      "country": "Brazil",
+      "capital": "José Bonifácio",
+      "country code": "BR"
+    },
+    {
+      "id": 165,
+      "country": "Sweden",
+      "capital": "Kungälv",
+      "country code": "SE"
+    },
+    {
+      "id": 166,
+      "country": "Russia",
+      "capital": "Spas-Klepiki",
+      "country code": "RU"
+    },
+    {
+      "id": 167,
+      "country": "Indonesia",
+      "capital": "Leuwihalang",
+      "country code": "ID"
+    },
+    {
+      "id": 168,
+      "country": "Philippines",
+      "capital": "Basista",
+      "country code": "PH"
+    },
+    {
+      "id": 169,
+      "country": "Russia",
+      "capital": "Borisova Griva",
+      "country code": "RU"
+    },
+    {
+      "id": 170,
+      "country": "Brazil",
+      "capital": "Anápolis",
+      "country code": "BR"
+    },
+    {
+      "id": 171,
+      "country": "China",
+      "capital": "Xianyi",
+      "country code": "CN"
+    },
+    {
+      "id": 172,
+      "country": "Indonesia",
+      "capital": "Sukacai Tengah",
+      "country code": "ID"
+    },
+    {
+      "id": 173,
+      "country": "China",
+      "capital": "Yangqing",
+      "country code": "CN"
+    },
+    {
+      "id": 174,
+      "country": "Puerto Rico",
+      "capital": "San Juan",
+      "country code": "PR"
+    },
+    {
+      "id": 175,
+      "country": "Philippines",
+      "capital": "San Vicente",
+      "country code": "PH"
+    },
+    {
+      "id": 176,
+      "country": "Netherlands",
+      "capital": "Zwolle",
+      "country code": "NL"
+    },
+    {
+      "id": 177,
+      "country": "Colombia",
+      "capital": "Murindó",
+      "country code": "CO"
+    },
+    { "id": 178, "country": "China", "capital": "Basar", "country code": "CN" },
+    {
+      "id": 179,
+      "country": "Ethiopia",
+      "capital": "Nejo",
+      "country code": "ET"
+    },
+    {
+      "id": 180,
+      "country": "Czech Republic",
+      "capital": "Kladruby",
+      "country code": "CZ"
+    },
+    {
+      "id": 181,
+      "country": "Latvia",
+      "capital": "Līgatne",
+      "country code": "LV"
+    },
+    {
+      "id": 182,
+      "country": "Russia",
+      "capital": "Zverevo",
+      "country code": "RU"
+    },
+    {
+      "id": 183,
+      "country": "Russia",
+      "capital": "Mukhen",
+      "country code": "RU"
+    },
+    {
+      "id": 184,
+      "country": "China",
+      "capital": "Jixian",
+      "country code": "CN"
+    },
+    {
+      "id": 185,
+      "country": "China",
+      "capital": "Mengdong",
+      "country code": "CN"
+    },
+    {
+      "id": 186,
+      "country": "Jamaica",
+      "capital": "Mocho",
+      "country code": "JM"
+    },
+    {
+      "id": 187,
+      "country": "Syria",
+      "capital": "Kafr Takhārīm",
+      "country code": "SY"
+    },
+    {
+      "id": 188,
+      "country": "Philippines",
+      "capital": "Tawan tawan",
+      "country code": "PH"
+    },
+    {
+      "id": 189,
+      "country": "Bosnia and Herzegovina",
+      "capital": "Stanari",
+      "country code": "BA"
+    },
+    {
+      "id": 190,
+      "country": "Nicaragua",
+      "capital": "La Jicaral",
+      "country code": "NI"
+    },
+    { "id": 191, "country": "Egypt", "capital": "Ziftá", "country code": "EG" },
+    {
+      "id": 192,
+      "country": "Nicaragua",
+      "capital": "San Sebastián de Yalí",
+      "country code": "NI"
+    },
+    {
+      "id": 193,
+      "country": "China",
+      "capital": "Huangjinjing",
+      "country code": "CN"
+    },
+    {
+      "id": 194,
+      "country": "Vietnam",
+      "capital": "An Lão",
+      "country code": "VN"
+    },
+    {
+      "id": 195,
+      "country": "United States",
+      "capital": "Orlando",
+      "country code": "US"
+    },
+    {
+      "id": 196,
+      "country": "Philippines",
+      "capital": "Bato",
+      "country code": "PH"
+    },
+    {
+      "id": 197,
+      "country": "Czech Republic",
+      "capital": "Jablonec nad Nisou",
+      "country code": "CZ"
+    },
+    {
+      "id": 198,
+      "country": "Indonesia",
+      "capital": "Kondangrege",
+      "country code": "ID"
+    },
+    {
+      "id": 199,
+      "country": "Mexico",
+      "capital": "Solidaridad",
+      "country code": "MX"
+    },
+    {
+      "id": 200,
+      "country": "Malaysia",
+      "capital": "Kangar",
+      "country code": "MY"
+    },
+    {
+      "id": 201,
+      "country": "Sweden",
+      "capital": "Bagarmossen",
+      "country code": "SE"
+    },
+    {
+      "id": 202,
+      "country": "South Africa",
+      "capital": "Dundee",
+      "country code": "ZA"
+    },
+    {
+      "id": 203,
+      "country": "Colombia",
+      "capital": "Facatativá",
+      "country code": "CO"
+    },
+    {
+      "id": 204,
+      "country": "China",
+      "capital": "Chifeng",
+      "country code": "CN"
+    },
+    {
+      "id": 205,
+      "country": "Zambia",
+      "capital": "Mporokoso",
+      "country code": "ZM"
+    },
+    {
+      "id": 206,
+      "country": "China",
+      "capital": "Guangdu",
+      "country code": "CN"
+    },
+    {
+      "id": 207,
+      "country": "Tanzania",
+      "capital": "Mlowo",
+      "country code": "TZ"
+    },
+    {
+      "id": 208,
+      "country": "Indonesia",
+      "capital": "Tualangcut",
+      "country code": "ID"
+    },
+    {
+      "id": 209,
+      "country": "France",
+      "capital": "Bourges",
+      "country code": "FR"
+    },
+    {
+      "id": 210,
+      "country": "Malta",
+      "capital": "Marsaxlokk",
+      "country code": "MT"
+    },
+    {
+      "id": 211,
+      "country": "Sweden",
+      "capital": "Årsta",
+      "country code": "SE"
+    },
+    { "id": 212, "country": "China", "capital": "Jurh", "country code": "CN" },
+    {
+      "id": 213,
+      "country": "Honduras",
+      "capital": "Armenia",
+      "country code": "HN"
+    },
+    {
+      "id": 214,
+      "country": "China",
+      "capital": "Narong",
+      "country code": "CN"
+    },
+    {
+      "id": 215,
+      "country": "Sweden",
+      "capital": "Mönsterås",
+      "country code": "SE"
+    },
+    {
+      "id": 216,
+      "country": "Japan",
+      "capital": "Kan’onjichō",
+      "country code": "JP"
+    },
+    {
+      "id": 217,
+      "country": "Poland",
+      "capital": "Łękawica",
+      "country code": "PL"
+    },
+    {
+      "id": 218,
+      "country": "Honduras",
+      "capital": "San Esteban",
+      "country code": "HN"
+    },
+    {
+      "id": 219,
+      "country": "Sweden",
+      "capital": "Tyringe",
+      "country code": "SE"
+    },
+    {
+      "id": 220,
+      "country": "Democratic Republic of the Congo",
+      "capital": "Kamina",
+      "country code": "CD"
+    },
+    {
+      "id": 221,
+      "country": "Brazil",
+      "capital": "Esperantina",
+      "country code": "BR"
+    },
+    {
+      "id": 222,
+      "country": "Thailand",
+      "capital": "Wang Nam Yen",
+      "country code": "TH"
+    },
+    {
+      "id": 223,
+      "country": "Indonesia",
+      "capital": "Kadubadak",
+      "country code": "ID"
+    },
+    {
+      "id": 224,
+      "country": "Vanuatu",
+      "capital": "Saratamata",
+      "country code": "VU"
+    },
+    {
+      "id": 225,
+      "country": "Japan",
+      "capital": "Mitaka-shi",
+      "country code": "JP"
+    },
+    {
+      "id": 226,
+      "country": "Portugal",
+      "capital": "Eirol",
+      "country code": "PT"
+    },
+    {
+      "id": 227,
+      "country": "Indonesia",
+      "capital": "Tene",
+      "country code": "ID"
+    },
+    {
+      "id": 228,
+      "country": "Colombia",
+      "capital": "San Calixto",
+      "country code": "CO"
+    },
+    { "id": 229, "country": "Egypt", "capital": "Idkū", "country code": "EG" },
+    {
+      "id": 230,
+      "country": "Portugal",
+      "capital": "Banho e Carvalhosa",
+      "country code": "PT"
+    },
+    {
+      "id": 231,
+      "country": "Portugal",
+      "capital": "Vilares",
+      "country code": "PT"
+    },
+    {
+      "id": 232,
+      "country": "Indonesia",
+      "capital": "Triteh",
+      "country code": "ID"
+    },
+    {
+      "id": 233,
+      "country": "China",
+      "capital": "Jiuzhen",
+      "country code": "CN"
+    },
+    {
+      "id": 234,
+      "country": "Portugal",
+      "capital": "Sabugueiro",
+      "country code": "PT"
+    },
+    {
+      "id": 235,
+      "country": "Honduras",
+      "capital": "San José de Colinas",
+      "country code": "HN"
+    },
+    {
+      "id": 236,
+      "country": "Thailand",
+      "capital": "Samut Songkhram",
+      "country code": "TH"
+    },
+    {
+      "id": 237,
+      "country": "Indonesia",
+      "capital": "Pasireurih",
+      "country code": "ID"
+    },
+    {
+      "id": 238,
+      "country": "China",
+      "capital": "Samajie Ewenkeminzu",
+      "country code": "CN"
+    },
+    {
+      "id": 239,
+      "country": "Netherlands",
+      "capital": "Heerlen",
+      "country code": "NL"
+    },
+    {
+      "id": 240,
+      "country": "Ecuador",
+      "capital": "Ibarra",
+      "country code": "EC"
+    },
+    {
+      "id": 241,
+      "country": "Spain",
+      "capital": "Coruña, A",
+      "country code": "ES"
+    },
+    {
+      "id": 242,
+      "country": "Indonesia",
+      "capital": "Dukoh",
+      "country code": "ID"
+    },
+    {
+      "id": 243,
+      "country": "China",
+      "capital": "Haoping",
+      "country code": "CN"
+    },
+    {
+      "id": 244,
+      "country": "Colombia",
+      "capital": "Madrid",
+      "country code": "CO"
+    },
+    {
+      "id": 245,
+      "country": "Burundi",
+      "capital": "Ngozi",
+      "country code": "BI"
+    },
+    {
+      "id": 246,
+      "country": "Czech Republic",
+      "capital": "Kobylí",
+      "country code": "CZ"
+    },
+    {
+      "id": 247,
+      "country": "Bulgaria",
+      "capital": "Chirpan",
+      "country code": "BG"
+    },
+    {
+      "id": 248,
+      "country": "Honduras",
+      "capital": "La Guama",
+      "country code": "HN"
+    },
+    {
+      "id": 249,
+      "country": "Philippines",
+      "capital": "San Vicente",
+      "country code": "PH"
+    },
+    {
+      "id": 250,
+      "country": "Indonesia",
+      "capital": "Nunleu",
+      "country code": "ID"
+    },
+    {
+      "id": 251,
+      "country": "Israel",
+      "capital": "Ramat Yishay",
+      "country code": "IL"
+    },
+    {
+      "id": 252,
+      "country": "Russia",
+      "capital": "Kalino",
+      "country code": "RU"
+    },
+    {
+      "id": 253,
+      "country": "United States",
+      "capital": "Newark",
+      "country code": "US"
+    },
+    {
+      "id": 254,
+      "country": "China",
+      "capital": "Wudangshan",
+      "country code": "CN"
+    },
+    {
+      "id": 255,
+      "country": "France",
+      "capital": "Rennes",
+      "country code": "FR"
+    },
+    {
+      "id": 256,
+      "country": "Sweden",
+      "capital": "Solna",
+      "country code": "SE"
+    },
+    {
+      "id": 257,
+      "country": "Afghanistan",
+      "capital": "Khayr Kōṯ",
+      "country code": "AF"
+    },
+    {
+      "id": 258,
+      "country": "Poland",
+      "capital": "Nowy Dwór Gdański",
+      "country code": "PL"
+    },
+    {
+      "id": 259,
+      "country": "Indonesia",
+      "capital": "Karangpari",
+      "country code": "ID"
+    },
+    {
+      "id": 260,
+      "country": "Denmark",
+      "capital": "København",
+      "country code": "DK"
+    },
+    {
+      "id": 261,
+      "country": "China",
+      "capital": "Biaokou",
+      "country code": "CN"
+    },
+    {
+      "id": 262,
+      "country": "China",
+      "capital": "Houjiachuan",
+      "country code": "CN"
+    },
+    {
+      "id": 263,
+      "country": "China",
+      "capital": "Sandao",
+      "country code": "CN"
+    },
+    {
+      "id": 264,
+      "country": "Thailand",
+      "capital": "Santi Suk",
+      "country code": "TH"
+    },
+    {
+      "id": 265,
+      "country": "China",
+      "capital": "Hongshan",
+      "country code": "CN"
+    },
+    {
+      "id": 266,
+      "country": "Moldova",
+      "capital": "Slobozia",
+      "country code": "MD"
+    },
+    {
+      "id": 267,
+      "country": "Indonesia",
+      "capital": "Margaharja",
+      "country code": "ID"
+    },
+    {
+      "id": 268,
+      "country": "Philippines",
+      "capital": "Pandan",
+      "country code": "PH"
+    },
+    {
+      "id": 269,
+      "country": "China",
+      "capital": "Yanglinwei",
+      "country code": "CN"
+    },
+    {
+      "id": 270,
+      "country": "Mexico",
+      "capital": "Niños Heroes",
+      "country code": "MX"
+    },
+    {
+      "id": 271,
+      "country": "China",
+      "capital": "Miaoshi",
+      "country code": "CN"
+    },
+    {
+      "id": 272,
+      "country": "Albania",
+      "capital": "Kombësi",
+      "country code": "AL"
+    },
+    {
+      "id": 273,
+      "country": "Poland",
+      "capital": "Słupno",
+      "country code": "PL"
+    },
+    {
+      "id": 274,
+      "country": "Russia",
+      "capital": "Vyazniki",
+      "country code": "RU"
+    },
+    {
+      "id": 275,
+      "country": "Peru",
+      "capital": "El Ingenio",
+      "country code": "PE"
+    },
+    {
+      "id": 276,
+      "country": "Portugal",
+      "capital": "Seia",
+      "country code": "PT"
+    },
+    {
+      "id": 277,
+      "country": "Indonesia",
+      "capital": "South Tangerang",
+      "country code": "ID"
+    },
+    { "id": 278, "country": "China", "capital": "Xinle", "country code": "CN" },
+    {
+      "id": 279,
+      "country": "Latvia",
+      "capital": "Daugavgrīva",
+      "country code": "LV"
+    },
+    {
+      "id": 280,
+      "country": "Azerbaijan",
+      "capital": "Bakıxanov",
+      "country code": "AZ"
+    },
+    {
+      "id": 281,
+      "country": "Brazil",
+      "capital": "Ibirité",
+      "country code": "BR"
+    },
+    {
+      "id": 282,
+      "country": "Canada",
+      "capital": "Gravelbourg",
+      "country code": "CA"
+    },
+    {
+      "id": 283,
+      "country": "Argentina",
+      "capital": "La Paz",
+      "country code": "AR"
+    },
+    {
+      "id": 284,
+      "country": "Russia",
+      "capital": "Kokoshkino",
+      "country code": "RU"
+    },
+    {
+      "id": 285,
+      "country": "China",
+      "capital": "Zhichanghe",
+      "country code": "CN"
+    },
+    {
+      "id": 286,
+      "country": "Greece",
+      "capital": "Pélla",
+      "country code": "GR"
+    },
+    {
+      "id": 287,
+      "country": "New Zealand",
+      "capital": "Christchurch",
+      "country code": "NZ"
+    },
+    {
+      "id": 288,
+      "country": "France",
+      "capital": "Lagnieu",
+      "country code": "FR"
+    },
+    {
+      "id": 289,
+      "country": "Honduras",
+      "capital": "Tepusteca",
+      "country code": "HN"
+    },
+    {
+      "id": 290,
+      "country": "China",
+      "capital": "Sanzhang",
+      "country code": "CN"
+    },
+    {
+      "id": 291,
+      "country": "Czech Republic",
+      "capital": "Bošovice",
+      "country code": "CZ"
+    },
+    {
+      "id": 292,
+      "country": "Russia",
+      "capital": "Rossosh’",
+      "country code": "RU"
+    },
+    {
+      "id": 293,
+      "country": "Nigeria",
+      "capital": "Oguta",
+      "country code": "NG"
+    },
+    {
+      "id": 294,
+      "country": "Uzbekistan",
+      "capital": "Uychi",
+      "country code": "UZ"
+    },
+    {
+      "id": 295,
+      "country": "Greece",
+      "capital": "Makrychóri",
+      "country code": "GR"
+    },
+    {
+      "id": 296,
+      "country": "Portugal",
+      "capital": "Avelinha",
+      "country code": "PT"
+    },
+    {
+      "id": 297,
+      "country": "Argentina",
+      "capital": "Espinillo",
+      "country code": "AR"
+    },
+    { "id": 298, "country": "Peru", "capital": "Lima", "country code": "PE" },
+    {
+      "id": 299,
+      "country": "Japan",
+      "capital": "Amagasaki",
+      "country code": "JP"
+    },
+    {
+      "id": 300,
+      "country": "Philippines",
+      "capital": "Kananya",
+      "country code": "PH"
+    },
+    {
+      "id": 301,
+      "country": "Indonesia",
+      "capital": "Jaga",
+      "country code": "ID"
+    },
+    {
+      "id": 302,
+      "country": "China",
+      "capital": "Waitun",
+      "country code": "CN"
+    },
+    {
+      "id": 303,
+      "country": "Croatia",
+      "capital": "Bakar",
+      "country code": "HR"
+    },
+    {
+      "id": 304,
+      "country": "Russia",
+      "capital": "Solomenskoye",
+      "country code": "RU"
+    },
+    {
+      "id": 305,
+      "country": "Czech Republic",
+      "capital": "Poříčany",
+      "country code": "CZ"
+    },
+    {
+      "id": 306,
+      "country": "Serbia",
+      "capital": "Sajan",
+      "country code": "RS"
+    },
+    {
+      "id": 307,
+      "country": "Poland",
+      "capital": "Osieczany",
+      "country code": "PL"
+    },
+    {
+      "id": 308,
+      "country": "Kazakhstan",
+      "capital": "Saryshaghan",
+      "country code": "KZ"
+    },
+    {
+      "id": 309,
+      "country": "South Africa",
+      "capital": "Barkly East",
+      "country code": "ZA"
+    },
+    {
+      "id": 310,
+      "country": "Russia",
+      "capital": "Budënnovsk",
+      "country code": "RU"
+    },
+    {
+      "id": 311,
+      "country": "Russia",
+      "capital": "Novoorsk",
+      "country code": "RU"
+    },
+    {
+      "id": 312,
+      "country": "Sweden",
+      "capital": "Stockholm",
+      "country code": "SE"
+    },
+    {
+      "id": 313,
+      "country": "China",
+      "capital": "Tianjin",
+      "country code": "CN"
+    },
+    {
+      "id": 314,
+      "country": "Russia",
+      "capital": "Tashla",
+      "country code": "RU"
+    },
+    {
+      "id": 315,
+      "country": "Indonesia",
+      "capital": "Ongabelen",
+      "country code": "ID"
+    },
+    {
+      "id": 316,
+      "country": "China",
+      "capital": "Yanjiatai",
+      "country code": "CN"
+    },
+    {
+      "id": 317,
+      "country": "Germany",
+      "capital": "Stuttgart",
+      "country code": "DE"
+    },
+    {
+      "id": 318,
+      "country": "France",
+      "capital": "Sochaux",
+      "country code": "FR"
+    },
+    {
+      "id": 319,
+      "country": "United States",
+      "capital": "Rochester",
+      "country code": "US"
+    },
+    {
+      "id": 320,
+      "country": "Indonesia",
+      "capital": "Pilang",
+      "country code": "ID"
+    },
+    {
+      "id": 321,
+      "country": "Slovakia",
+      "capital": "Bratislava",
+      "country code": "SK"
+    },
+    {
+      "id": 322,
+      "country": "Portugal",
+      "capital": "Queluz",
+      "country code": "PT"
+    },
+    {
+      "id": 323,
+      "country": "Thailand",
+      "capital": "Lom Kao",
+      "country code": "TH"
+    },
+    {
+      "id": 324,
+      "country": "Netherlands",
+      "capital": "Kerkrade",
+      "country code": "NL"
+    },
+    {
+      "id": 325,
+      "country": "United States",
+      "capital": "Mobile",
+      "country code": "US"
+    },
+    {
+      "id": 326,
+      "country": "Guatemala",
+      "capital": "Ciudad Vieja",
+      "country code": "GT"
+    },
+    {
+      "id": 327,
+      "country": "Portugal",
+      "capital": "Estela",
+      "country code": "PT"
+    },
+    {
+      "id": 328,
+      "country": "Argentina",
+      "capital": "Colonias Unidas",
+      "country code": "AR"
+    },
+    {
+      "id": 329,
+      "country": "Czech Republic",
+      "capital": "Doubrava",
+      "country code": "CZ"
+    },
+    {
+      "id": 330,
+      "country": "Peru",
+      "capital": "San Carlos",
+      "country code": "PE"
+    },
+    { "id": 331, "country": "Bhutan", "capital": "Daga", "country code": "BT" },
+    {
+      "id": 332,
+      "country": "Poland",
+      "capital": "Rzepiennik Strzyżewski",
+      "country code": "PL"
+    },
+    {
+      "id": 333,
+      "country": "Colombia",
+      "capital": "Elías",
+      "country code": "CO"
+    },
+    {
+      "id": 334,
+      "country": "Brazil",
+      "capital": "Barra de São Francisco",
+      "country code": "BR"
+    },
+    {
+      "id": 335,
+      "country": "Sweden",
+      "capital": "Ängelholm",
+      "country code": "SE"
+    },
+    {
+      "id": 336,
+      "country": "Guatemala",
+      "capital": "San Vicente Pacaya",
+      "country code": "GT"
+    },
+    {
+      "id": 337,
+      "country": "Indonesia",
+      "capital": "Karangbungur",
+      "country code": "ID"
+    },
+    {
+      "id": 338,
+      "country": "Indonesia",
+      "capital": "Tarikolot",
+      "country code": "ID"
+    },
+    {
+      "id": 339,
+      "country": "Finland",
+      "capital": "Rauma",
+      "country code": "FI"
+    },
+    { "id": 340, "country": "China", "capital": "Xiluo", "country code": "CN" },
+    {
+      "id": 341,
+      "country": "Mexico",
+      "capital": "Francisco I Madero",
+      "country code": "MX"
+    },
+    {
+      "id": 342,
+      "country": "Brazil",
+      "capital": "Ituiutaba",
+      "country code": "BR"
+    },
+    {
+      "id": 343,
+      "country": "Russia",
+      "capital": "Togur",
+      "country code": "RU"
+    },
+    {
+      "id": 344,
+      "country": "China",
+      "capital": "Gechuan",
+      "country code": "CN"
+    },
+    {
+      "id": 345,
+      "country": "Brazil",
+      "capital": "Goiânia",
+      "country code": "BR"
+    },
+    {
+      "id": 346,
+      "country": "New Caledonia",
+      "capital": "La Foa",
+      "country code": "NC"
+    },
+    {
+      "id": 347,
+      "country": "China",
+      "capital": "Shuangjie",
+      "country code": "CN"
+    },
+    {
+      "id": 348,
+      "country": "Russia",
+      "capital": "Rybnoye",
+      "country code": "RU"
+    },
+    {
+      "id": 349,
+      "country": "Brazil",
+      "capital": "Prata",
+      "country code": "BR"
+    },
+    {
+      "id": 350,
+      "country": "Indonesia",
+      "capital": "Lojigawaran",
+      "country code": "ID"
+    },
+    {
+      "id": 351,
+      "country": "Peru",
+      "capital": "Sunampe",
+      "country code": "PE"
+    },
+    {
+      "id": 352,
+      "country": "Finland",
+      "capital": "Virojoki",
+      "country code": "FI"
+    },
+    {
+      "id": 353,
+      "country": "Ukraine",
+      "capital": "Zaliznychne",
+      "country code": "UA"
+    },
+    {
+      "id": 354,
+      "country": "Brazil",
+      "capital": "Barra de São Francisco",
+      "country code": "BR"
+    },
+    {
+      "id": 355,
+      "country": "United States",
+      "capital": "Omaha",
+      "country code": "US"
+    },
+    {
+      "id": 356,
+      "country": "Czech Republic",
+      "capital": "Otaslavice",
+      "country code": "CZ"
+    },
+    {
+      "id": 357,
+      "country": "Mongolia",
+      "capital": "Havirga",
+      "country code": "MN"
+    },
+    {
+      "id": 358,
+      "country": "Japan",
+      "capital": "Fujinomiya",
+      "country code": "JP"
+    },
+    {
+      "id": 359,
+      "country": "North Korea",
+      "capital": "Musan-ŭp",
+      "country code": "KP"
+    },
+    {
+      "id": 360,
+      "country": "Brazil",
+      "capital": "Medina",
+      "country code": "BR"
+    },
+    {
+      "id": 361,
+      "country": "China",
+      "capital": "Yunmeng Chengguanzhen",
+      "country code": "CN"
+    },
+    {
+      "id": 362,
+      "country": "Philippines",
+      "capital": "Naga",
+      "country code": "PH"
+    },
+    {
+      "id": 363,
+      "country": "Mexico",
+      "capital": "Emiliano Zapata",
+      "country code": "MX"
+    },
+    {
+      "id": 364,
+      "country": "China",
+      "capital": "Wangbuzhuang",
+      "country code": "CN"
+    },
+    {
+      "id": 365,
+      "country": "Mexico",
+      "capital": "Emiliano Zapata",
+      "country code": "MX"
+    },
+    {
+      "id": 366,
+      "country": "Bolivia",
+      "capital": "Oruro",
+      "country code": "BO"
+    },
+    {
+      "id": 367,
+      "country": "United Kingdom",
+      "capital": "Walton",
+      "country code": "GB"
+    },
+    {
+      "id": 368,
+      "country": "Philippines",
+      "capital": "Rimus",
+      "country code": "PH"
+    },
+    {
+      "id": 369,
+      "country": "Ukraine",
+      "capital": "Scholkine",
+      "country code": "UA"
+    },
+    {
+      "id": 370,
+      "country": "Pakistan",
+      "capital": "Jahāniān Shāh",
+      "country code": "PK"
+    },
+    {
+      "id": 371,
+      "country": "Guatemala",
+      "capital": "Comitancillo",
+      "country code": "GT"
+    },
+    {
+      "id": 372,
+      "country": "Nigeria",
+      "capital": "Bornu Yassu",
+      "country code": "NG"
+    },
+    {
+      "id": 373,
+      "country": "Brazil",
+      "capital": "Campo Largo",
+      "country code": "BR"
+    },
+    {
+      "id": 374,
+      "country": "Finland",
+      "capital": "Ruokolahti",
+      "country code": "FI"
+    },
+    {
+      "id": 375,
+      "country": "Poland",
+      "capital": "Przyborów",
+      "country code": "PL"
+    },
+    {
+      "id": 376,
+      "country": "Argentina",
+      "capital": "Santa Rosa",
+      "country code": "AR"
+    },
+    {
+      "id": 377,
+      "country": "South Korea",
+      "capital": "Hayang",
+      "country code": "KR"
+    },
+    {
+      "id": 378,
+      "country": "Philippines",
+      "capital": "Irosin",
+      "country code": "PH"
+    },
+    {
+      "id": 379,
+      "country": "Nigeria",
+      "capital": "Akwanga",
+      "country code": "NG"
+    },
+    {
+      "id": 380,
+      "country": "Canada",
+      "capital": "Mont-Saint-Hilaire",
+      "country code": "CA"
+    },
+    {
+      "id": 381,
+      "country": "United States",
+      "capital": "Chicago",
+      "country code": "US"
+    },
+    {
+      "id": 382,
+      "country": "Ukraine",
+      "capital": "Seredyna-Buda",
+      "country code": "UA"
+    },
+    {
+      "id": 383,
+      "country": "Indonesia",
+      "capital": "Mawa",
+      "country code": "ID"
+    },
+    {
+      "id": 384,
+      "country": "Armenia",
+      "capital": "Khasht’arrak",
+      "country code": "AM"
+    },
+    {
+      "id": 385,
+      "country": "Finland",
+      "capital": "Valkeakoski",
+      "country code": "FI"
+    },
+    {
+      "id": 386,
+      "country": "Vietnam",
+      "capital": "Thị Trấn Mù Cang Chải",
+      "country code": "VN"
+    },
+    {
+      "id": 387,
+      "country": "Indonesia",
+      "capital": "Lohong",
+      "country code": "ID"
+    },
+    {
+      "id": 388,
+      "country": "Indonesia",
+      "capital": "Rokoy",
+      "country code": "ID"
+    },
+    {
+      "id": 389,
+      "country": "Philippines",
+      "capital": "Aguilar",
+      "country code": "PH"
+    },
+    {
+      "id": 390,
+      "country": "Indonesia",
+      "capital": "Bungur",
+      "country code": "ID"
+    },
+    {
+      "id": 391,
+      "country": "Indonesia",
+      "capital": "Wilanagara",
+      "country code": "ID"
+    },
+    {
+      "id": 392,
+      "country": "Indonesia",
+      "capital": "Tegalalang",
+      "country code": "ID"
+    },
+    {
+      "id": 393,
+      "country": "Indonesia",
+      "capital": "Wanglu Kulon",
+      "country code": "ID"
+    },
+    {
+      "id": 394,
+      "country": "Venezuela",
+      "capital": "Tucupita",
+      "country code": "VE"
+    },
+    { "id": 395, "country": "China", "capital": "Kuzhu", "country code": "CN" },
+    { "id": 396, "country": "Norway", "capital": "Oslo", "country code": "NO" },
+    {
+      "id": 397,
+      "country": "Morocco",
+      "capital": "Fezna",
+      "country code": "MA"
+    },
+    {
+      "id": 398,
+      "country": "Indonesia",
+      "capital": "Kumai",
+      "country code": "ID"
+    },
+    {
+      "id": 399,
+      "country": "Nigeria",
+      "capital": "Bununu Dass",
+      "country code": "NG"
+    },
+    {
+      "id": 400,
+      "country": "Croatia",
+      "capital": "Buzet",
+      "country code": "HR"
+    },
+    { "id": 401, "country": "Iran", "capital": "Tehrān", "country code": "IR" },
+    {
+      "id": 402,
+      "country": "Bulgaria",
+      "capital": "Panagyurishte",
+      "country code": "BG"
+    },
+    {
+      "id": 403,
+      "country": "Indonesia",
+      "capital": "Nambak Tengah",
+      "country code": "ID"
+    },
+    {
+      "id": 404,
+      "country": "United States",
+      "capital": "Phoenix",
+      "country code": "US"
+    },
+    {
+      "id": 405,
+      "country": "Russia",
+      "capital": "Polazna",
+      "country code": "RU"
+    },
+    {
+      "id": 406,
+      "country": "Philippines",
+      "capital": "Little Baguio",
+      "country code": "PH"
+    },
+    {
+      "id": 407,
+      "country": "China",
+      "capital": "Dailing",
+      "country code": "CN"
+    },
+    {
+      "id": 408,
+      "country": "Russia",
+      "capital": "Gorodets",
+      "country code": "RU"
+    },
+    {
+      "id": 409,
+      "country": "Brazil",
+      "capital": "Videira",
+      "country code": "BR"
+    },
+    {
+      "id": 410,
+      "country": "Peru",
+      "capital": "Maranura",
+      "country code": "PE"
+    },
+    {
+      "id": 411,
+      "country": "China",
+      "capital": "Changxingbao",
+      "country code": "CN"
+    },
+    {
+      "id": 412,
+      "country": "Croatia",
+      "capital": "Baška Voda",
+      "country code": "HR"
+    },
+    {
+      "id": 413,
+      "country": "China",
+      "capital": "Shensuo",
+      "country code": "CN"
+    },
+    {
+      "id": 414,
+      "country": "Russia",
+      "capital": "Chaplygin",
+      "country code": "RU"
+    },
+    {
+      "id": 415,
+      "country": "China",
+      "capital": "Dongfanghong",
+      "country code": "CN"
+    },
+    {
+      "id": 416,
+      "country": "Brazil",
+      "capital": "Livramento do Brumado",
+      "country code": "BR"
+    },
+    {
+      "id": 417,
+      "country": "Brazil",
+      "capital": "Nova Olímpia",
+      "country code": "BR"
+    },
+    {
+      "id": 418,
+      "country": "Chile",
+      "capital": "Lautaro",
+      "country code": "CL"
+    },
+    {
+      "id": 419,
+      "country": "Russia",
+      "capital": "Surazh",
+      "country code": "RU"
+    },
+    {
+      "id": 420,
+      "country": "China",
+      "capital": "Hexing",
+      "country code": "CN"
+    },
+    {
+      "id": 421,
+      "country": "Portugal",
+      "capital": "São Pedro de Trafaria",
+      "country code": "PT"
+    },
+    {
+      "id": 422,
+      "country": "Indonesia",
+      "capital": "Peranap",
+      "country code": "ID"
+    },
+    {
+      "id": 423,
+      "country": "Indonesia",
+      "capital": "Bantawora",
+      "country code": "ID"
+    },
+    {
+      "id": 424,
+      "country": "Ivory Coast",
+      "capital": "Soubré",
+      "country code": "CI"
+    },
+    {
+      "id": 425,
+      "country": "Portugal",
+      "capital": "Aldeia",
+      "country code": "PT"
+    },
+    {
+      "id": 426,
+      "country": "Albania",
+      "capital": "Bërxull",
+      "country code": "AL"
+    },
+    { "id": 427, "country": "China", "capital": "Daye", "country code": "CN" },
+    {
+      "id": 428,
+      "country": "Portugal",
+      "capital": "Chaínça",
+      "country code": "PT"
+    },
+    {
+      "id": 429,
+      "country": "Peru",
+      "capital": "San Juan",
+      "country code": "PE"
+    },
+    { "id": 430, "country": "Kenya", "capital": "Busia", "country code": "KE" },
+    {
+      "id": 431,
+      "country": "United States",
+      "capital": "Saint Petersburg",
+      "country code": "US"
+    },
+    {
+      "id": 432,
+      "country": "China",
+      "capital": "Gufeng",
+      "country code": "CN"
+    },
+    {
+      "id": 433,
+      "country": "Indonesia",
+      "capital": "Gandekan",
+      "country code": "ID"
+    },
+    {
+      "id": 434,
+      "country": "Sweden",
+      "capital": "Kristinehamn",
+      "country code": "SE"
+    },
+    {
+      "id": 435,
+      "country": "China",
+      "capital": "Longwantun",
+      "country code": "CN"
+    },
+    {
+      "id": 436,
+      "country": "Russia",
+      "capital": "Vyborg",
+      "country code": "RU"
+    },
+    {
+      "id": 437,
+      "country": "France",
+      "capital": "Paris 19",
+      "country code": "FR"
+    },
+    {
+      "id": 438,
+      "country": "Colombia",
+      "capital": "Arauca",
+      "country code": "CO"
+    },
+    {
+      "id": 439,
+      "country": "Pakistan",
+      "capital": "Faruka",
+      "country code": "PK"
+    },
+    {
+      "id": 440,
+      "country": "Pakistan",
+      "capital": "Barishāl",
+      "country code": "PK"
+    },
+    { "id": 441, "country": "Peru", "capital": "Laraos", "country code": "PE" },
+    {
+      "id": 442,
+      "country": "China",
+      "capital": "Jiuxian",
+      "country code": "CN"
+    },
+    {
+      "id": 443,
+      "country": "Germany",
+      "capital": "Bochum",
+      "country code": "DE"
+    },
+    {
+      "id": 444,
+      "country": "Japan",
+      "capital": "Ginowan",
+      "country code": "JP"
+    },
+    {
+      "id": 445,
+      "country": "Russia",
+      "capital": "Burmakino",
+      "country code": "RU"
+    },
+    {
+      "id": 446,
+      "country": "Japan",
+      "capital": "Okazaki",
+      "country code": "JP"
+    },
+    {
+      "id": 447,
+      "country": "Bulgaria",
+      "capital": "Slavyanovo",
+      "country code": "BG"
+    },
+    {
+      "id": 448,
+      "country": "Latvia",
+      "capital": "Valmiera",
+      "country code": "LV"
+    },
+    { "id": 449, "country": "Syria", "capital": "Arīḩā", "country code": "SY" },
+    {
+      "id": 450,
+      "country": "Philippines",
+      "capital": "Peñarrubia",
+      "country code": "PH"
+    },
+    {
+      "id": 451,
+      "country": "France",
+      "capital": "Bordeaux",
+      "country code": "FR"
+    },
+    {
+      "id": 452,
+      "country": "China",
+      "capital": "Jiaobei",
+      "country code": "CN"
+    },
+    {
+      "id": 453,
+      "country": "France",
+      "capital": "Saint-Étienne",
+      "country code": "FR"
+    },
+    {
+      "id": 454,
+      "country": "Afghanistan",
+      "capital": "Ḩukūmat-e Shīnkaī",
+      "country code": "AF"
+    },
+    {
+      "id": 455,
+      "country": "Colombia",
+      "capital": "Santander de Quilichao",
+      "country code": "CO"
+    },
+    {
+      "id": 456,
+      "country": "Syria",
+      "capital": "Al Mālikīyah",
+      "country code": "SY"
+    },
+    {
+      "id": 457,
+      "country": "Poland",
+      "capital": "Gowarczów",
+      "country code": "PL"
+    },
+    {
+      "id": 458,
+      "country": "Thailand",
+      "capital": "Dan Khun Thot",
+      "country code": "TH"
+    },
+    {
+      "id": 459,
+      "country": "China",
+      "capital": "Shihudang",
+      "country code": "CN"
+    },
+    {
+      "id": 460,
+      "country": "Palestinian Territory",
+      "capital": "Bayt ‘Īnūn",
+      "country code": "PS"
+    },
+    {
+      "id": 461,
+      "country": "Colombia",
+      "capital": "Sabaneta",
+      "country code": "CO"
+    },
+    {
+      "id": 462,
+      "country": "Ukraine",
+      "capital": "Dovhe",
+      "country code": "UA"
+    },
+    {
+      "id": 463,
+      "country": "Russia",
+      "capital": "Yur’yevets",
+      "country code": "RU"
+    },
+    {
+      "id": 464,
+      "country": "China",
+      "capital": "Shuangpengxi",
+      "country code": "CN"
+    },
+    {
+      "id": 465,
+      "country": "Palestinian Territory",
+      "capital": "Al Majd",
+      "country code": "PS"
+    },
+    {
+      "id": 466,
+      "country": "Russia",
+      "capital": "Kuloy",
+      "country code": "RU"
+    },
+    { "id": 467, "country": "China", "capital": "Hexi", "country code": "CN" },
+    {
+      "id": 468,
+      "country": "Czech Republic",
+      "capital": "Žabčice",
+      "country code": "CZ"
+    },
+    {
+      "id": 469,
+      "country": "Indonesia",
+      "capital": "Ketanen",
+      "country code": "ID"
+    },
+    {
+      "id": 470,
+      "country": "Philippines",
+      "capital": "San Francisco",
+      "country code": "PH"
+    },
+    {
+      "id": 471,
+      "country": "Azerbaijan",
+      "capital": "Basqal",
+      "country code": "AZ"
+    },
+    {
+      "id": 472,
+      "country": "China",
+      "capital": "Guandukou",
+      "country code": "CN"
+    },
+    {
+      "id": 473,
+      "country": "Russia",
+      "capital": "Nebug",
+      "country code": "RU"
+    },
+    {
+      "id": 474,
+      "country": "Indonesia",
+      "capital": "Krajan Sumurtawang",
+      "country code": "ID"
+    },
+    { "id": 475, "country": "China", "capital": "Cola", "country code": "CN" },
+    {
+      "id": 476,
+      "country": "Colombia",
+      "capital": "Planeta Rica",
+      "country code": "CO"
+    },
+    {
+      "id": 477,
+      "country": "Indonesia",
+      "capital": "Mentaras",
+      "country code": "ID"
+    },
+    {
+      "id": 478,
+      "country": "Brazil",
+      "capital": "Ponta Porã",
+      "country code": "BR"
+    },
+    {
+      "id": 479,
+      "country": "Russia",
+      "capital": "Baraba",
+      "country code": "RU"
+    },
+    { "id": 480, "country": "Japan", "capital": "Saiki", "country code": "JP" },
+    {
+      "id": 481,
+      "country": "Ukraine",
+      "capital": "Novovasylivka",
+      "country code": "UA"
+    },
+    {
+      "id": 482,
+      "country": "Philippines",
+      "capital": "Lamak",
+      "country code": "PH"
+    },
+    {
+      "id": 483,
+      "country": "Sweden",
+      "capital": "Västerås",
+      "country code": "SE"
+    },
+    {
+      "id": 484,
+      "country": "Portugal",
+      "capital": "Pinhal de Frades",
+      "country code": "PT"
+    },
+    {
+      "id": 485,
+      "country": "Indonesia",
+      "capital": "Padangpanjang",
+      "country code": "ID"
+    },
+    {
+      "id": 486,
+      "country": "Argentina",
+      "capital": "Yuto",
+      "country code": "AR"
+    },
+    {
+      "id": 487,
+      "country": "China",
+      "capital": "Qianzhou",
+      "country code": "CN"
+    },
+    {
+      "id": 488,
+      "country": "Indonesia",
+      "capital": "Waipare",
+      "country code": "ID"
+    },
+    {
+      "id": 489,
+      "country": "Mexico",
+      "capital": "Guadalupe Victoria",
+      "country code": "MX"
+    },
+    {
+      "id": 490,
+      "country": "Bulgaria",
+      "capital": "Kotel",
+      "country code": "BG"
+    },
+    {
+      "id": 491,
+      "country": "China",
+      "capital": "Xin’an",
+      "country code": "CN"
+    },
+    {
+      "id": 492,
+      "country": "Philippines",
+      "capital": "San Andres",
+      "country code": "PH"
+    },
+    {
+      "id": 493,
+      "country": "Russia",
+      "capital": "Spitsevka",
+      "country code": "RU"
+    },
+    {
+      "id": 494,
+      "country": "China",
+      "capital": "Xiaopu",
+      "country code": "CN"
+    },
+    {
+      "id": 495,
+      "country": "China",
+      "capital": "Nantang",
+      "country code": "CN"
+    },
+    {
+      "id": 496,
+      "country": "Peru",
+      "capital": "Carhuamayo",
+      "country code": "PE"
+    },
+    {
+      "id": 497,
+      "country": "Yemen",
+      "capital": "Al Ḩumaydāt",
+      "country code": "YE"
+    },
+    {
+      "id": 498,
+      "country": "Russia",
+      "capital": "Sarany",
+      "country code": "RU"
+    },
+    { "id": 499, "country": "Peru", "capital": "Macari", "country code": "PE" },
+    {
+      "id": 500,
+      "country": "East Timor",
+      "capital": "Liquica",
+      "country code": "TL"
+    },
+    { "id": 501, "country": "Sudan", "capital": "Rabak", "country code": "SD" },
+    {
+      "id": 502,
+      "country": "Mexico",
+      "capital": "La Esperanza",
+      "country code": "MX"
+    },
+    {
+      "id": 503,
+      "country": "Afghanistan",
+      "capital": "Shibirghān",
+      "country code": "AF"
+    },
+    {
+      "id": 504,
+      "country": "Philippines",
+      "capital": "Ilihan",
+      "country code": "PH"
+    },
+    {
+      "id": 505,
+      "country": "Croatia",
+      "capital": "Jadranovo",
+      "country code": "HR"
+    },
+    {
+      "id": 506,
+      "country": "Angola",
+      "capital": "Cabinda",
+      "country code": "AO"
+    },
+    {
+      "id": 507,
+      "country": "Czech Republic",
+      "capital": "Čerčany",
+      "country code": "CZ"
+    },
+    {
+      "id": 508,
+      "country": "China",
+      "capital": "Shuangjie",
+      "country code": "CN"
+    },
+    {
+      "id": 509,
+      "country": "Poland",
+      "capital": "Sztum",
+      "country code": "PL"
+    },
+    {
+      "id": 510,
+      "country": "Mongolia",
+      "capital": "Doloon",
+      "country code": "MN"
+    },
+    {
+      "id": 511,
+      "country": "Panama",
+      "capital": "Los Algarrobos",
+      "country code": "PA"
+    },
+    {
+      "id": 512,
+      "country": "Portugal",
+      "capital": "Ribeirinha",
+      "country code": "PT"
+    },
+    {
+      "id": 513,
+      "country": "Sweden",
+      "capital": "Rimbo",
+      "country code": "SE"
+    },
+    {
+      "id": 514,
+      "country": "Indonesia",
+      "capital": "Ciherang",
+      "country code": "ID"
+    },
+    {
+      "id": 515,
+      "country": "Philippines",
+      "capital": "Sandayong Sur",
+      "country code": "PH"
+    },
+    {
+      "id": 516,
+      "country": "Russia",
+      "capital": "Mendeleyevskiy",
+      "country code": "RU"
+    },
+    {
+      "id": 517,
+      "country": "Nigeria",
+      "capital": "Ngala",
+      "country code": "NG"
+    },
+    {
+      "id": 518,
+      "country": "Philippines",
+      "capital": "Bucay",
+      "country code": "PH"
+    },
+    {
+      "id": 519,
+      "country": "Afghanistan",
+      "capital": "Farah",
+      "country code": "AF"
+    },
+    {
+      "id": 520,
+      "country": "China",
+      "capital": "Xinhang",
+      "country code": "CN"
+    },
+    {
+      "id": 521,
+      "country": "Portugal",
+      "capital": "Madalena do Mar",
+      "country code": "PT"
+    },
+    {
+      "id": 522,
+      "country": "Poland",
+      "capital": "Jasionów",
+      "country code": "PL"
+    },
+    {
+      "id": 523,
+      "country": "China",
+      "capital": "Shuanghe",
+      "country code": "CN"
+    },
+    {
+      "id": 524,
+      "country": "Czech Republic",
+      "capital": "Jindřichov",
+      "country code": "CZ"
+    },
+    {
+      "id": 525,
+      "country": "Latvia",
+      "capital": "Vecumnieki",
+      "country code": "LV"
+    },
+    {
+      "id": 526,
+      "country": "Indonesia",
+      "capital": "Telagaselaba",
+      "country code": "ID"
+    },
+    {
+      "id": 527,
+      "country": "Portugal",
+      "capital": "São Pedro Gafanhoeira",
+      "country code": "PT"
+    },
+    {
+      "id": 528,
+      "country": "Ukraine",
+      "capital": "Lanchyn",
+      "country code": "UA"
+    },
+    {
+      "id": 529,
+      "country": "Morocco",
+      "capital": "Tiout",
+      "country code": "MA"
+    },
+    {
+      "id": 530,
+      "country": "Indonesia",
+      "capital": "Cangkringan",
+      "country code": "ID"
+    },
+    {
+      "id": 531,
+      "country": "China",
+      "capital": "Harbin",
+      "country code": "CN"
+    },
+    {
+      "id": 532,
+      "country": "Iran",
+      "capital": "Khondāb",
+      "country code": "IR"
+    },
+    {
+      "id": 533,
+      "country": "United States",
+      "capital": "Orlando",
+      "country code": "US"
+    },
+    {
+      "id": 534,
+      "country": "China",
+      "capital": "Qiaozhen",
+      "country code": "CN"
+    },
+    {
+      "id": 535,
+      "country": "United States",
+      "capital": "New York City",
+      "country code": "US"
+    },
+    {
+      "id": 536,
+      "country": "Ireland",
+      "capital": "Castleknock",
+      "country code": "IE"
+    },
+    {
+      "id": 537,
+      "country": "Portugal",
+      "capital": "Cardal",
+      "country code": "PT"
+    },
+    {
+      "id": 538,
+      "country": "Guyana",
+      "capital": "Mahaica Village",
+      "country code": "GY"
+    },
+    {
+      "id": 539,
+      "country": "Portugal",
+      "capital": "Vista Alegre",
+      "country code": "PT"
+    },
+    {
+      "id": 540,
+      "country": "Colombia",
+      "capital": "Los Córdobas",
+      "country code": "CO"
+    },
+    {
+      "id": 541,
+      "country": "Costa Rica",
+      "capital": "Paraíso",
+      "country code": "CR"
+    },
+    {
+      "id": 542,
+      "country": "China",
+      "capital": "Huangdu",
+      "country code": "CN"
+    },
+    {
+      "id": 543,
+      "country": "Russia",
+      "capital": "Novaya Mayna",
+      "country code": "RU"
+    },
+    {
+      "id": 544,
+      "country": "Indonesia",
+      "capital": "Gayam",
+      "country code": "ID"
+    },
+    {
+      "id": 545,
+      "country": "Croatia",
+      "capital": "Ivanec",
+      "country code": "HR"
+    },
+    {
+      "id": 546,
+      "country": "China",
+      "capital": "Sandaohezi",
+      "country code": "CN"
+    },
+    {
+      "id": 547,
+      "country": "Indonesia",
+      "capital": "Karanggeneng",
+      "country code": "ID"
+    },
+    {
+      "id": 548,
+      "country": "Indonesia",
+      "capital": "Krajan Kinanti",
+      "country code": "ID"
+    },
+    {
+      "id": 549,
+      "country": "South Africa",
+      "capital": "Stutterheim",
+      "country code": "ZA"
+    },
+    {
+      "id": 550,
+      "country": "Japan",
+      "capital": "Miyazu",
+      "country code": "JP"
+    },
+    {
+      "id": 551,
+      "country": "Poland",
+      "capital": "Bieliny",
+      "country code": "PL"
+    },
+    {
+      "id": 552,
+      "country": "Portugal",
+      "capital": "Cruz",
+      "country code": "PT"
+    },
+    {
+      "id": 553,
+      "country": "Indonesia",
+      "capital": "Cisewu",
+      "country code": "ID"
+    },
+    {
+      "id": 554,
+      "country": "Russia",
+      "capital": "Dalmatovo",
+      "country code": "RU"
+    },
+    {
+      "id": 555,
+      "country": "Croatia",
+      "capital": "Radoboj",
+      "country code": "HR"
+    },
+    {
+      "id": 556,
+      "country": "Iran",
+      "capital": "Javānrūd",
+      "country code": "IR"
+    },
+    {
+      "id": 557,
+      "country": "Finland",
+      "capital": "Kajaani",
+      "country code": "FI"
+    },
+    {
+      "id": 558,
+      "country": "Russia",
+      "capital": "Turgenevo",
+      "country code": "RU"
+    },
+    {
+      "id": 559,
+      "country": "Argentina",
+      "capital": "Contraalmirante Cordero",
+      "country code": "AR"
+    },
+    {
+      "id": 560,
+      "country": "Thailand",
+      "capital": "Suphan Buri",
+      "country code": "TH"
+    },
+    {
+      "id": 561,
+      "country": "Netherlands",
+      "capital": "Maastricht",
+      "country code": "NL"
+    },
+    {
+      "id": 562,
+      "country": "Israel",
+      "capital": "Qiryat Yam",
+      "country code": "IL"
+    },
+    {
+      "id": 563,
+      "country": "Mexico",
+      "capital": "San Francisco",
+      "country code": "MX"
+    },
+    {
+      "id": 564,
+      "country": "United Arab Emirates",
+      "capital": "Dibba Al-Hisn",
+      "country code": "AE"
+    },
+    {
+      "id": 565,
+      "country": "Poland",
+      "capital": "Wąsosz",
+      "country code": "PL"
+    },
+    {
+      "id": 566,
+      "country": "Poland",
+      "capital": "Perzów",
+      "country code": "PL"
+    },
+    {
+      "id": 567,
+      "country": "Greece",
+      "capital": "Elefsína",
+      "country code": "GR"
+    },
+    {
+      "id": 568,
+      "country": "Russia",
+      "capital": "Solikamsk",
+      "country code": "RU"
+    },
+    {
+      "id": 569,
+      "country": "Serbia",
+      "capital": "Donji Dobrić",
+      "country code": "RS"
+    },
+    {
+      "id": 570,
+      "country": "Morocco",
+      "capital": "Taghazout",
+      "country code": "MA"
+    },
+    { "id": 571, "country": "Russia", "capital": "Kama", "country code": "RU" },
+    {
+      "id": 572,
+      "country": "China",
+      "capital": "Guoxiang",
+      "country code": "CN"
+    },
+    {
+      "id": 573,
+      "country": "Comoros",
+      "capital": "Vanadjou",
+      "country code": "KM"
+    },
+    {
+      "id": 574,
+      "country": "Portugal",
+      "capital": "Lagoa",
+      "country code": "PT"
+    },
+    {
+      "id": 575,
+      "country": "Portugal",
+      "capital": "Mosteirô",
+      "country code": "PT"
+    },
+    {
+      "id": 576,
+      "country": "Russia",
+      "capital": "L’vovskiy",
+      "country code": "RU"
+    },
+    {
+      "id": 577,
+      "country": "Netherlands",
+      "capital": "Zwolle",
+      "country code": "NL"
+    },
+    {
+      "id": 578,
+      "country": "Russia",
+      "capital": "Krasnogorskoye",
+      "country code": "RU"
+    },
+    {
+      "id": 579,
+      "country": "Czech Republic",
+      "capital": "Želetava",
+      "country code": "CZ"
+    },
+    { "id": 580, "country": "China", "capital": "Ganzi", "country code": "CN" },
+    {
+      "id": 581,
+      "country": "Mexico",
+      "capital": "Chapultepec",
+      "country code": "MX"
+    },
+    {
+      "id": 582,
+      "country": "Indonesia",
+      "capital": "Karang Daye",
+      "country code": "ID"
+    },
+    {
+      "id": 583,
+      "country": "Indonesia",
+      "capital": "Jorong",
+      "country code": "ID"
+    },
+    {
+      "id": 584,
+      "country": "Ukraine",
+      "capital": "Pechenizhyn",
+      "country code": "UA"
+    },
+    {
+      "id": 585,
+      "country": "Guatemala",
+      "capital": "Comapa",
+      "country code": "GT"
+    },
+    {
+      "id": 586,
+      "country": "Peru",
+      "capital": "Condoroma",
+      "country code": "PE"
+    },
+    { "id": 587, "country": "Ghana", "capital": "Ho", "country code": "GH" },
+    {
+      "id": 588,
+      "country": "Ethiopia",
+      "capital": "Ginir",
+      "country code": "ET"
+    },
+    { "id": 589, "country": "Chile", "capital": "Lebu", "country code": "CL" },
+    {
+      "id": 590,
+      "country": "China",
+      "capital": "Xinfang",
+      "country code": "CN"
+    },
+    {
+      "id": 591,
+      "country": "Indonesia",
+      "capital": "Tuwiri Wetan",
+      "country code": "ID"
+    },
+    {
+      "id": 592,
+      "country": "China",
+      "capital": "Lizhuang",
+      "country code": "CN"
+    },
+    { "id": 593, "country": "China", "capital": "Xubao", "country code": "CN" },
+    {
+      "id": 594,
+      "country": "Indonesia",
+      "capital": "Desa Kertasari",
+      "country code": "ID"
+    },
+    {
+      "id": 595,
+      "country": "Philippines",
+      "capital": "Bigaan",
+      "country code": "PH"
+    },
+    {
+      "id": 596,
+      "country": "Nigeria",
+      "capital": "Wudil",
+      "country code": "NG"
+    },
+    {
+      "id": 597,
+      "country": "Russia",
+      "capital": "Samagaltay",
+      "country code": "RU"
+    },
+    {
+      "id": 598,
+      "country": "China",
+      "capital": "Bianba",
+      "country code": "CN"
+    },
+    {
+      "id": 599,
+      "country": "Syria",
+      "capital": "Ma‘dān",
+      "country code": "SY"
+    },
+    {
+      "id": 600,
+      "country": "Iran",
+      "capital": "Marāveh Tappeh",
+      "country code": "IR"
+    },
+    {
+      "id": 601,
+      "country": "China",
+      "capital": "Xiangshan",
+      "country code": "CN"
+    },
+    {
+      "id": 602,
+      "country": "Argentina",
+      "capital": "Azul",
+      "country code": "AR"
+    },
+    {
+      "id": 603,
+      "country": "Ukraine",
+      "capital": "Skalat",
+      "country code": "UA"
+    },
+    {
+      "id": 604,
+      "country": "Philippines",
+      "capital": "Motrico",
+      "country code": "PH"
+    },
+    {
+      "id": 605,
+      "country": "Ukraine",
+      "capital": "Vyshneve",
+      "country code": "UA"
+    },
+    {
+      "id": 606,
+      "country": "China",
+      "capital": "Huaqiao",
+      "country code": "CN"
+    },
+    {
+      "id": 607,
+      "country": "Belarus",
+      "capital": "Mstsislaw",
+      "country code": "BY"
+    },
+    {
+      "id": 608,
+      "country": "Indonesia",
+      "capital": "Kukulu",
+      "country code": "ID"
+    },
+    {
+      "id": 609,
+      "country": "Indonesia",
+      "capital": "Peukanbada",
+      "country code": "ID"
+    },
+    {
+      "id": 610,
+      "country": "Czech Republic",
+      "capital": "Ludgeřovice",
+      "country code": "CZ"
+    },
+    {
+      "id": 611,
+      "country": "Russia",
+      "capital": "Novotitarovskaya",
+      "country code": "RU"
+    },
+    {
+      "id": 612,
+      "country": "Sweden",
+      "capital": "Hofors",
+      "country code": "SE"
+    },
+    {
+      "id": 613,
+      "country": "China",
+      "capital": "Jin’an",
+      "country code": "CN"
+    },
+    {
+      "id": 614,
+      "country": "Ireland",
+      "capital": "Confey",
+      "country code": "IE"
+    },
+    {
+      "id": 615,
+      "country": "China",
+      "capital": "Liushi",
+      "country code": "CN"
+    },
+    {
+      "id": 616,
+      "country": "Portugal",
+      "capital": "Macieira de Rates",
+      "country code": "PT"
+    },
+    { "id": 617, "country": "Norway", "capital": "Oslo", "country code": "NO" },
+    {
+      "id": 618,
+      "country": "Russia",
+      "capital": "Bogdanovich",
+      "country code": "RU"
+    },
+    {
+      "id": 619,
+      "country": "Nigeria",
+      "capital": "Kontagora",
+      "country code": "NG"
+    },
+    {
+      "id": 620,
+      "country": "China",
+      "capital": "Danzao",
+      "country code": "CN"
+    },
+    {
+      "id": 621,
+      "country": "Brazil",
+      "capital": "Boa Esperança",
+      "country code": "BR"
+    },
+    { "id": 622, "country": "China", "capital": "Wuhu", "country code": "CN" },
+    {
+      "id": 623,
+      "country": "Paraguay",
+      "capital": "Puerto Mayor Otaño",
+      "country code": "PY"
+    },
+    {
+      "id": 624,
+      "country": "China",
+      "capital": "Wangqinzhuang",
+      "country code": "CN"
+    },
+    {
+      "id": 625,
+      "country": "Argentina",
+      "capital": "Monteros",
+      "country code": "AR"
+    },
+    {
+      "id": 626,
+      "country": "China",
+      "capital": "Tianhu",
+      "country code": "CN"
+    },
+    {
+      "id": 627,
+      "country": "Colombia",
+      "capital": "Purísima",
+      "country code": "CO"
+    },
+    {
+      "id": 628,
+      "country": "Democratic Republic of the Congo",
+      "capital": "Kampene",
+      "country code": "CD"
+    },
+    {
+      "id": 629,
+      "country": "Brazil",
+      "capital": "Goianira",
+      "country code": "BR"
+    },
+    {
+      "id": 630,
+      "country": "China",
+      "capital": "Chayuan",
+      "country code": "CN"
+    },
+    {
+      "id": 631,
+      "country": "China",
+      "capital": "Meishan",
+      "country code": "CN"
+    },
+    {
+      "id": 632,
+      "country": "China",
+      "capital": "Touying",
+      "country code": "CN"
+    },
+    {
+      "id": 633,
+      "country": "Honduras",
+      "capital": "Minas de Oro",
+      "country code": "HN"
+    },
+    {
+      "id": 634,
+      "country": "China",
+      "capital": "Qiuchuan",
+      "country code": "CN"
+    },
+    {
+      "id": 635,
+      "country": "Indonesia",
+      "capital": "Kalapadua",
+      "country code": "ID"
+    },
+    {
+      "id": 636,
+      "country": "Afghanistan",
+      "capital": "Mehtar Lām",
+      "country code": "AF"
+    },
+    {
+      "id": 637,
+      "country": "Madagascar",
+      "capital": "Toamasina",
+      "country code": "MG"
+    },
+    {
+      "id": 638,
+      "country": "Tunisia",
+      "capital": "Qulaybīyah",
+      "country code": "TN"
+    },
+    {
+      "id": 639,
+      "country": "China",
+      "capital": "Qiting",
+      "country code": "CN"
+    },
+    {
+      "id": 640,
+      "country": "France",
+      "capital": "Bastia",
+      "country code": "FR"
+    },
+    {
+      "id": 641,
+      "country": "Indonesia",
+      "capital": "Krajan Kinanti",
+      "country code": "ID"
+    },
+    {
+      "id": 642,
+      "country": "France",
+      "capital": "Rungis",
+      "country code": "FR"
+    },
+    { "id": 643, "country": "China", "capital": "Jinli", "country code": "CN" },
+    {
+      "id": 644,
+      "country": "Indonesia",
+      "capital": "Guwoterus",
+      "country code": "ID"
+    },
+    {
+      "id": 645,
+      "country": "Ethiopia",
+      "capital": "Debre Zeyit",
+      "country code": "ET"
+    },
+    {
+      "id": 646,
+      "country": "Sudan",
+      "capital": "Kināna",
+      "country code": "SD"
+    },
+    {
+      "id": 647,
+      "country": "Poland",
+      "capital": "Koronowo",
+      "country code": "PL"
+    },
+    {
+      "id": 648,
+      "country": "Russia",
+      "capital": "Volkhov",
+      "country code": "RU"
+    },
+    {
+      "id": 649,
+      "country": "Lithuania",
+      "capital": "Kaišiadorys",
+      "country code": "LT"
+    },
+    { "id": 650, "country": "Japan", "capital": "Hannō", "country code": "JP" },
+    {
+      "id": 651,
+      "country": "Russia",
+      "capital": "Svobody",
+      "country code": "RU"
+    },
+    {
+      "id": 652,
+      "country": "Philippines",
+      "capital": "Bungsuan",
+      "country code": "PH"
+    },
+    {
+      "id": 653,
+      "country": "New Zealand",
+      "capital": "Gore",
+      "country code": "NZ"
+    },
+    {
+      "id": 654,
+      "country": "Russia",
+      "capital": "Uglich",
+      "country code": "RU"
+    },
+    {
+      "id": 655,
+      "country": "Sweden",
+      "capital": "Stockholm",
+      "country code": "SE"
+    },
+    {
+      "id": 656,
+      "country": "Mongolia",
+      "capital": "Shiree",
+      "country code": "MN"
+    },
+    {
+      "id": 657,
+      "country": "China",
+      "capital": "Xinjiezi",
+      "country code": "CN"
+    },
+    {
+      "id": 658,
+      "country": "Canada",
+      "capital": "Lloydminster",
+      "country code": "CA"
+    },
+    {
+      "id": 659,
+      "country": "Nigeria",
+      "capital": "Kujama",
+      "country code": "NG"
+    },
+    {
+      "id": 660,
+      "country": "Indonesia",
+      "capital": "Tambakmerak",
+      "country code": "ID"
+    },
+    {
+      "id": 661,
+      "country": "China",
+      "capital": "Shatian",
+      "country code": "CN"
+    },
+    {
+      "id": 662,
+      "country": "Kazakhstan",
+      "capital": "Akkol’",
+      "country code": "KZ"
+    },
+    {
+      "id": 663,
+      "country": "Sweden",
+      "capital": "Borås",
+      "country code": "SE"
+    },
+    {
+      "id": 664,
+      "country": "Indonesia",
+      "capital": "Rimpakgede",
+      "country code": "ID"
+    },
+    {
+      "id": 665,
+      "country": "China",
+      "capital": "Huikou",
+      "country code": "CN"
+    },
+    {
+      "id": 666,
+      "country": "Canada",
+      "capital": "Powassan",
+      "country code": "CA"
+    },
+    {
+      "id": 667,
+      "country": "Iceland",
+      "capital": "Höfn",
+      "country code": "IS"
+    },
+    {
+      "id": 668,
+      "country": "Russia",
+      "capital": "Kirovgrad",
+      "country code": "RU"
+    },
+    {
+      "id": 669,
+      "country": "Croatia",
+      "capital": "Pregrada",
+      "country code": "HR"
+    },
+    {
+      "id": 670,
+      "country": "Russia",
+      "capital": "Il’inskiy Pogost",
+      "country code": "RU"
+    },
+    {
+      "id": 671,
+      "country": "France",
+      "capital": "Besançon",
+      "country code": "FR"
+    },
+    {
+      "id": 672,
+      "country": "Syria",
+      "capital": "Kuwayris Sharqī",
+      "country code": "SY"
+    },
+    {
+      "id": 673,
+      "country": "China",
+      "capital": "Mudian",
+      "country code": "CN"
+    },
+    {
+      "id": 674,
+      "country": "Ukraine",
+      "capital": "Kobleve",
+      "country code": "UA"
+    },
+    {
+      "id": 675,
+      "country": "Sweden",
+      "capital": "Stockholm",
+      "country code": "SE"
+    },
+    {
+      "id": 676,
+      "country": "Portugal",
+      "capital": "Monte Novo",
+      "country code": "PT"
+    },
+    { "id": 677, "country": "China", "capital": "Nanhe", "country code": "CN" },
+    {
+      "id": 678,
+      "country": "Denmark",
+      "capital": "København",
+      "country code": "DK"
+    },
+    {
+      "id": 679,
+      "country": "Yemen",
+      "capital": "Qaryat ad Da‘īs",
+      "country code": "YE"
+    },
+    {
+      "id": 680,
+      "country": "Myanmar",
+      "capital": "Myitkyina",
+      "country code": "MM"
+    },
+    {
+      "id": 681,
+      "country": "Indonesia",
+      "capital": "Cigarogol",
+      "country code": "ID"
+    },
+    {
+      "id": 682,
+      "country": "Mexico",
+      "capital": "Vicente Guerrero",
+      "country code": "MX"
+    },
+    {
+      "id": 683,
+      "country": "Sweden",
+      "capital": "Gävle",
+      "country code": "SE"
+    },
+    {
+      "id": 684,
+      "country": "Greece",
+      "capital": "Elassóna",
+      "country code": "GR"
+    },
+    {
+      "id": 685,
+      "country": "Dominica",
+      "capital": "Castle Bruce",
+      "country code": "DM"
+    },
+    {
+      "id": 686,
+      "country": "Thailand",
+      "capital": "Bang Sai",
+      "country code": "TH"
+    },
+    {
+      "id": 687,
+      "country": "China",
+      "capital": "Zhangjiayuan",
+      "country code": "CN"
+    },
+    {
+      "id": 688,
+      "country": "Russia",
+      "capital": "Vavozh",
+      "country code": "RU"
+    },
+    {
+      "id": 689,
+      "country": "Lithuania",
+      "capital": "Ignalina",
+      "country code": "LT"
+    },
+    {
+      "id": 690,
+      "country": "Vietnam",
+      "capital": "Chợ Mới",
+      "country code": "VN"
+    },
+    {
+      "id": 691,
+      "country": "Philippines",
+      "capital": "Labog",
+      "country code": "PH"
+    },
+    {
+      "id": 692,
+      "country": "China",
+      "capital": "Donggu",
+      "country code": "CN"
+    },
+    {
+      "id": 693,
+      "country": "Indonesia",
+      "capital": "Peuhaq",
+      "country code": "ID"
+    },
+    {
+      "id": 694,
+      "country": "Somalia",
+      "capital": "Mogadishu",
+      "country code": "SO"
+    },
+    {
+      "id": 695,
+      "country": "Colombia",
+      "capital": "Ciudad Bolívar",
+      "country code": "CO"
+    },
+    {
+      "id": 696,
+      "country": "Portugal",
+      "capital": "Mosteirô",
+      "country code": "PT"
+    },
+    {
+      "id": 697,
+      "country": "China",
+      "capital": "Pingpu",
+      "country code": "CN"
+    },
+    { "id": 698, "country": "China", "capital": "Hekou", "country code": "CN" },
+    {
+      "id": 699,
+      "country": "Colombia",
+      "capital": "Itagüí",
+      "country code": "CO"
+    },
+    {
+      "id": 700,
+      "country": "Indonesia",
+      "capital": "Lairoka",
+      "country code": "ID"
+    },
+    {
+      "id": 701,
+      "country": "United States",
+      "capital": "Fort Myers",
+      "country code": "US"
+    },
+    { "id": 702, "country": "China", "capital": "Tumba", "country code": "CN" },
+    {
+      "id": 703,
+      "country": "Canada",
+      "capital": "Summerside",
+      "country code": "CA"
+    },
+    {
+      "id": 704,
+      "country": "Philippines",
+      "capital": "Cabuyao",
+      "country code": "PH"
+    },
+    {
+      "id": 705,
+      "country": "Brazil",
+      "capital": "João Alfredo",
+      "country code": "BR"
+    },
+    {
+      "id": 706,
+      "country": "Sweden",
+      "capital": "Linköping",
+      "country code": "SE"
+    },
+    { "id": 707, "country": "Poland", "capital": "Gzy", "country code": "PL" },
+    {
+      "id": 708,
+      "country": "Kuwait",
+      "capital": "Ash Shāmīyah",
+      "country code": "KW"
+    },
+    { "id": 709, "country": "Russia", "capital": "Orda", "country code": "RU" },
+    {
+      "id": 710,
+      "country": "Indonesia",
+      "capital": "Noeltoko",
+      "country code": "ID"
+    },
+    {
+      "id": 711,
+      "country": "Bolivia",
+      "capital": "La Bélgica",
+      "country code": "BO"
+    },
+    {
+      "id": 712,
+      "country": "Indonesia",
+      "capital": "Panite",
+      "country code": "ID"
+    },
+    {
+      "id": 713,
+      "country": "Poland",
+      "capital": "Baćkowice",
+      "country code": "PL"
+    },
+    {
+      "id": 714,
+      "country": "Indonesia",
+      "capital": "Mempawah",
+      "country code": "ID"
+    },
+    {
+      "id": 715,
+      "country": "Indonesia",
+      "capital": "Campok",
+      "country code": "ID"
+    },
+    {
+      "id": 716,
+      "country": "Costa Rica",
+      "capital": "San Francisco",
+      "country code": "CR"
+    },
+    { "id": 717, "country": "China", "capital": "Usu", "country code": "CN" },
+    {
+      "id": 718,
+      "country": "China",
+      "capital": "Gaobeijie",
+      "country code": "CN"
+    },
+    {
+      "id": 719,
+      "country": "Indonesia",
+      "capital": "Sumberbatas",
+      "country code": "ID"
+    },
+    {
+      "id": 720,
+      "country": "France",
+      "capital": "Annonay",
+      "country code": "FR"
+    },
+    {
+      "id": 721,
+      "country": "Vietnam",
+      "capital": "Tô Hạp",
+      "country code": "VN"
+    },
+    {
+      "id": 722,
+      "country": "Portugal",
+      "capital": "Parchal",
+      "country code": "PT"
+    },
+    {
+      "id": 723,
+      "country": "Palestinian Territory",
+      "capital": "Rūjayb",
+      "country code": "PS"
+    },
+    {
+      "id": 724,
+      "country": "Palestinian Territory",
+      "capital": "‘Ayn al Bayḑā",
+      "country code": "PS"
+    },
+    {
+      "id": 725,
+      "country": "Kosovo",
+      "capital": "Gjilan",
+      "country code": "XK"
+    },
+    {
+      "id": 726,
+      "country": "China",
+      "capital": "Leshan",
+      "country code": "CN"
+    },
+    {
+      "id": 727,
+      "country": "Iran",
+      "capital": "Bandar-e Māhshahr",
+      "country code": "IR"
+    },
+    {
+      "id": 728,
+      "country": "Russia",
+      "capital": "Pyatigorsk",
+      "country code": "RU"
+    },
+    {
+      "id": 729,
+      "country": "Nigeria",
+      "capital": "Sofo-Birnin-Gwari",
+      "country code": "NG"
+    },
+    {
+      "id": 730,
+      "country": "Russia",
+      "capital": "Nagornyy",
+      "country code": "RU"
+    },
+    {
+      "id": 731,
+      "country": "Armenia",
+      "capital": "Artsvanist",
+      "country code": "AM"
+    },
+    {
+      "id": 732,
+      "country": "Angola",
+      "capital": "Luena",
+      "country code": "AO"
+    },
+    {
+      "id": 733,
+      "country": "Japan",
+      "capital": "Hakodate",
+      "country code": "JP"
+    },
+    { "id": 734, "country": "Japan", "capital": "Iwase", "country code": "JP" },
+    {
+      "id": 735,
+      "country": "Honduras",
+      "capital": "La Virtud",
+      "country code": "HN"
+    },
+    {
+      "id": 736,
+      "country": "Philippines",
+      "capital": "Manga",
+      "country code": "PH"
+    },
+    {
+      "id": 737,
+      "country": "Indonesia",
+      "capital": "Bambor",
+      "country code": "ID"
+    },
+    {
+      "id": 738,
+      "country": "Palestinian Territory",
+      "capital": "Al Hāshimīyah",
+      "country code": "PS"
+    },
+    {
+      "id": 739,
+      "country": "Philippines",
+      "capital": "Matingain",
+      "country code": "PH"
+    },
+    {
+      "id": 740,
+      "country": "Brazil",
+      "capital": "Ituberá",
+      "country code": "BR"
+    },
+    {
+      "id": 741,
+      "country": "Ethiopia",
+      "capital": "Shakīso",
+      "country code": "ET"
+    },
+    {
+      "id": 742,
+      "country": "Indonesia",
+      "capital": "Salamrejo",
+      "country code": "ID"
+    },
+    {
+      "id": 743,
+      "country": "Russia",
+      "capital": "Toksovo",
+      "country code": "RU"
+    },
+    {
+      "id": 744,
+      "country": "China",
+      "capital": "Huangliang",
+      "country code": "CN"
+    },
+    {
+      "id": 745,
+      "country": "Spain",
+      "capital": "Coruña, A",
+      "country code": "ES"
+    },
+    {
+      "id": 746,
+      "country": "Sweden",
+      "capital": "Kristianstad",
+      "country code": "SE"
+    },
+    {
+      "id": 747,
+      "country": "Democratic Republic of the Congo",
+      "capital": "Kolwezi",
+      "country code": "CD"
+    },
+    {
+      "id": 748,
+      "country": "Thailand",
+      "capital": "Ta Phraya",
+      "country code": "TH"
+    },
+    {
+      "id": 749,
+      "country": "Poland",
+      "capital": "Szczawno-Zdrój",
+      "country code": "PL"
+    },
+    {
+      "id": 750,
+      "country": "China",
+      "capital": "Hongwei",
+      "country code": "CN"
+    },
+    {
+      "id": 751,
+      "country": "China",
+      "capital": "Shaoha",
+      "country code": "CN"
+    },
+    {
+      "id": 752,
+      "country": "Poland",
+      "capital": "Gozdowo",
+      "country code": "PL"
+    },
+    {
+      "id": 753,
+      "country": "Brazil",
+      "capital": "Itajuípe",
+      "country code": "BR"
+    },
+    {
+      "id": 754,
+      "country": "Colombia",
+      "capital": "Santa Lucía",
+      "country code": "CO"
+    },
+    {
+      "id": 755,
+      "country": "Greece",
+      "capital": "Palaiochóri",
+      "country code": "GR"
+    },
+    {
+      "id": 756,
+      "country": "Russia",
+      "capital": "Nal’chik",
+      "country code": "RU"
+    },
+    {
+      "id": 757,
+      "country": "Mauritania",
+      "capital": "Nouâdhibou",
+      "country code": "MR"
+    },
+    {
+      "id": 758,
+      "country": "Tonga",
+      "capital": "Neiafu",
+      "country code": "TO"
+    },
+    {
+      "id": 759,
+      "country": "China",
+      "capital": "Xiangcheng",
+      "country code": "CN"
+    },
+    {
+      "id": 760,
+      "country": "Portugal",
+      "capital": "Santiago de Subrrifana",
+      "country code": "PT"
+    },
+    {
+      "id": 761,
+      "country": "Indonesia",
+      "capital": "Jandir",
+      "country code": "ID"
+    },
+    {
+      "id": 762,
+      "country": "China",
+      "capital": "Yingpu",
+      "country code": "CN"
+    },
+    {
+      "id": 763,
+      "country": "Brazil",
+      "capital": "Alegrete",
+      "country code": "BR"
+    },
+    { "id": 764, "country": "France", "capital": "Nice", "country code": "FR" },
+    {
+      "id": 765,
+      "country": "Palestinian Territory",
+      "capital": "Zaytā",
+      "country code": "PS"
+    },
+    {
+      "id": 766,
+      "country": "Zimbabwe",
+      "capital": "Headlands",
+      "country code": "ZW"
+    },
+    {
+      "id": 767,
+      "country": "China",
+      "capital": "Xuanhua",
+      "country code": "CN"
+    },
+    {
+      "id": 768,
+      "country": "Argentina",
+      "capital": "Arraga",
+      "country code": "AR"
+    },
+    {
+      "id": 769,
+      "country": "Philippines",
+      "capital": "Datagon",
+      "country code": "PH"
+    },
+    {
+      "id": 770,
+      "country": "Ireland",
+      "capital": "Glasnevin",
+      "country code": "IE"
+    },
+    {
+      "id": 771,
+      "country": "Philippines",
+      "capital": "Mananum",
+      "country code": "PH"
+    },
+    {
+      "id": 772,
+      "country": "China",
+      "capital": "Qingshui",
+      "country code": "CN"
+    },
+    {
+      "id": 773,
+      "country": "Samoa",
+      "capital": "Gataivai",
+      "country code": "WS"
+    },
+    {
+      "id": 774,
+      "country": "Poland",
+      "capital": "Ostrowsko",
+      "country code": "PL"
+    },
+    {
+      "id": 775,
+      "country": "Peru",
+      "capital": "Pillpinto",
+      "country code": "PE"
+    },
+    {
+      "id": 776,
+      "country": "Mexico",
+      "capital": "Lazaro Cardenas",
+      "country code": "MX"
+    },
+    {
+      "id": 777,
+      "country": "Russia",
+      "capital": "Chita",
+      "country code": "RU"
+    },
+    {
+      "id": 778,
+      "country": "Netherlands",
+      "capital": "Breda",
+      "country code": "NL"
+    },
+    {
+      "id": 779,
+      "country": "United States",
+      "capital": "Jacksonville",
+      "country code": "US"
+    },
+    {
+      "id": 780,
+      "country": "Afghanistan",
+      "capital": "Ţāqchah Khānah",
+      "country code": "AF"
+    },
+    {
+      "id": 781,
+      "country": "Chad",
+      "capital": "Biltine",
+      "country code": "TD"
+    },
+    {
+      "id": 782,
+      "country": "Argentina",
+      "capital": "Rinconada",
+      "country code": "AR"
+    },
+    {
+      "id": 783,
+      "country": "Mongolia",
+      "capital": "Bilüü",
+      "country code": "MN"
+    },
+    { "id": 784, "country": "China", "capital": "Yulin", "country code": "CN" },
+    {
+      "id": 785,
+      "country": "Djibouti",
+      "capital": "'Ali Sabieh",
+      "country code": "DJ"
+    },
+    { "id": 786, "country": "Japan", "capital": "Noda", "country code": "JP" },
+    { "id": 787, "country": "Iran", "capital": "Āstārā", "country code": "IR" },
+    {
+      "id": 788,
+      "country": "Argentina",
+      "capital": "Chicoana",
+      "country code": "AR"
+    },
+    {
+      "id": 789,
+      "country": "Indonesia",
+      "capital": "Cikulahan",
+      "country code": "ID"
+    },
+    {
+      "id": 790,
+      "country": "Kazakhstan",
+      "capital": "Balpyk Bī",
+      "country code": "KZ"
+    },
+    {
+      "id": 791,
+      "country": "China",
+      "capital": "Shaowu",
+      "country code": "CN"
+    },
+    {
+      "id": 792,
+      "country": "Indonesia",
+      "capital": "Pamotan",
+      "country code": "ID"
+    },
+    {
+      "id": 793,
+      "country": "Philippines",
+      "capital": "Minapan",
+      "country code": "PH"
+    },
+    {
+      "id": 794,
+      "country": "Cyprus",
+      "capital": "Perivólia",
+      "country code": "CY"
+    },
+    {
+      "id": 795,
+      "country": "Yemen",
+      "capital": "Jawf al Maqbābah",
+      "country code": "YE"
+    },
+    {
+      "id": 796,
+      "country": "China",
+      "capital": "Huanfeng",
+      "country code": "CN"
+    },
+    {
+      "id": 797,
+      "country": "Indonesia",
+      "capital": "Temuji",
+      "country code": "ID"
+    },
+    {
+      "id": 798,
+      "country": "France",
+      "capital": "Arcueil",
+      "country code": "FR"
+    },
+    {
+      "id": 799,
+      "country": "Poland",
+      "capital": "Raciąż",
+      "country code": "PL"
+    },
+    {
+      "id": 800,
+      "country": "Croatia",
+      "capital": "Šibenik",
+      "country code": "HR"
+    },
+    {
+      "id": 801,
+      "country": "Greece",
+      "capital": "Néa Pélla",
+      "country code": "GR"
+    },
+    {
+      "id": 802,
+      "country": "Poland",
+      "capital": "Skrwilno",
+      "country code": "PL"
+    },
+    {
+      "id": 803,
+      "country": "Sweden",
+      "capital": "Tranås",
+      "country code": "SE"
+    },
+    {
+      "id": 804,
+      "country": "Philippines",
+      "capital": "Santa Lucia",
+      "country code": "PH"
+    },
+    {
+      "id": 805,
+      "country": "Indonesia",
+      "capital": "Sukahening",
+      "country code": "ID"
+    },
+    {
+      "id": 806,
+      "country": "Czech Republic",
+      "capital": "Višňova",
+      "country code": "CZ"
+    },
+    {
+      "id": 807,
+      "country": "Russia",
+      "capital": "Kolomyagi",
+      "country code": "RU"
+    },
+    {
+      "id": 808,
+      "country": "Indonesia",
+      "capital": "Bangkle",
+      "country code": "ID"
+    },
+    {
+      "id": 809,
+      "country": "Spain",
+      "capital": "Barcelona",
+      "country code": "ES"
+    },
+    {
+      "id": 810,
+      "country": "Philippines",
+      "capital": "Mindupok",
+      "country code": "PH"
+    },
+    {
+      "id": 811,
+      "country": "Indonesia",
+      "capital": "Bantaeng",
+      "country code": "ID"
+    },
+    {
+      "id": 812,
+      "country": "East Timor",
+      "capital": "Same",
+      "country code": "TL"
+    },
+    {
+      "id": 813,
+      "country": "Colombia",
+      "capital": "Gigante",
+      "country code": "CO"
+    },
+    {
+      "id": 814,
+      "country": "China",
+      "capital": "Binglincha",
+      "country code": "CN"
+    },
+    { "id": 815, "country": "China", "capital": "Suqu", "country code": "CN" },
+    {
+      "id": 816,
+      "country": "Portugal",
+      "capital": "Santo Amaro",
+      "country code": "PT"
+    },
+    {
+      "id": 817,
+      "country": "China",
+      "capital": "Chenghuang",
+      "country code": "CN"
+    },
+    {
+      "id": 818,
+      "country": "China",
+      "capital": "Jiangpu",
+      "country code": "CN"
+    },
+    {
+      "id": 819,
+      "country": "South Africa",
+      "capital": "Margate",
+      "country code": "ZA"
+    },
+    {
+      "id": 820,
+      "country": "Germany",
+      "capital": "Bochum",
+      "country code": "DE"
+    },
+    {
+      "id": 821,
+      "country": "Thailand",
+      "capital": "Bang Yai",
+      "country code": "TH"
+    },
+    {
+      "id": 822,
+      "country": "South Korea",
+      "capital": "Waegwan",
+      "country code": "KR"
+    },
+    {
+      "id": 823,
+      "country": "Indonesia",
+      "capital": "Dahu Satu",
+      "country code": "ID"
+    },
+    {
+      "id": 824,
+      "country": "South Africa",
+      "capital": "Richards Bay",
+      "country code": "ZA"
+    },
+    {
+      "id": 825,
+      "country": "Greece",
+      "capital": "Lápas",
+      "country code": "GR"
+    },
+    {
+      "id": 826,
+      "country": "Indonesia",
+      "capital": "Sindangsuka",
+      "country code": "ID"
+    },
+    {
+      "id": 827,
+      "country": "Portugal",
+      "capital": "São Pedro do Estoril",
+      "country code": "PT"
+    },
+    {
+      "id": 828,
+      "country": "Philippines",
+      "capital": "Diamantina",
+      "country code": "PH"
+    },
+    {
+      "id": 829,
+      "country": "Nigeria",
+      "capital": "Dankalwa",
+      "country code": "NG"
+    },
+    {
+      "id": 830,
+      "country": "Yemen",
+      "capital": "Al Ḩudaydah",
+      "country code": "YE"
+    },
+    {
+      "id": 831,
+      "country": "Burkina Faso",
+      "capital": "Diébougou",
+      "country code": "BF"
+    },
+    { "id": 832, "country": "Cuba", "capital": "Banes", "country code": "CU" },
+    {
+      "id": 833,
+      "country": "Paraguay",
+      "capital": "Yaguarón",
+      "country code": "PY"
+    },
+    {
+      "id": 834,
+      "country": "Philippines",
+      "capital": "Lunec",
+      "country code": "PH"
+    },
+    {
+      "id": 835,
+      "country": "Philippines",
+      "capital": "Bagumbayan",
+      "country code": "PH"
+    },
+    { "id": 836, "country": "China", "capital": "Ruixi", "country code": "CN" },
+    {
+      "id": 837,
+      "country": "China",
+      "capital": "Litian",
+      "country code": "CN"
+    },
+    {
+      "id": 838,
+      "country": "Brazil",
+      "capital": "Bacabal",
+      "country code": "BR"
+    },
+    {
+      "id": 839,
+      "country": "Portugal",
+      "capital": "Seixal",
+      "country code": "PT"
+    },
+    {
+      "id": 840,
+      "country": "Iran",
+      "capital": "Damāvand",
+      "country code": "IR"
+    },
+    {
+      "id": 841,
+      "country": "Indonesia",
+      "capital": "Mayang",
+      "country code": "ID"
+    },
+    {
+      "id": 842,
+      "country": "North Korea",
+      "capital": "Sakchu-ŭp",
+      "country code": "KP"
+    },
+    {
+      "id": 843,
+      "country": "Philippines",
+      "capital": "Buenavista",
+      "country code": "PH"
+    },
+    {
+      "id": 844,
+      "country": "Poland",
+      "capital": "Dębno",
+      "country code": "PL"
+    },
+    { "id": 845, "country": "Iran", "capital": "Kahrīz", "country code": "IR" },
+    { "id": 846, "country": "Canada", "capital": "Oka", "country code": "CA" },
+    {
+      "id": 847,
+      "country": "China",
+      "capital": "Sanjinquan",
+      "country code": "CN"
+    },
+    {
+      "id": 848,
+      "country": "Egypt",
+      "capital": "Banī Mazār",
+      "country code": "EG"
+    },
+    {
+      "id": 849,
+      "country": "Canada",
+      "capital": "Selkirk",
+      "country code": "CA"
+    },
+    {
+      "id": 850,
+      "country": "Macedonia",
+      "capital": "Gostivar",
+      "country code": "MK"
+    },
+    {
+      "id": 851,
+      "country": "United States",
+      "capital": "Joliet",
+      "country code": "US"
+    },
+    {
+      "id": 852,
+      "country": "Indonesia",
+      "capital": "Grugul",
+      "country code": "ID"
+    },
+    {
+      "id": 853,
+      "country": "Poland",
+      "capital": "Połaniec",
+      "country code": "PL"
+    },
+    {
+      "id": 854,
+      "country": "Mongolia",
+      "capital": "Tsagaan-Ovoo",
+      "country code": "MN"
+    },
+    {
+      "id": 855,
+      "country": "Japan",
+      "capital": "Kameyama",
+      "country code": "JP"
+    },
+    {
+      "id": 856,
+      "country": "China",
+      "capital": "Yanghe",
+      "country code": "CN"
+    },
+    {
+      "id": 857,
+      "country": "China",
+      "capital": "Changfu",
+      "country code": "CN"
+    },
+    {
+      "id": 858,
+      "country": "Thailand",
+      "capital": "Phitsanulok",
+      "country code": "TH"
+    },
+    {
+      "id": 859,
+      "country": "Poland",
+      "capital": "Sulmierzyce",
+      "country code": "PL"
+    },
+    {
+      "id": 860,
+      "country": "China",
+      "capital": "Liutao",
+      "country code": "CN"
+    },
+    {
+      "id": 861,
+      "country": "Guatemala",
+      "capital": "San Jerónimo",
+      "country code": "GT"
+    },
+    { "id": 862, "country": "France", "capital": "Pau", "country code": "FR" },
+    {
+      "id": 863,
+      "country": "Malaysia",
+      "capital": "Kuala Lumpur",
+      "country code": "MY"
+    },
+    {
+      "id": 864,
+      "country": "Thailand",
+      "capital": "Sadao",
+      "country code": "TH"
+    },
+    {
+      "id": 865,
+      "country": "China",
+      "capital": "Shuigou",
+      "country code": "CN"
+    },
+    {
+      "id": 866,
+      "country": "Argentina",
+      "capital": "Tigre",
+      "country code": "AR"
+    },
+    {
+      "id": 867,
+      "country": "Venezuela",
+      "capital": "Rubio",
+      "country code": "VE"
+    },
+    {
+      "id": 868,
+      "country": "Moldova",
+      "capital": "Bilicenii Vechi",
+      "country code": "MD"
+    },
+    {
+      "id": 869,
+      "country": "China",
+      "capital": "Dongsheng",
+      "country code": "CN"
+    },
+    {
+      "id": 870,
+      "country": "Lebanon",
+      "capital": "Batroûn",
+      "country code": "LB"
+    },
+    {
+      "id": 871,
+      "country": "Argentina",
+      "capital": "General Guido",
+      "country code": "AR"
+    },
+    {
+      "id": 872,
+      "country": "Poland",
+      "capital": "Oleszyce",
+      "country code": "PL"
+    },
+    { "id": 873, "country": "Japan", "capital": "Sanjō", "country code": "JP" },
+    {
+      "id": 874,
+      "country": "Azerbaijan",
+      "capital": "Qızılhacılı",
+      "country code": "AZ"
+    },
+    {
+      "id": 875,
+      "country": "Colombia",
+      "capital": "Turbaco",
+      "country code": "CO"
+    },
+    {
+      "id": 876,
+      "country": "Philippines",
+      "capital": "Tagapul-an",
+      "country code": "PH"
+    },
+    {
+      "id": 877,
+      "country": "Thailand",
+      "capital": "Ubon Ratchathani",
+      "country code": "TH"
+    },
+    {
+      "id": 878,
+      "country": "Poland",
+      "capital": "Chojna",
+      "country code": "PL"
+    },
+    {
+      "id": 879,
+      "country": "Georgia",
+      "capital": "Tqibuli",
+      "country code": "GE"
+    },
+    {
+      "id": 880,
+      "country": "Japan",
+      "capital": "Kanoya",
+      "country code": "JP"
+    },
+    {
+      "id": 881,
+      "country": "Philippines",
+      "capital": "Gines-Patay",
+      "country code": "PH"
+    },
+    {
+      "id": 882,
+      "country": "Spain",
+      "capital": "Pamplona/Iruña",
+      "country code": "ES"
+    },
+    {
+      "id": 883,
+      "country": "France",
+      "capital": "Cannes",
+      "country code": "FR"
+    },
+    {
+      "id": 884,
+      "country": "France",
+      "capital": "Dammarie-les-Lys",
+      "country code": "FR"
+    },
+    {
+      "id": 885,
+      "country": "Indonesia",
+      "capital": "Amparita",
+      "country code": "ID"
+    },
+    {
+      "id": 886,
+      "country": "Czech Republic",
+      "capital": "Bukovany",
+      "country code": "CZ"
+    },
+    {
+      "id": 887,
+      "country": "United States",
+      "capital": "Brooklyn",
+      "country code": "US"
+    },
+    {
+      "id": 888,
+      "country": "China",
+      "capital": "Jixing",
+      "country code": "CN"
+    },
+    {
+      "id": 889,
+      "country": "United States",
+      "capital": "Dallas",
+      "country code": "US"
+    },
+    {
+      "id": 890,
+      "country": "Indonesia",
+      "capital": "Batambak",
+      "country code": "ID"
+    },
+    {
+      "id": 891,
+      "country": "Russia",
+      "capital": "Severoural’sk",
+      "country code": "RU"
+    },
+    {
+      "id": 892,
+      "country": "Indonesia",
+      "capital": "Krajan Menggare",
+      "country code": "ID"
+    },
+    {
+      "id": 893,
+      "country": "Russia",
+      "capital": "Monastyrishche",
+      "country code": "RU"
+    },
+    {
+      "id": 894,
+      "country": "China",
+      "capital": "Binhailu",
+      "country code": "CN"
+    },
+    {
+      "id": 895,
+      "country": "Ukraine",
+      "capital": "Vyshhorod",
+      "country code": "UA"
+    },
+    {
+      "id": 896,
+      "country": "Philippines",
+      "capital": "Santo Domingo",
+      "country code": "PH"
+    },
+    {
+      "id": 897,
+      "country": "Philippines",
+      "capital": "Luna",
+      "country code": "PH"
+    },
+    {
+      "id": 898,
+      "country": "China",
+      "capital": "Jiangkou",
+      "country code": "CN"
+    },
+    {
+      "id": 899,
+      "country": "Vietnam",
+      "capital": "Lai Cách",
+      "country code": "VN"
+    },
+    {
+      "id": 900,
+      "country": "Brazil",
+      "capital": "Brasília de Minas",
+      "country code": "BR"
+    },
+    {
+      "id": 901,
+      "country": "Brazil",
+      "capital": "Divinópolis",
+      "country code": "BR"
+    },
+    {
+      "id": 902,
+      "country": "China",
+      "capital": "Xinshi",
+      "country code": "CN"
+    },
+    {
+      "id": 903,
+      "country": "Indonesia",
+      "capital": "Makbon",
+      "country code": "ID"
+    },
+    {
+      "id": 904,
+      "country": "Serbia",
+      "capital": "Gadžin Han",
+      "country code": "RS"
+    },
+    {
+      "id": 905,
+      "country": "Indonesia",
+      "capital": "Krebet",
+      "country code": "ID"
+    },
+    {
+      "id": 906,
+      "country": "Russia",
+      "capital": "Manzurka",
+      "country code": "RU"
+    },
+    {
+      "id": 907,
+      "country": "China",
+      "capital": "Shengao",
+      "country code": "CN"
+    },
+    {
+      "id": 908,
+      "country": "Armenia",
+      "capital": "Bambakashat",
+      "country code": "AM"
+    },
+    { "id": 909, "country": "China", "capital": "Libei", "country code": "CN" },
+    {
+      "id": 910,
+      "country": "China",
+      "capital": "Shimen",
+      "country code": "CN"
+    },
+    {
+      "id": 911,
+      "country": "Russia",
+      "capital": "Neftegorsk",
+      "country code": "RU"
+    },
+    {
+      "id": 912,
+      "country": "United States",
+      "capital": "San Antonio",
+      "country code": "US"
+    },
+    {
+      "id": 913,
+      "country": "China",
+      "capital": "Dingshu",
+      "country code": "CN"
+    },
+    {
+      "id": 914,
+      "country": "Indonesia",
+      "capital": "Batukuta",
+      "country code": "ID"
+    },
+    {
+      "id": 915,
+      "country": "Tunisia",
+      "capital": "Bi’r al Ḩufayy",
+      "country code": "TN"
+    },
+    {
+      "id": 916,
+      "country": "Chile",
+      "capital": "Concepción",
+      "country code": "CL"
+    },
+    {
+      "id": 917,
+      "country": "Indonesia",
+      "capital": "Pojok",
+      "country code": "ID"
+    },
+    {
+      "id": 918,
+      "country": "China",
+      "capital": "Huangpu",
+      "country code": "CN"
+    },
+    {
+      "id": 919,
+      "country": "Venezuela",
+      "capital": "Valle de La Pascua",
+      "country code": "VE"
+    },
+    {
+      "id": 920,
+      "country": "Greece",
+      "capital": "Tríkala",
+      "country code": "GR"
+    },
+    {
+      "id": 921,
+      "country": "Philippines",
+      "capital": "Piña",
+      "country code": "PH"
+    },
+    {
+      "id": 922,
+      "country": "Haiti",
+      "capital": "Chantal",
+      "country code": "HT"
+    },
+    {
+      "id": 923,
+      "country": "Dominica",
+      "capital": "Roseau",
+      "country code": "DM"
+    },
+    { "id": 924, "country": "Iran", "capital": "Takāb", "country code": "IR" },
+    {
+      "id": 925,
+      "country": "Cyprus",
+      "capital": "Liopétri",
+      "country code": "CY"
+    },
+    {
+      "id": 926,
+      "country": "Nicaragua",
+      "capital": "La Jicaral",
+      "country code": "NI"
+    },
+    {
+      "id": 927,
+      "country": "Philippines",
+      "capital": "Puerto Galera",
+      "country code": "PH"
+    },
+    {
+      "id": 928,
+      "country": "Bolivia",
+      "capital": "San Carlos",
+      "country code": "BO"
+    },
+    {
+      "id": 929,
+      "country": "Indonesia",
+      "capital": "Krajan Tegalombo",
+      "country code": "ID"
+    },
+    {
+      "id": 930,
+      "country": "Honduras",
+      "capital": "Vallecillo",
+      "country code": "HN"
+    },
+    {
+      "id": 931,
+      "country": "France",
+      "capital": "Gennevilliers",
+      "country code": "FR"
+    },
+    { "id": 932, "country": "Peru", "capital": "Putina", "country code": "PE" },
+    {
+      "id": 933,
+      "country": "Canada",
+      "capital": "Sainte-Sophie",
+      "country code": "CA"
+    },
+    {
+      "id": 934,
+      "country": "China",
+      "capital": "Heshui",
+      "country code": "CN"
+    },
+    {
+      "id": 935,
+      "country": "Russia",
+      "capital": "Maloyaroslavets",
+      "country code": "RU"
+    },
+    {
+      "id": 936,
+      "country": "Dominican Republic",
+      "capital": "Juncalito Abajo",
+      "country code": "DO"
+    },
+    {
+      "id": 937,
+      "country": "China",
+      "capital": "Dushang",
+      "country code": "CN"
+    },
+    {
+      "id": 938,
+      "country": "China",
+      "capital": "Xianxiang",
+      "country code": "CN"
+    },
+    {
+      "id": 939,
+      "country": "China",
+      "capital": "Wangcheng",
+      "country code": "CN"
+    },
+    {
+      "id": 940,
+      "country": "Netherlands",
+      "capital": "Vlissingen",
+      "country code": "NL"
+    },
+    {
+      "id": 941,
+      "country": "Philippines",
+      "capital": "Tulay na Lupa",
+      "country code": "PH"
+    },
+    {
+      "id": 942,
+      "country": "Albania",
+      "capital": "Arrën",
+      "country code": "AL"
+    },
+    {
+      "id": 943,
+      "country": "Russia",
+      "capital": "Petrodvorets",
+      "country code": "RU"
+    },
+    {
+      "id": 944,
+      "country": "Russia",
+      "capital": "Shchëkino",
+      "country code": "RU"
+    },
+    { "id": 945, "country": "Iran", "capital": "Kangān", "country code": "IR" },
+    {
+      "id": 946,
+      "country": "China",
+      "capital": "Fazhan",
+      "country code": "CN"
+    },
+    { "id": 947, "country": "Japan", "capital": "Iwata", "country code": "JP" },
+    {
+      "id": 948,
+      "country": "Russia",
+      "capital": "Satka",
+      "country code": "RU"
+    },
+    {
+      "id": 949,
+      "country": "Bosnia and Herzegovina",
+      "capital": "Maglaj",
+      "country code": "BA"
+    },
+    {
+      "id": 950,
+      "country": "Philippines",
+      "capital": "Kalilangan",
+      "country code": "PH"
+    },
+    {
+      "id": 951,
+      "country": "Poland",
+      "capital": "Wola Filipowska",
+      "country code": "PL"
+    },
+    {
+      "id": 952,
+      "country": "China",
+      "capital": "Dongdu",
+      "country code": "CN"
+    },
+    {
+      "id": 953,
+      "country": "Philippines",
+      "capital": "Bailan",
+      "country code": "PH"
+    },
+    {
+      "id": 954,
+      "country": "Albania",
+      "capital": "Armen",
+      "country code": "AL"
+    },
+    {
+      "id": 955,
+      "country": "Ukraine",
+      "capital": "Kuty",
+      "country code": "UA"
+    },
+    {
+      "id": 956,
+      "country": "Brazil",
+      "capital": "Alegre",
+      "country code": "BR"
+    },
+    {
+      "id": 957,
+      "country": "Portugal",
+      "capital": "Ribeiro",
+      "country code": "PT"
+    },
+    {
+      "id": 958,
+      "country": "Ukraine",
+      "capital": "Savyntsi",
+      "country code": "UA"
+    },
+    {
+      "id": 959,
+      "country": "Czech Republic",
+      "capital": "Železný Brod",
+      "country code": "CZ"
+    },
+    {
+      "id": 960,
+      "country": "Portugal",
+      "capital": "Breia",
+      "country code": "PT"
+    },
+    { "id": 961, "country": "China", "capital": "Nanhu", "country code": "CN" },
+    {
+      "id": 962,
+      "country": "Philippines",
+      "capital": "Bangui",
+      "country code": "PH"
+    },
+    {
+      "id": 963,
+      "country": "Ukraine",
+      "capital": "Pavlysh",
+      "country code": "UA"
+    },
+    {
+      "id": 964,
+      "country": "Colombia",
+      "capital": "Campo de la Cruz",
+      "country code": "CO"
+    },
+    {
+      "id": 965,
+      "country": "Indonesia",
+      "capital": "Bangeran",
+      "country code": "ID"
+    },
+    {
+      "id": 966,
+      "country": "Argentina",
+      "capital": "Famaillá",
+      "country code": "AR"
+    },
+    {
+      "id": 967,
+      "country": "Yemen",
+      "capital": "Ar Rawḑah",
+      "country code": "YE"
+    },
+    {
+      "id": 968,
+      "country": "Brazil",
+      "capital": "Abreu e Lima",
+      "country code": "BR"
+    },
+    {
+      "id": 969,
+      "country": "China",
+      "capital": "Benhong",
+      "country code": "CN"
+    },
+    {
+      "id": 970,
+      "country": "Croatia",
+      "capital": "Galižana",
+      "country code": "HR"
+    },
+    {
+      "id": 971,
+      "country": "Puerto Rico",
+      "capital": "San Juan",
+      "country code": "PR"
+    },
+    {
+      "id": 972,
+      "country": "Thailand",
+      "capital": "Sukhothai",
+      "country code": "TH"
+    },
+    { "id": 973, "country": "China", "capital": "Junbu", "country code": "CN" },
+    {
+      "id": 974,
+      "country": "Czech Republic",
+      "capital": "Olbramovice",
+      "country code": "CZ"
+    },
+    {
+      "id": 975,
+      "country": "Sweden",
+      "capital": "Örebro",
+      "country code": "SE"
+    },
+    {
+      "id": 976,
+      "country": "Brazil",
+      "capital": "Parobé",
+      "country code": "BR"
+    },
+    {
+      "id": 977,
+      "country": "China",
+      "capital": "Tuqiao",
+      "country code": "CN"
+    },
+    {
+      "id": 978,
+      "country": "China",
+      "capital": "Haihui",
+      "country code": "CN"
+    },
+    {
+      "id": 979,
+      "country": "United States",
+      "capital": "Greensboro",
+      "country code": "US"
+    },
+    {
+      "id": 980,
+      "country": "Austria",
+      "capital": "Sankt Lorenzen im Mürztal",
+      "country code": "AT"
+    },
+    {
+      "id": 981,
+      "country": "Israel",
+      "capital": "Nazareth",
+      "country code": "IL"
+    },
+    {
+      "id": 982,
+      "country": "Kazakhstan",
+      "capital": "Burunday",
+      "country code": "KZ"
+    },
+    {
+      "id": 983,
+      "country": "Indonesia",
+      "capital": "Balung",
+      "country code": "ID"
+    },
+    { "id": 984, "country": "China", "capital": "Hebu", "country code": "CN" },
+    {
+      "id": 985,
+      "country": "Indonesia",
+      "capital": "Tambangan",
+      "country code": "ID"
+    },
+    {
+      "id": 986,
+      "country": "China",
+      "capital": "Qinggou",
+      "country code": "CN"
+    },
+    {
+      "id": 987,
+      "country": "Sweden",
+      "capital": "Jönköping",
+      "country code": "SE"
+    },
+    {
+      "id": 988,
+      "country": "Poland",
+      "capital": "Puńsk",
+      "country code": "PL"
+    },
+    {
+      "id": 989,
+      "country": "Niger",
+      "capital": "Matamey",
+      "country code": "NE"
+    },
+    {
+      "id": 990,
+      "country": "China",
+      "capital": "Huagang",
+      "country code": "CN"
+    },
+    {
+      "id": 991,
+      "country": "Vietnam",
+      "capital": "Nghi Xuân",
+      "country code": "VN"
+    },
+    {
+      "id": 992,
+      "country": "Japan",
+      "capital": "Isesaki",
+      "country code": "JP"
+    },
+    {
+      "id": 993,
+      "country": "China",
+      "capital": "Chengqu",
+      "country code": "CN"
+    },
+    {
+      "id": 994,
+      "country": "Brazil",
+      "capital": "Aragarças",
+      "country code": "BR"
+    },
+    {
+      "id": 995,
+      "country": "Poland",
+      "capital": "Karnice",
+      "country code": "PL"
+    },
+    {
+      "id": 996,
+      "country": "Canada",
+      "capital": "Willowdale",
+      "country code": "CA"
+    },
+    {
+      "id": 997,
+      "country": "Guatemala",
+      "capital": "La Reforma",
+      "country code": "GT"
+    },
+    {
+      "id": 998,
+      "country": "Guatemala",
+      "capital": "Olopa",
+      "country code": "GT"
+    },
+    {
+      "id": 999,
+      "country": "Iran",
+      "capital": "Farrokh Shahr",
+      "country code": "IR"
+    },
+    {
+      "id": 1000,
+      "country": "China",
+      "capital": "Yunzhong",
+      "country code": "CN"
+    }
+  ]
+}
