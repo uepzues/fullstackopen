@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -20,11 +26,29 @@ body {
   text-align: center;
 }
 
+.app > div:last-child {
+  width: 600px;
+}
+
 .searchDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.searchDiv h3 {
+  margin: 20px 0;
+}
+.searchDiv p {
+  font-weight: bold;
+}
+
+.searchDiv .info {
+  color: rgb(12, 133, 12);
+  background-color: #fff;
+  width: 100%;
+  padding-block: 10px;
+  border-radius: 5px;
 }
 
 .searchDiv input {
@@ -34,14 +58,29 @@ body {
   text-align: center;
 }
 
+.searchDiv input[type="text"] {
+  font-size: 2ch;
+  padding: 10px 5px;
+  font-weight: bold;
+}
+
+.info {
+  margin-top: 15px;
+}
+
 .result {
   font-weight: bold;
 }
 
 .result .resultMap {
+  background-color: rgb(93, 156, 234);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  /* border: 2px solid rgb(120, 101, 198); */
+  /* box-shadow: -1px 1px 10px 5px rgba(0, 0, 0, 0.2); */
 }
 
 .result .resultMap div {
@@ -50,6 +89,24 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  height: 5ch;
+}
+
+.result .resultMap div:hover {
+  transform: translateX(2px) translateY(-2px);
+  box-shadow: -5px 5px 0px 0px rgb(55, 153, 109);
+}
+
+.result .resultMap div:nth-of-type(odd) {
+  background-color: rgba(80, 154, 245, 0.7);
+}
+
+.result .resultMap div:nth-of-type(even) {
+  background-color: rgb(138, 183, 242);
+}
+.result .resultMap div:hover:nth-of-type(odd) {
+  background-color: rgb(122, 169, 230);
+  box-shadow: -5px 5px 0px 0px rgb(55, 153, 109);
 }
 
 .result .resultMap div button {
@@ -65,6 +122,33 @@ body {
 .result .resultMap div button:hover {
   background-color: rgb(33, 156, 84, 0.7);
   cursor: pointer;
-  scale: .98;
-  box-shadow:  -2px 2px 2px 3px rgba(0, 0, 0, 0.2);
+  scale: 0.98;
+  box-shadow: -2px 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.countryResult {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.weather img {
+  margin: -30px;
+  width: 160px;
 }

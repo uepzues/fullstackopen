@@ -12,6 +12,7 @@ const App = () => {
   const [showCountry, setShowCountry] = useState(false);
   const [location, setlocation] = useState(null);
   const [info, setInfo] = useState(null);
+  const [showWeather, setShowWeather] = useState(false);
   const [weather, setWeather] = useState({
     temp: "",
     main: "",
@@ -35,6 +36,7 @@ const App = () => {
     setWeather({});
     setIsButtonClicked(false);
     ShowCountry(false);
+    setShowWeather(false);
   };
 
   const handleClick = (loc, id) => {
@@ -42,6 +44,7 @@ const App = () => {
     setlocation(loc);
     setCountryId(id);
     setIsButtonClicked(true);
+    setShowWeather(true);
   };
 
   useEffect(() => {
@@ -77,6 +80,7 @@ const App = () => {
             updatedWeather(data);
           });
           setShowCountry(true);
+          setShowWeather(true);
           setResult([bansa]);
           return;
         }
@@ -86,29 +90,33 @@ const App = () => {
             .then((data) => {
               updatedWeather(data);
               setShowCountry(true);
+              setShowWeather(true);
               setInfo(null);
             })
             .catch((error) => console.log(error.message));
           setResult(filteredCountries);
         }
       } else if (filteredCountries.length > 10) {
-        console.log("please be more specific");
+        // console.log("Please be more specific");
         setResult([]);
-        setInfo("please be more specific");
+        setInfo("Please be more specific");
       } else if (
         filteredCountries.length > 0 &&
         filteredCountries.length < 10
       ) {
         setResult(filteredCountries);
         setShowCountry(false);
+        setShowWeather(false);
 
         setInfo(null);
       } else {
         setInfo("There are no matches");
         setShowCountry(false);
+        setShowWeather(false);
         setResult(filteredCountries);
       }
     } else {
+      setShowWeather(false);
       setShowCountry(false);
       setResult([]);
     }
@@ -127,8 +135,9 @@ const App = () => {
             showCountry={showCountry}
             location={handleClick}
             weather={weather}
+            search={search}
           />
-          <Weather weather={weather} />
+          <Weather weather={weather} showWeather={showWeather} />
         </div>
       </div>
     </>

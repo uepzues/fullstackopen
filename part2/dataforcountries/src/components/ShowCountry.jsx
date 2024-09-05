@@ -12,8 +12,8 @@ const ShowCountry = ({ result }) => {
           ? country?.altSpellings.map((s) => <span key={s}>{s}, </span>)
           : null}
       </div>
-      <h2>{country?.capital || ""}</h2>
-      <div>
+      <h2> {country?.capital || ""}</h2>
+      <div className="flag">
         {country?.flags?.png ? (
           <img src={country?.flags.png} alt={country?.flags.alt || ""} />
         ) : null}
