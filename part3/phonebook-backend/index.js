@@ -52,6 +52,32 @@ app.get("/api/persons/:id", (req, res) => {
   }
 });
 
+app.use(express.json());
+
+app.post("/api/persons", (req, res) => {
+  const body = req.body;
+
+  const id = Math.floor(Math.random() * 5000);
+
+  console.log(body);
+
+  if (!body) {
+    return res.status(400).json({
+      error: "missing content",
+    });
+  }
+
+  const contact = {
+    id: id.toString(),
+    name: body.name,
+    number: body.number || "no number",
+  };
+
+  persons.concat(contact);
+
+  res.json(contact);
+});
+
 app.delete("/api/persons/:id", (req, res) => {
   const id = req.params.id;
   person = persons.filter((p) => p.id === id);
