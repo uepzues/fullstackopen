@@ -7,7 +7,7 @@ const Result = ({ result, showCountry, location }) => {
         {showCountry ? (
           <ShowCountry result={result} />
         ) : (
-          <div>
+          <div className="resultMap">
             {result.map((c) => (
               <div key={c.cca2}>
                 <p>{c.name.common}</p>

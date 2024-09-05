@@ -1,0 +1,70 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-color: #9db2e0;
+}
+
+.app {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.app > div {
+  text-align: center;
+}
+
+.searchDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchDiv input {
+  min-width: 40ch;
+  height: 4ch;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.result {
+  font-weight: bold;
+}
+
+.result .resultMap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result .resultMap div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.result .resultMap div button {
+  width: 7ch;
+  height: 4ch;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(33, 156, 84);
+  color: white;
+}
+
+.result .resultMap div button:hover {
+  background-color: rgb(33, 156, 84, 0.7);
+  cursor: pointer;
+  scale: .98;
+  box-shadow:  -2px 2px 2px 3px rgba(0, 0, 0, 0.2);
+}

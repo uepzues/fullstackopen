@@ -3,7 +3,7 @@ import APIService from "./services/APIService";
 import SearchDiv from "./components/SearchDiv";
 import Result from "./components/Result";
 import Weather from "./components/Weather";
-
+import ShowCountry from "./components/ShowCountry";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -34,6 +34,7 @@ const App = () => {
     setInfo(null);
     setWeather({});
     setIsButtonClicked(false);
+    ShowCountry(false);
   };
 
   const handleClick = (loc, id) => {
@@ -84,11 +85,11 @@ const App = () => {
           APIService.getWeather(countryGet)
             .then((data) => {
               updatedWeather(data);
-              setResult(filteredCountries);
               setShowCountry(true);
               setInfo(null);
             })
             .catch((error) => console.log(error.message));
+          setResult(filteredCountries);
         }
       } else if (filteredCountries.length > 10) {
         console.log("please be more specific");
@@ -99,8 +100,9 @@ const App = () => {
         filteredCountries.length < 10
       ) {
         setResult(filteredCountries);
+        setShowCountry(false);
+
         setInfo(null);
-        console.log();
       } else {
         setInfo("There are no matches");
         setShowCountry(false);
@@ -114,16 +116,20 @@ const App = () => {
 
   return (
     <>
-      <div className="App">
-        <h1>Country Info</h1>
-        <SearchDiv onChange={handleChange} value={search} info={info} />
-        <Result
-          result={result}
-          showCountry={showCountry}
-          location={handleClick}
-          weather={weather}
-        />
-        <Weather weather={weather} />
+      <div className="app">
+        <div>
+          <h1>Country Info</h1>
+          <SearchDiv onChange={handleChange} value={search} info={info} />
+        </div>
+        <div>
+          <Result
+            result={result}
+            showCountry={showCountry}
+            location={handleClick}
+            weather={weather}
+          />
+          <Weather weather={weather} />
+        </div>
       </div>
     </>
   );
