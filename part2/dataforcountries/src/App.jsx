@@ -11,9 +11,10 @@ const SearchDiv = ({ onChange, value, info }) => {
   );
 };
 
-const Result = ({ result, showCountry, location, weather }) => {
+const Result = ({ result, showCountry, location }) => {
   return (
     <div className="result">
+      {/* {console.log("result", result)} */}
       {showCountry ? (
         <ShowCountry result={result} />
       ) : (
@@ -21,7 +22,9 @@ const Result = ({ result, showCountry, location, weather }) => {
           {result.map((c) => (
             <div key={c.cca2}>
               <p>{c.name.common}</p>
-              <button onClick={() => location(c.capital[0])}>show</button>
+              <button onClick={() => location(c.capital[0], c.cca2)}>
+                show
+              </button>
             </div>
           ))}
         </div>
@@ -92,6 +95,8 @@ const App = () => {
     icon: "",
     clouds: "",
   });
+  const [countryId, setCountryId] = useState(null);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   useEffect(() => {
     APIService.getCountries().then((data) => {
@@ -104,10 +109,14 @@ const App = () => {
     setlocation(null);
     setInfo(null);
     setWeather({});
+    setIsButtonClicked(false);
   };
 
-  const handleClick = (id) => {
-    setlocation(id);
+  const handleClick = (loc, id) => {
+    // console.log("clicked", loc, id);
+    setlocation(loc);
+    setCountryId(id);
+    setIsButtonClicked(true);
   };
 
   useEffect(() => {
@@ -116,27 +125,58 @@ const App = () => {
         return c.name.common.toLowerCase().includes(search.toLowerCase());
       });
 
-      if (filteredCountries.length === 1 || location !== null) {
+      if (
+        filteredCountries.length === 1 ||
+        location !== null ||
+        isButtonClicked
+      ) {
         setInfo(null);
+
+        const bansa = filteredCountries.find((c) => c.cca2 === countryId);
+
         const countryGet = location || filteredCountries[0]?.name.common;
 
-        if (countryGet) {
-          APIService.getWeather(countryGet).then((data) => {
-            setWeather({
-              temp: data.data.main.temp,
-              main: data.data.weather[0].main,
-              description: data.data.weather[0].description,
-              icon: data.data.weather[0].icon,
-              clouds: data.data.clouds.all,
-            });
+        const updatedWeather = (data) => {
+          setWeather({
+            temp: data.main.temp,
+            main: data.weather[0].main,
+            description: data.weather[0].description,
+            icon: data.weather[0].icon,
+            clouds: data.clouds.all,
           });
+        };
+
+        if (isButtonClicked && bansa) {
+          // console.log("button clicked", isButtonClicked);
+          APIService.getWeather(bansa.capital[0]).then((data) => {
+            updatedWeather(data);
+          });
+          setShowCountry(true);
+          setResult([bansa]);
+          return;
         }
-        setResult(filteredCountries);
-        setShowCountry(true);
+
+        if (countryGet) {
+          APIService.getWeather(countryGet)
+            .then((data) => {
+              updatedWeather(data);
+              setResult(filteredCountries);
+              setShowCountry(true);
+              setInfo(null);
+            })
+            .catch((error) => console.log(error.message));
+        }
       } else if (filteredCountries.length > 10) {
         console.log("please be more specific");
         setResult([]);
         setInfo("please be more specific");
+      } else if (
+        filteredCountries.length > 0 &&
+        filteredCountries.length < 10
+      ) {
+        setResult(filteredCountries);
+        setInfo(null);
+        console.log();
       } else {
         setInfo("There are no matches");
         setShowCountry(false);
@@ -146,7 +186,7 @@ const App = () => {
       setShowCountry(false);
       setResult([]);
     }
-  }, [search, countries, location]);
+  }, [search, countries, location, countryId, isButtonClicked]);
 
   return (
     <>
@@ -159,7 +199,6 @@ const App = () => {
           location={handleClick}
           weather={weather}
         />
-        {/* {console.log("app page", weather)} */}
         <Weather weather={weather} />
       </div>
     </>

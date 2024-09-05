@@ -12,8 +12,13 @@ export const getCountries = () => {
 };
 
 export const getWeather = (capital) => {
+  // console.log("server", capital);
   return axios
-    .get(`${weatherUrl}?q=${"Nicosia"}&appid=${API_KEY}&units=metric`)
+    .get(`${weatherUrl}?q=${capital}&appid=${API_KEY}&units=metric`)
+    .then((response) => {
+      console.log("from server, ok");
+      return response.data;
+    })
     .catch((error) => console.log(error.message));
 };
 
