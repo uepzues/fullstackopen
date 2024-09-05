@@ -18,7 +18,7 @@ const ShowCountry = ({ result }) => {
           <img src={country?.flags.png} alt={country?.flags.alt || ""} />
         ) : null}
       </div>
-      <div>
+      <div className="languages">
         {country && <h3>Languages</h3>}
         <ul>
           {country?.languages

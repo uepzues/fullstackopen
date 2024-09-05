@@ -134,6 +134,12 @@ body {
   gap: 10px;
 }
 
+.countryResult .languages li{
+  display: inline;
+  text-align: center;
+  margin: 10px;
+}
+
 .weather {
   margin-top: 15px;
   display: flex;
