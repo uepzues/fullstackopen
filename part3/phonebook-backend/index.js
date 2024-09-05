@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-const persons = [
+let persons = [
   {
     id: "1",
     name: "Arto Hellas",
@@ -53,27 +53,36 @@ app.get("/api/persons/:id", (req, res) => {
 });
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.post("/api/persons", (req, res) => {
   const body = req.body;
-
   const id = Math.floor(Math.random() * 5000);
 
   console.log(body);
 
-  if (!body) {
+  const filter = persons.find((p) => p.name === body.name);
+  console.log(filter);
+
+  if (!body.name || !body.number) {
     return res.status(400).json({
       error: "missing content",
+    });
+  }
+
+  if (filter) {
+    return res.status(400).json({
+      error: "name must be unique",
     });
   }
 
   const contact = {
     id: id.toString(),
     name: body.name,
-    number: body.number || "no number",
+    number: body.number,
   };
 
-  persons.concat(contact);
+  persons.push(contact);
 
   res.json(contact);
 });
