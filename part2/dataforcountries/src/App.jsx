@@ -1,91 +1,15 @@
 import { useState, useEffect } from "react";
 import APIService from "./services/APIService";
+import SearchDiv from "./components/SearchDiv";
+import Result from "./components/Result";
+import Weather from "./components/Weather";
 
-const SearchDiv = ({ onChange, value, info }) => {
-  return (
-    <div>
-      find country <br />
-      <input type="text" value={value} onChange={onChange} />
-      <p>{info}</p>
-    </div>
-  );
-};
-
-const Result = ({ result, showCountry, location }) => {
-  return (
-    <div className="result">
-      {/* {console.log("result", result)} */}
-      {showCountry ? (
-        <ShowCountry result={result} />
-      ) : (
-        <div>
-          {result.map((c) => (
-            <div key={c.cca2}>
-              <p>{c.name.common}</p>
-              <button onClick={() => location(c.capital[0], c.cca2)}>
-                show
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
-const Weather = ({ weather }) => {
-  return (
-    <div>
-      {weather && (
-        <div>
-          <p>{weather.temp}</p>
-          <p>{weather.main}</p>
-          <p>{weather.description}</p>
-          <p>{weather.icon}</p>
-          <p>{weather.clouds}</p>
-        </div>
-      )}
-    </div>
-  );
-};
-const ShowCountry = ({ result }) => {
-  const countries = Array.isArray(result) ? result : [result];
-
-  const country = countries[0] || null;
-
-  return (
-    <div className="countryResult">
-      <h1>{country?.name.common || null}</h1>
-      <h2>{country?.region || null}</h2>
-      <div>
-        {country?.altSpellings
-          ? country?.altSpellings.map((s) => <span key={s}>{s}, </span>)
-          : null}
-      </div>
-      <h2>{country?.capital || ""}</h2>
-      <div>
-        {country?.flags?.png ? (
-          <img src={country?.flags.png} alt={country?.flags.alt || ""} />
-        ) : null}
-      </div>
-      <div>
-        {country && <h3>Languages</h3>}
-        <ul>
-          {country?.languages
-            ? Object.values(country?.languages).map((l) => <li key={l}>{l}</li>)
-            : null}
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const App = () => {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
   const [result, setResult] = useState([]);
   const [showCountry, setShowCountry] = useState(false);
-  //location is country code
   const [location, setlocation] = useState(null);
   const [info, setInfo] = useState(null);
   const [weather, setWeather] = useState({
