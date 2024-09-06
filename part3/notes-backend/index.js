@@ -34,9 +34,9 @@ app.use(cors());
 
 app.use(express.json());
 
-// app.use(requestLogger);
+app.use(requestLogger);
 
-app.use(express.static("public"));
+app.use(express.static("dist"));
 
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: "unknown endpoint" });
@@ -44,7 +44,7 @@ const unknownEndpoint = (request, response) => {
 
 app.get("/", (req, res) => {
   console.log(__dirname);
-  res.sendFile(path.join(__dirname, "./index.html"));
+  res.sendFile(path.join(`${__dirname}/dist/`, "index.html"));
 });
 
 app.get("/api/notes", (req, res) => {
@@ -62,11 +62,6 @@ app.get("/api/notes/:id", (req, res) => {
   }
 });
 
-// app.post("/api/notes", (req, res) => {
-//   const note = req.body;
-//   console.log(note);
-//   res.json(note);
-// });
 const generatedID = () => {
   const maxId =
     notes.length > 0 ? Math.max(...notes.map((n) => Number(n.id))) : 0;
