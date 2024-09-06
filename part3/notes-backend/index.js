@@ -34,18 +34,17 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use(requestLogger);
+// app.use(requestLogger);
 
-app.use(express.static("dist"));
-
-
+app.use(express.static("public"));
 
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: "unknown endpoint" });
 };
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  console.log(__dirname);
+  res.sendFile(path.join(__dirname, "./index.html"));
 });
 
 app.get("/api/notes", (req, res) => {
