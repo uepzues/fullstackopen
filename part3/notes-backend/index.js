@@ -3,23 +3,23 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-// let notes = [
-//   {
-//     id: "1",
-//     content: "HTML is easy",
-//     important: true,
-//   },
-//   {
-//     id: "2",
-//     content: "Browser can execute only JavaScript",
-//     important: false,
-//   },
-//   {
-//     id: "3",
-//     content: "GET and POST are the most important methods of HTTP protocol",
-//     important: true,
-//   },
-// ];
+let notes = [
+  {
+    id: "1",
+    content: "HTML is easy",
+    important: true,
+  },
+  {
+    id: "2",
+    content: "Browser can execute only JavaScript",
+    important: false,
+  },
+  {
+    id: "3",
+    content: "GET and POST are the most important methods of HTTP protocol",
+    important: true,
+  },
+];
 
 const requestLogger = (request, response, next) => {
   console.log("Method:", request.method);
@@ -35,7 +35,7 @@ app.use(express.json());
 
 app.use(requestLogger);
 
-app.use(express.static('dist'))
+app.use(express.static("dist"));
 
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: "unknown endpoint" });
