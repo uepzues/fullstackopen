@@ -1,25 +1,25 @@
 const http = require("http");
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
 
-let notes = [
-  {
-    id: "1",
-    content: "HTML is easy",
-    important: true,
-  },
-  {
-    id: "2",
-    content: "Browser can execute only JavaScript",
-    important: false,
-  },
-  {
-    id: "3",
-    content: "GET and POST are the most important methods of HTTP protocol",
-    important: true,
-  },
-];
+// let notes = [
+//   {
+//     id: "1",
+//     content: "HTML is easy",
+//     important: true,
+//   },
+//   {
+//     id: "2",
+//     content: "Browser can execute only JavaScript",
+//     important: false,
+//   },
+//   {
+//     id: "3",
+//     content: "GET and POST are the most important methods of HTTP protocol",
+//     important: true,
+//   },
+// ];
 
 const requestLogger = (request, response, next) => {
   console.log("Method:", request.method);
@@ -28,6 +28,8 @@ const requestLogger = (request, response, next) => {
   console.log("---");
   next();
 };
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -95,6 +97,7 @@ app.delete("/api/notes/:id", (req, res) => {
   res.status(204).end();
 });
 
-const PORT = 3001;
-app.listen(PORT);
-console.log(`Server running on port ${PORT}`);
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
