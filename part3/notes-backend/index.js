@@ -2,6 +2,7 @@ const http = require("http");
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const path = require("path");
 
 let notes = [
   {
@@ -37,12 +38,14 @@ app.use(requestLogger);
 
 app.use(express.static("dist"));
 
+
+
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: "unknown endpoint" });
 };
 
 app.get("/", (req, res) => {
-  res.send("/index.html");
+  res.sendFile(path.join(__dirname, "/index.html"));
 });
 
 app.get("/api/notes", (req, res) => {
