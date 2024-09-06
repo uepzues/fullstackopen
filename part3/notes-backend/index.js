@@ -42,7 +42,7 @@ const unknownEndpoint = (request, response) => {
 };
 
 app.get("/", (req, res) => {
-  res.send("index.html");
+  res.send("/index.html");
 });
 
 app.get("/api/notes", (req, res) => {
