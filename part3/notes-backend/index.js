@@ -28,6 +28,9 @@ const requestLogger = (request, response, next) => {
   next();
 };
 
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: "unknown endpoint" });
+};
 const app = express();
 
 app.use(cors());
@@ -38,9 +41,7 @@ app.use(requestLogger);
 
 app.use(express.static("dist"));
 
-const unknownEndpoint = (request, response) => {
-  response.status(404).send({ error: "unknown endpoint" });
-};
+app.use(unknownEndpoint);
 
 app.get("/", (req, res) => {
   console.log(__dirname);
