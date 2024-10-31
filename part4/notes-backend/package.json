@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:ui": "rm -rf build && cd ../notes2 && npm run build && cp -r build ../notes-backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kim Sanz",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
