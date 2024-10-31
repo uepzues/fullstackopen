@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const path = require("path");
 const mongoose = require("mongoose");
 
 require("dotenv").config();
@@ -26,7 +25,6 @@ const noteSchema = new mongoose.Schema({
 
 const Note = mongoose.model("Note", noteSchema);
 
-
 const requestLogger = (request, response, next) => {
   console.log("Method:", request.method);
   console.log("Path:  ", request.path);
@@ -40,7 +38,7 @@ const unknownEndpoint = (request, response) => {
 };
 const app = express();
 
-// app.use(requestLogger);
+app.use(requestLogger);
 
 app.use(cors());
 
@@ -48,7 +46,7 @@ app.use(express.json());
 
 app.use(express.static("dist"));
 
-app.use(unknownEndpoint);
+// app.use(unknownEndpoint);
 
 app.get("/", (req, res) => {
   console.log("on get /");

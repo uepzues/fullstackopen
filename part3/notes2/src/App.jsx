@@ -11,7 +11,10 @@ export default function App() {
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    noteService.getAll().then((initialNotes) => setNotes(initialNotes.data));
+    noteService.getAll().then((initialNotes) => {
+      console.log(initialNotes);
+      setNotes(initialNotes.data);
+    });
   }, []);
 
   const toggleImportanceOf = (id) => {
