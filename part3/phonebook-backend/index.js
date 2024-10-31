@@ -103,7 +103,7 @@ app.delete("/api/persons/:id", (req, res) => {
 
   console.log("from backend", id);
 
-  Persons.deleteOne({ _id: id })
+  Persons.findByIdAndDelete({ _id: id })
     .then((result) => {
       if (result.deletedCount === 0) {
         return res.status(404).json({ error: "Person not found" });
