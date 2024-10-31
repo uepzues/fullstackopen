@@ -44,7 +44,6 @@ app.get("/info", (req, res) => {
 
 app.get("/api/persons/:id", (req, res) => {
   const id = req.params.id;
-  const person = Persons.find((a) => a.id === id);
 
   Persons.findById(id).then((person) => {
     if (person) {
