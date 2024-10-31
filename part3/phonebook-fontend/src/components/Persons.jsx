@@ -7,7 +7,6 @@ export default function Persons({ filteredPersons, delContact }) {
           <button onClick={() => delContact(person.id)}>del</button>
         </div>
       ))}
-      
     </div>
   );
 }

@@ -1,12 +1,8 @@
 import axios from "axios";
 
-const baseUrl = "/api/persons";
+const baseUrl = "http://localhost:3001/api/persons";
 
-const getContacts = () =>
-  axios
-    .get(baseUrl)
-    .then((response) => response)
-    .catch((err) => console.log(err));
+const getContacts = () => axios.get(baseUrl).then((response) => response);
 
 const create = (data) => {
   const request = axios.post(baseUrl, data);
@@ -15,16 +11,15 @@ const create = (data) => {
 
 const update = (id, data) => {
   const request = axios.patch(`${baseUrl}/${id}`, data);
+  console.log(id);
   return request.then((res) => res.data);
 };
 
 const delContact = (id) => {
   const req = axios.delete(`${baseUrl}/${id}`);
-  return req
-    .then((res) => {
-      return res.data, console.log(`${id} deleted`);
-    })
-    .catch((err) => console.log(err.message));
+  return req.then((res) => {
+    return res.data;
+  });
 };
 
 export default {

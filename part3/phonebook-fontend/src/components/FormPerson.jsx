@@ -7,7 +7,7 @@ export default function FormPerson({ onSubmit, onChange, newContact }) {
           <br />
           <input
             name="newName"
-            value={newContact.newName || ""}
+            value={newContact.newName}
             onChange={onChange}
           />
         </div>
@@ -16,7 +16,7 @@ export default function FormPerson({ onSubmit, onChange, newContact }) {
           <input
             name="newNumber"
             type="tel"
-            value={newContact.newNumber || ""}
+            value={newContact.newNumber}
             onChange={onChange}
           />
         </div>

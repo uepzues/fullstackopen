@@ -1,24 +1,31 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const mongoose = require("mongoose");
 
-let notes = [
-  {
-    id: "1",
-    content: "HTML is easy",
-    important: true,
-  },
-  {
-    id: "2",
-    content: "Browser can execute only JavaScript",
-    important: false,
-  },
-  {
-    id: "3",
-    content: "GET and POST are the most important methods of HTTP protocol",
-    important: true,
-  },
-];
+require("dotenv").config();
+
+const password = process.env.VITE_MONGODB_URI_PW;
+const username = process.env.VITE_MONGODB_URI_USERNAME;
+
+const url = `mongodb+srv://${username}:${password}@zuesuep.8bkzlbx.mongodb.net/fullstackopen?retryWrites=true&w=majority`;
+
+mongoose.set("strictQuery", false);
+
+mongoose
+  .connect(url)
+  .then(() => {
+    console.log("connected to MongoDB");
+  })
+  .catch((err) => console.log(err));
+
+const noteSchema = new mongoose.Schema({
+  content: String,
+  important: Boolean,
+});
+
+const Note = mongoose.model("Note", noteSchema);
+
 
 const requestLogger = (request, response, next) => {
   console.log("Method:", request.method);
@@ -33,23 +40,27 @@ const unknownEndpoint = (request, response) => {
 };
 const app = express();
 
+// app.use(requestLogger);
+
 app.use(cors());
 
 app.use(express.json());
-
-app.use(requestLogger);
 
 app.use(express.static("dist"));
 
 app.use(unknownEndpoint);
 
 app.get("/", (req, res) => {
-  console.log(__dirname);
-  res.sendFile(path.join(`${__dirname}/dist/`, "index.html"));
+  console.log("on get /");
+  res.send("<h1>Hello World!</h1>");
 });
 
 app.get("/api/notes", (req, res) => {
-  res.json(notes);
+  console.log(Note);
+  Note.find({}).then((notes) => {
+    console.log(notes);
+    res.json(notes);
+  });
 });
 
 app.get("/api/notes/:id", (req, res) => {
@@ -97,7 +108,7 @@ app.delete("/api/notes/:id", (req, res) => {
   res.status(204).end();
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3003;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

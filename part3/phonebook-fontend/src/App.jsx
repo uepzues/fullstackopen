@@ -35,20 +35,19 @@ export default function App() {
       number: newContact.newNumber,
     };
 
-    if (persons.some((person) => person.name === newContact.newName)) {
+    const existingPerson = persons.find((p) => p.name === newContact.newName);
+
+    if (existingPerson) {
       if (
         window.confirm(
           `${newContact.newName} is already added to phonebook do you want to change the number?`
         )
       ) {
-        const person = persons.find(
-          (person) => person.name === newContact.newName
-        );
         contactService
-          .update(person.id, contactObject)
+          .update(existingPerson.id, contactObject)
           .then((res) => {
             setPersons(
-              persons.map((per) => (per.id !== person.id ? per : res))
+              persons.map((per) => (per.id !== existingPerson.id ? per : res))
             );
             setNotif(`Changed ${newContact.newName}'s number`);
             setTimeout(() => {
@@ -94,15 +93,25 @@ export default function App() {
   };
 
   const delContact = (id) => {
-    if (window.confirm("Do you want to delete the entry?")) {
+    console.log("from frontend", id);
+
+    const foundPerson = persons.find((person) => person.id === id);
+
+    if (
+      window.confirm(
+        `Do you want to delete ${
+          foundPerson ? foundPerson.name : "this entry"
+        }?`
+      )
+    ) {
       contactService
         .delContact(id)
         .then(() => {
           setPersons(persons.filter((person) => person.id !== id));
-        })
-        .then(() => {
-          const foundPerson = persons.find((person) => person.id === id);
-          setNotif(`Deleted ${foundPerson.name}`);
+
+          if (foundPerson) {
+            setNotif(`Deleted ${foundPerson.name}`);
+          }
           setTimeout(() => {
             setNotif(null);
           }, 5000);

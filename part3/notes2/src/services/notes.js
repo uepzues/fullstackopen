@@ -4,7 +4,9 @@ const baseURL = "./api/notes";
 const getAll = () => {
   return axios
     .get(baseURL)
-    .then((response) => response)
+    .then((response) => {
+      console.log(response);
+      return response})
     .catch((e) => console.log(e));
 };
 

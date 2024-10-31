@@ -21,7 +21,6 @@ export default function App() {
     noteService
       .update(id, changedNote)
       .then((returnedNote) => {
-
         setNotes(notes.map((note) => (note.id !== id ? note : returnedNote)));
       })
       .catch((error) => {
@@ -78,6 +77,7 @@ export default function App() {
         </button>
       </div>
       <ul>
+        {/* {console.log(notesToShow)} */}
         {notesToShow.map((note) => (
           <Note
             key={note.id}
