@@ -56,9 +56,7 @@ export default function App() {
           })
           .catch((err) => {
             console.log(err.message);
-            setErrNotif(
-              `Information of ${newContact.newName} has already been removed from server`
-            );
+            setErrNotif(err.response.data.error);
             setTimeout(() => {
               setErrNotif(null);
             }, 5000);
@@ -82,8 +80,8 @@ export default function App() {
         }, 5000);
       })
       .catch((err) => {
-        console.log(err);
-        setErrNotif("An error occurred while adding the contact.");
+        console.log(err.message);
+        setErrNotif(err.response.data.error);
         setTimeout(() => {
           setErrNotif(null);
         }, 5000);
