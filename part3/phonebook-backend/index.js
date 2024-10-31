@@ -58,13 +58,12 @@ app.get("/api/persons/:id", (req, res) => {
 app.post("/api/persons", (req, res, next) => {
   const { name, number } = req.body;
 
-  if (!name || !number) {
-    return res.status(400).json({
-      error: "missing content",
-    });
-  }
+  const contact = {
+    name,
+    number,
+  };
 
-  const person = new Persons({ name, number });
+  const person = new Persons(contact);
 
   person
     .save()
@@ -72,11 +71,11 @@ app.post("/api/persons", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-app.patch("/api/persons/:id", (req, res, next) => {
+app.put("/api/persons/:id", (req, res, next) => {
   const id = req.params.id;
   const { name, number } = req.body;
 
-  console.log(id);
+  console.log("from put", id);
 
   const person = {
     name,
