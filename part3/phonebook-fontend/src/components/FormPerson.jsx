@@ -6,7 +6,6 @@ export default function FormPerson({ onSubmit, onChange, newContact }) {
           name
           <br />
           <input
-            required
             name="newName"
             value={newContact.newName}
             onChange={onChange}
@@ -15,7 +14,6 @@ export default function FormPerson({ onSubmit, onChange, newContact }) {
         <div>
           number <br />
           <input
-            required
             name="newNumber"
             type="tel"
             value={newContact.newNumber}
