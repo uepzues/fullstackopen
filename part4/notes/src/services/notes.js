@@ -3,7 +3,7 @@ const baseURL = "http://localhost:3003/api/notes";
 
 const getAll = () => {
   return axios.get(baseURL).then((response) => {
-    console.log(response);
+    // console.log(response);
     return response;
   });
 };
@@ -20,8 +20,7 @@ const update = (id, newObject) => {
 
 const delNote = (id) => {
   const request = axios.delete(`${baseURL}/${id}`);
-  return request.then((response) => {
-    console.log(response.data);
+  return request.then(() => {
     console.log(`Deleted note with id ${id}`);
   });
 };
