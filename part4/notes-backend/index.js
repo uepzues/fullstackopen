@@ -1,6 +1,8 @@
+const config = require("./utils/config.js")
+
 const express = require("express")
 const cors = require("cors")
-const Note = require("./mongo.js")
+const Note = require("./models/model.js")
 
 const requestLogger = (request, response, next) => {
   console.log("Method:", request.method)
