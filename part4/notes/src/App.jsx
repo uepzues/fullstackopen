@@ -81,7 +81,6 @@ export default function App() {
         </button>
       </div>
       <ul>
-        {/* {console.log(notesToShow)} */}
         {notesToShow.map((note) => (
           <Note
             key={note.id}
