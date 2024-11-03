@@ -1,13 +1,14 @@
+const { MONGODB_URI } = require("./utils/config")
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const blogRouter = require("./controllers/blog")
 
-require("dotenv").config()
+// require("dotenv").config()
 
 const app = express()
 
-const mongoUrl = process.env.NODE_ENV
+const mongoUrl = MONGODB_URI
 
 mongoose
   .connect(mongoUrl)
