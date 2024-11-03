@@ -6,6 +6,16 @@ const requestLogger = (req, res) => {
   console.log("---")
 }
 
-const errorHandler = (err, req, res, next)=>{
-   logger.err(err.message) 
+const errorHandler = (err, req, res, next) => {
+  logger.err(err.message)
+}
+
+const unknownEndpoint = (req, res) => {
+  res.status(404).send({ error: "unknown endpoint" })
+}
+
+module.exports = {
+  requestLogger,
+  errorHandler,
+  unknownEndpoint,
 }
