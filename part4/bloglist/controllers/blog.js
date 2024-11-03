@@ -7,21 +7,23 @@ blogRouter.get("/", (req, res) => {
   })
 })
 
-blogRouter.get("/:id", (req, res) => {
+blogRouter.get("/:id", (req, res, next) => {
   const id = req.params.id
-  console.log(id)
 
   Blog.findById(id)
     .then((result) => {
-      res.json(result)
+      if (result) {
+        res.json(result)
+      } else {
+        res.status(404).end
+      }
     })
     .catch((err) => {
-      console.log(err.message)
-      res.status(404).end
+      logger.error(err.message)
     })
 })
 
-blogRouter.post("/", (req, res) => {
+blogRouter.post("/", (req, res, next) => {
   const { title, author, url, likes } = req.body
 
   const content = {
