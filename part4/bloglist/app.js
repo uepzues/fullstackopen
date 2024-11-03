@@ -4,8 +4,6 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const blogRouter = require("./controllers/blog")
 
-// require("dotenv").config()
-
 const app = express()
 
 const mongoUrl = MONGODB_URI
