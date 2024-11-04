@@ -52,7 +52,7 @@ describe("most likes", () => {
   })
 })
 
-describe("most number of likes with author name", () => {
+describe("most number of blogs with author name", () => {
   const blogList = [
     {
       title: "The Joy of Japanese KitKats: Unique Flavors You Need to Try",
@@ -68,10 +68,77 @@ describe("most number of likes with author name", () => {
       likes: 13,
       id: "67271c2c1222e4c56ae1502d",
     },
+    {
+      title: "Exploring the World of Feullantine White Chocolate",
+      author: "Sakura Yamamoto",
+      url: "http://localhost:3004/post",
+      likes: 6,
+      id: "672820d7e1e08353f243360e",
+    },
+    {
+      title: "A Dive into Japanese Strawberry Desserts",
+      author: "Riku Tanabe",
+      url: "http://localhost:3004/post",
+      likes: 13,
+      id: "67282122e1e08353f2433610",
+    },
+    {
+      title: "Discovering Chocolate Whole Grain Flavors",
+      author: "Riku Tanabe",
+      url: "http://localhost:3004/post",
+      likes: 12,
+      id: "67282128e1e08353f2433612",
+    },
   ]
 
-  test("most number of likes with the author", () => {
+  test("most number of blogs with the author", () => {
     const result = listHelper.mostBlogs(blogList)
-    assert.deepStrictEqual(result, { author: "Riku Tanabe", likes: 13 })
+    assert.deepStrictEqual(result, { author: "Riku Tanabe", blogs: 3 })
+  })
+})
+
+describe(" most liked author", () => {
+  const blogList = [
+    {
+      title: "The Joy of Japanese KitKats: Unique Flavors You Need to Try",
+      author: "Aki Tanaka",
+      url: "http://localhost:3004/post",
+      likes: 5,
+      id: "6726e6f460db2ccaa9e7a2e0",
+    },
+    {
+      title: "Matcha Lovers Unite: Rich Matcha KitKats",
+      author: "Riku Tanabe",
+      url: "http://localhost:3004/post",
+      likes: 13,
+      id: "67271c2c1222e4c56ae1502d",
+    },
+    {
+      title: "Exploring the World of Feullantine White Chocolate",
+      author: "Sakura Yamamoto",
+      url: "http://localhost:3004/post",
+      likes: 6,
+      id: "672820d7e1e08353f243360e",
+    },
+    {
+      title: "A Dive into Japanese Strawberry Desserts",
+      author: "Kenta Suzuki",
+      url: "http://localhost:3004/post",
+      likes: 13,
+      id: "67282122e1e08353f2433610",
+    },
+    {
+      title: "Discovering Chocolate Whole Grain Flavors",
+      author: "Mei Watanabe",
+      url: "http://localhost:3004/post",
+      likes: 12,
+      id: "67282128e1e08353f2433612",
+    },
+  ]
+
+  test(" most liked author", () => {
+    const result = listHelper.mostLikes(blogList)
+
+    assert.deepStrictEqual(result)
   })
 })
