@@ -24,8 +24,16 @@ const favouritesBlog = (blogs) => {
   console.log("maxNum", maxNum.likes)
   return maxNum.likes
 }
-
 const mostBlogs = (blog) => {
+  const getAuthors = _.countBy(blog, "author")
+  const getMost = _.reduce(Object.keys(getAuthors), (x, y) => {
+    return getAuthors[y] > getAuthors[x] ? y : x
+  })
+  const numBlog = blog[getMost]
+  console.log("author", getMost, "blog", getAuthors[getMost])
+  return { author: getMost, blogs: getAuthors[getMost] }
+}
+const mostLikes = (blog) => {
   const getAuthor = _.reduce(blog, function (val, n) {
     return val > n.likes ? val : n
   })
@@ -37,5 +45,6 @@ module.exports = {
   dummy,
   totalLikes,
   favouritesBlog,
+  mostLikes,
   mostBlogs,
 }
