@@ -115,16 +115,16 @@ describe(" most liked author", () => {
     },
     {
       title: "Exploring the World of Feullantine White Chocolate",
-      author: "Sakura Yamamoto",
+      author: "Riku Tanabe",
       url: "http://localhost:3004/post",
-      likes: 6,
+      likes: 16,
       id: "672820d7e1e08353f243360e",
     },
     {
       title: "A Dive into Japanese Strawberry Desserts",
-      author: "Kenta Suzuki",
+      author: "Aki Tanaka",
       url: "http://localhost:3004/post",
-      likes: 13,
+      likes: 11,
       id: "67282122e1e08353f2433610",
     },
     {
@@ -139,6 +139,6 @@ describe(" most liked author", () => {
   test(" most liked author", () => {
     const result = listHelper.mostLikes(blogList)
 
-    assert.deepStrictEqual(result)
+    assert.deepStrictEqual(result, { author: "Riku Tanabe", likes: 29 })
   })
 })
