@@ -8,10 +8,9 @@ const logger = require("./utils/logger")
 
 const app = express()
 
-const mongoUrl = MONGODB_URI
 
 mongoose
-  .connect(mongoUrl)
+  .connect(MONGODB_URI)
   .then(() => {
     logger.info("connected to DB")
   })
