@@ -37,7 +37,6 @@ const mostLikes = (blogs) => {
 
   _.forEach(blogs, (blog) => {
     const { author, likes } = blog
-
     // console.log("author", author)
     if (authorLikes[author]) {
       authorLikes[author] += likes
@@ -45,7 +44,6 @@ const mostLikes = (blogs) => {
       authorLikes[author] = likes
     }
   })
-
   console.log("authorLikes", authorLikes)
   const getAuthor = _.reduce(
     _.keys(authorLikes),
@@ -55,9 +53,7 @@ const mostLikes = (blogs) => {
     },
     {}
   )
-
   console.log("getAuthor", getAuthor)
-
   return { author: getAuthor, likes: authorLikes[getAuthor] }
 }
 
