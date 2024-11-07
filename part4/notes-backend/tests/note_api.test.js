@@ -48,10 +48,10 @@ test("the first note is about HTTP methods", async () => {
 test("a valid note can be added", async () => {
   const main = async () => {
     const notes = await Note.find({})
-    // console.log("the operation returned the following notes:", notes)
+    console.log("the operation returned the following notes:", notes)
 
     const response = await notes[0].deleteOne()
-    // console.log("the first note is deleted", response)
+    console.log("the first note is deleted", response)
   }
 
   main()
