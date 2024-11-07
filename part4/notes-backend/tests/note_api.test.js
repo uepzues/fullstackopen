@@ -40,10 +40,41 @@ test("there are two notes", async () => {
 })
 
 test("the first note is about HTTP methods", async () => {
-  const response = await api.get("/api/get")
-
+  const response = await api.get("/api/notes")
   const contents = response.body.map((e) => e.content)
   assert(contents.includes("HTML is easy"))
+})
+
+test("a valid note can be added", async () => {
+  const main = async () => {
+    const notes = await Note.find({})
+    // console.log("the operation returned the following notes:", notes)
+
+    const response = await notes[0].deleteOne()
+    // console.log("the first note is deleted", response)
+  }
+
+  main()
+
+  const newNote = {
+    content: "async/await simplifies making async calls",
+    important: true,
+  }
+
+  await api
+    .post("/api/notes")
+    .send(newNote)
+    .expect(201)
+    .expect("Content-Type", /application\/json/)
+
+  const response = await api.get("/api/notes")
+  const contents = response.body.map((r) => r.content)
+
+  console.log(contents)
+
+  assert.strictEqual(response.body.length, initialNotes.length)
+
+  assert(contents.includes("async/await simplifies making async calls"))
 })
 
 after(async () => {
