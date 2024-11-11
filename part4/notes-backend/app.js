@@ -1,12 +1,13 @@
 const config = require("./utils/config")
-const cors = require("cors")
 const express = require("express")
+require("express-async-errors")
+const app = express()
+const cors = require("cors")
 const logger = require("./utils/logger")
 const middleware = require("./utils/middleware")
 const notesRouter = require("./controllers/note")
 const mongoose = require("mongoose")
 
-const app = express()
 const url = config.MONGODB_URI
 
 mongoose.set("strictQuery", false)
