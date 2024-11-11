@@ -3,14 +3,14 @@ const middleware = require("./utils/middleware")
 const express = require("express")
 const app = express()
 const cors = require("cors")
-const mongoose = require("mongoose")
 const blogRouter = require("./controllers/blog")
 const logger = require("./utils/logger")
+const mongoose = require("mongoose")
 
 mongoose
   .connect(config.MONGODB_URI)
   .then(() => {
-    console.log("connected to DB")
+    logger.info("connected to DB")
   })
   .catch((err) => logger.error("error connecting to DB", err.message))
 
