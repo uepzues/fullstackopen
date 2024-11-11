@@ -7,8 +7,6 @@ const mongoose = require("mongoose")
 const blogRouter = require("./controllers/blog")
 const logger = require("./utils/logger")
 
-
-
 mongoose
   .connect(MONGODB_URI)
   .then(() => {
