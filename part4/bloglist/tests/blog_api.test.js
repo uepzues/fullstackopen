@@ -39,7 +39,7 @@ test("returns the uid as 'id'", async () => {
   assert.strictEqual(ids.includes("id") && !ids.includes("_id"), true)
 })
 
-test.only("successfuly creates a post", async () => {
+test("successfuly creates a post", async () => {
   const newPost = {
     title: "This is a new title",
     author: "Balthazar Wulf",
@@ -54,6 +54,7 @@ test.only("successfuly creates a post", async () => {
     .expect("Content-Type", /application\/json/)
 
   const posts = await blogHelper.blogListInDb()
+
   assert.strictEqual(posts.length, blogHelper.blogList.length + 1)
 
   const savedPost = posts.find((post) => {
@@ -63,6 +64,26 @@ test.only("successfuly creates a post", async () => {
 
   //   console.log(savedPost)
   assert.equal(Boolean(savedPost), true)
+})
+
+test.only("likes property is missing", async () => {
+  const newPost = {
+    title: "This is a new title",
+    author: "Balthazar Wulf",
+    url: "http://localhost/post",
+  }
+
+  await api
+    .post("/api/blogs")
+    .send(newPost)
+    .expect(201)
+    .expect("Content-Type", /application\/json/)
+
+  const savedPost = await blogHelper.blogListInDb()
+  const keys = Object.keys(savedPost[savedPost.length - 1])
+  console.log(keys)
+
+  assert.strictEqual(!keys.includes("likes"), true)
 })
 
 after(async () => {
