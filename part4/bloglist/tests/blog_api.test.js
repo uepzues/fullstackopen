@@ -23,12 +23,22 @@ test("list are returned as JSON", async () => {
     .expect("Content-Type", /application\/json/)
 })
 
-test.only("returns the correct amount of blog post", async () => {
+test("returns the correct amount of blog post", async () => {
   console.log("test")
 
   const result = await api.get("/api/blogs")
 
   assert.strictEqual(result.body.length, blogHelper.blogList.length)
+})
+
+test.only("returns the uid as 'id'", async () => {
+  const result = await api.get("/api/blogs")
+
+  const ids = Object.keys(result.body[0])
+
+  assert.strictEqual(ids.includes("id") && !ids.includes("_id"), true)
+
+  console.log(result.body)
 })
 
 after(async () => {
