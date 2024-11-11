@@ -10,9 +10,8 @@ notesRouter.get("/", async (req, res) => {
   // })
 })
 
-notesRouter.get("/:id", async (req, res, next) => {
+notesRouter.get("/:id", async (req, res) => {
   const id = req.params.id
-
   const note = await Note.findById(id)
 
   if (note) {
@@ -33,9 +32,8 @@ notesRouter.get("/:id", async (req, res, next) => {
   //   .catch((error) => next(error))
 })
 
-notesRouter.post("/", async (req, res, next) => {
+notesRouter.post("/", async (req, res) => {
   const { content, important } = req.body
-
   if (!content) {
     return res.status(400).json({
       error: "content missing",
@@ -43,8 +41,9 @@ notesRouter.post("/", async (req, res, next) => {
   }
   const note = {
     content,
-    important: Boolean(important) || false,
+    important: important || false,
   }
+
   const message = new Note(note)
   const savedNote = await message.save()
   console.log(savedNote)
@@ -59,9 +58,8 @@ notesRouter.post("/", async (req, res, next) => {
   //   .catch((error) => next(error))
 })
 
-notesRouter.put("/:id", async (req, res, next) => {
+notesRouter.put("/:id", async (req, res) => {
   const id = req.params.id
-
   const { content, important } = req.body
 
   const note = {
@@ -90,11 +88,10 @@ notesRouter.put("/:id", async (req, res, next) => {
 
 notesRouter.delete("/:id", async (req, res) => {
   const id = req.params.id
+  await Note.findByIdAndDelete(id)
 
-  const deletedNote = await Note.findByIdAndDelete(id)
-
-  console.log("deleted:", deletedNote.id)
-  res.json(deletedNote)
+  // console.log("deleted:", deletedNote.id)
+  res.status(204).end()
 
   // Note.findByIdAndDelete(id)
   //   .then((deletedNote) => {
