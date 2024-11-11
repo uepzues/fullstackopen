@@ -31,14 +31,38 @@ test("returns the correct amount of blog post", async () => {
   assert.strictEqual(result.body.length, blogHelper.blogList.length)
 })
 
-test.only("returns the uid as 'id'", async () => {
+test("returns the uid as 'id'", async () => {
   const result = await api.get("/api/blogs")
 
   const ids = Object.keys(result.body[0])
 
   assert.strictEqual(ids.includes("id") && !ids.includes("_id"), true)
+})
 
-  console.log(result.body)
+test.only("successfuly creates a post", async () => {
+  const newPost = {
+    title: "This is a new title",
+    author: "Balthazar Wulf",
+    likes: 1,
+    url: "http://localhost/post",
+  }
+
+  await api
+    .post("/api/blogs")
+    .send(newPost)
+    .expect(201)
+    .expect("Content-Type", /application\/json/)
+
+  const posts = await blogHelper.blogListInDb()
+  assert.strictEqual(posts.length, blogHelper.blogList.length + 1)
+
+  const savedPost = posts.find((post) => {
+    return post.title === newPost.title
+    post.author === newPost.author && post.url === newPost.url
+  })
+
+  //   console.log(savedPost)
+  assert.equal(Boolean(savedPost), true)
 })
 
 after(async () => {
