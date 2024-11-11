@@ -19,7 +19,7 @@ blogRouter.get("/:id", (req, res, next) => {
       }
     })
     .catch((err) => {
-      logger.error(err.message)
+      next(err.message)
     })
 })
 
