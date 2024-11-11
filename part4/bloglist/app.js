@@ -1,12 +1,12 @@
 const { MONGODB_URI } = require("./utils/config")
 const middleware = require("./utils/middleware")
 const express = require("express")
+const app = express()
 const cors = require("cors")
 const mongoose = require("mongoose")
 const blogRouter = require("./controllers/blog")
 const logger = require("./utils/logger")
 
-const app = express()
 
 
 mongoose
