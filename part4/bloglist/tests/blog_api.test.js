@@ -39,7 +39,7 @@ test("returns the uid as 'id'", async () => {
   assert.strictEqual(ids.includes("id") && !ids.includes("_id"), true)
 })
 
-test("successfuly creates a post", async () => {
+test.only("successfuly creates a post", async () => {
   const newPost = {
     title: "This is a new title",
     author: "Balthazar Wulf",
@@ -58,15 +58,14 @@ test("successfuly creates a post", async () => {
   assert.strictEqual(posts.length, blogHelper.blogList.length + 1)
 
   const savedPost = posts.find((post) => {
-    return post.title === newPost.title
-    post.author === newPost.author && post.url === newPost.url
+    return post.author === newPost.author && post.url === newPost.url
   })
 
   //   console.log(savedPost)
   assert.equal(Boolean(savedPost), true)
 })
 
-test.only("likes property is missing", async () => {
+test("likes property is missing", async () => {
   const newPost = {
     title: "This is a new title",
     author: "Balthazar Wulf",
@@ -84,6 +83,52 @@ test.only("likes property is missing", async () => {
   console.log(keys)
 
   assert.strictEqual(!keys.includes("likes"), true)
+})
+
+test("missing url properties should result in status 400", async () => {
+  const newPost = [
+    {
+      title: "This is a new title",
+      author: "Ogandu Mowible",
+      likes: 3,
+    },
+    {
+      author: "Lucy Miles",
+      url: "http://localhost/post",
+      likes: 3,
+    },
+  ]
+
+  const result = await api
+    .post("/api/blogs")
+    .send(newPost[0])
+    .expect(400)
+    .expect("Content-Type", /application\/json/)
+
+  assert.strictEqual(result.status, 400)
+})
+
+test("missing title properties should result in status 400", async () => {
+  const newPost = [
+    {
+      title: "This is a new title",
+      author: "Ogandu Mowible",
+      likes: 3,
+    },
+    {
+      author: "Lucy Miles",
+      url: "http://localhost/post",
+      likes: 3,
+    },
+  ]
+
+  const result = await api
+    .post("/api/blogs")
+    .send(newPost[1])
+    .expect(400)
+    .expect("Content-Type", /application\/json/)
+
+  assert.strictEqual(result.status, 400)
 })
 
 after(async () => {
