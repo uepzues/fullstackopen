@@ -66,6 +66,7 @@ describe("when there are blog posts saved", () => {
       //   console.log(savedPost)
       assert.equal(Boolean(savedPost), true)
     })
+
     test("likes property is missing", async () => {
       const newPost = {
         title: "This is a new title",
@@ -81,7 +82,7 @@ describe("when there are blog posts saved", () => {
 
       const savedPost = await blogHelper.blogListInDb()
       const keys = Object.keys(savedPost[savedPost.length - 1])
-      console.log(keys)
+      // console.log(savedPost.length)
 
       assert.strictEqual(!keys.includes("likes"), true)
     })
@@ -133,6 +134,31 @@ describe("when there are blog posts saved", () => {
     })
   })
 
+  describe("when updating post", () => {
+    test("successful update of post", async () => {
+      const savedPost = await blogHelper.blogListInDb()
+      const id = savedPost[0].id
+
+      const post = {
+        title: "updated title",
+        author: "updated author",
+        url: "http://updated-url.com",
+        likes: 6,
+      }
+
+      const result = await api
+        .put(`/api/blogs/${id}`)
+        .send(post)
+        .expect(200)
+        .expect("Content-Type", /application\/json/)
+
+      // console.log("inside test", result.body)
+
+      assert.strictEqual(result.status, 200)
+      assert.strictEqual(result.body.title, post.title)
+    })
+  })
+
   describe("when deleting a post", () => {
     test("deletes a valid id successfuly", async () => {
       const savedPost = await blogHelper.blogListInDb()
@@ -153,6 +179,7 @@ describe("when there are blog posts saved", () => {
     })
   })
 })
+
 after(async () => {
   await mongoose.connection.close()
 })
