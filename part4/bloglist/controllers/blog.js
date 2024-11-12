@@ -1,60 +1,50 @@
 const blogRouter = require("express").Router()
 const Blog = require("../models/blogModel")
 
-blogRouter.get("/", (req, res) => {
-  Blog.find({}).then((blogs) => {
-    res.json(blogs)
-  })
+blogRouter.get("/", async (req, res) => {
+  const result = await Blog.find({})
+  res.json(result)
 })
 
-blogRouter.get("/:id", (req, res, next) => {
+blogRouter.get("/:id", async (req, res) => {
   const id = req.params.id
+  const result = await Blog.findById(id)
 
-  Blog.findById(id)
-    .then((result) => {
-      if (result) {
-        res.json(result)
-      } else {
-        res.status(404).end
-      }
-    })
-    .catch((err) => {
-      next(err.message)
-    })
+  if (result) {
+    res.json(result)
+  } else {
+    res.status(404).send({ error: "blog not found" })
+  }
 })
 
-blogRouter.post("/", (req, res, next) => {
+blogRouter.post("/", async (req, res) => {
   const { title, author, url, likes } = req.body
 
   const content = {
     title,
     author,
     url,
-    likes,
+    likes: likes || 0,
   }
 
   const blog = new Blog(content)
+  if (!title || !url) {
+    return res.status(400).send({ error: "Title and URL required" })
+  }
 
-  blog
-    .save()
-    .then((result) => {
-      res.status(201).json(result)
-    })
-    .catch((err) => console.log(err.message))
+  const result = blog.save()
+  return res.status(201).json(result)
 })
 
-blogRouter.delete("/:id", (req, res) => {
+blogRouter.delete("/:id", async (req, res) => {
   const id = req.params.id
+  const result = await Blog.findByIdAndDelete(id)
 
-  Blog.findByIdAndDelete(id)
-    .then((deletedPost) => {
-      console.log("deleted post with id", deletedPost.id)
-      res.status(204).end()
-    })
-    .catch((err) => {
-      console.log("error deletign post", err.message)
-      res.status(404).json({ error: err.message })
-    })
+  if (!result) {
+    return res.status(400).send({ error: "blog not found" })
+  }
+  console.log("deleted post with id", id)
+  res.status(204).end()
 })
 
 module.exports = blogRouter
