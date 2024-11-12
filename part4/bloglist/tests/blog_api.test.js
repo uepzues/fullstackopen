@@ -132,5 +132,5 @@ test("missing title properties should result in status 400", async () => {
 })
 
 after(async () => {
-  await mongoose.connection.close
+  await mongoose.connection.close()
 })
