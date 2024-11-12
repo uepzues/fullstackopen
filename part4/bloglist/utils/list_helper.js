@@ -44,11 +44,11 @@ const mostLikes = (blogs) => {
       authorLikes[author] = likes
     }
   })
-  console.log("authorLikes", authorLikes)
+  // console.log("authorLikes", authorLikes)
   const getAuthor = _.reduce(
     _.keys(authorLikes),
     (x, y) => {
-      console.log(authorLikes[y])
+      // console.log(authorLikes[y])
       return authorLikes[x] > authorLikes[y] ? x : y
     },
     {}
