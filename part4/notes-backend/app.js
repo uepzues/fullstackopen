@@ -3,10 +3,10 @@ const express = require("express")
 require("express-async-errors")
 const app = express()
 const cors = require("cors")
-const logger = require("./utils/logger")
+// const logger = require("./utils/logger")
 const middleware = require("./utils/middleware")
-const notesRouter = require("./controllers/note")
 const userRouter = require("./controllers/users")
+const notesRouter = require("./controllers/note")
 const mongoose = require("mongoose")
 
 const url = config.MONGODB_URI
