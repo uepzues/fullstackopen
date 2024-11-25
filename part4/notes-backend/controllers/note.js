@@ -3,7 +3,7 @@ const Note = require("../models/model")
 const User = require("../models/user")
 
 notesRouter.get("/", async (req, res) => {
-  const notes = await Note.find({})
+  const notes = await Note.find({}).populate("user", { username: 1, name: 1 })
   res.json(notes)
 })
 
@@ -21,25 +21,18 @@ notesRouter.get("/:id", async (req, res) => {
 notesRouter.post("/", async (req, res) => {
   const { content, important, userId } = req.body
 
-  // if (!content) {
-  //   return res.status(400).json({
-  //     error: "content missing",
-  //   })
-  // }
-
-  const user = await User.findById(userId)
+  const person = await User.findById(userId)
 
   const note = {
     content,
     important: important || false,
-    date: new Date(),
-    user: userId,
+    user: person._id,
   }
 
   const message = new Note(note)
   const savedNote = await message.save()
-  user.notes = user.notes.concat(savedNote._id)
-  await user.save()
+  person.notes = person.notes.concat(savedNote._id)
+  await person.save()
   // console.log(savedNote)
   res.status(201).json(savedNote)
 })
