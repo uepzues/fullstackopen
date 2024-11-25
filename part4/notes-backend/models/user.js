@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
       ref: "Note",
     },
   ],
+  id: String,
 })
 
 userSchema.set("toJSON", {
