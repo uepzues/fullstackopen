@@ -7,6 +7,7 @@ const cors = require("cors")
 const middleware = require("./utils/middleware")
 const userRouter = require("./controllers/users")
 const notesRouter = require("./controllers/note")
+const loginRouter = require("./controllers/login")
 const mongoose = require("mongoose")
 
 const url = config.MONGODB_URI
@@ -27,6 +28,8 @@ app.use(express.static("dist"))
 app.use(express.json())
 
 app.use(middleware.requestLogger)
+
+app.use("/api/login", loginRouter)
 
 app.use("/api/users", userRouter)
 
