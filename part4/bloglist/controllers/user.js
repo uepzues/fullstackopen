@@ -8,27 +8,29 @@ userRouter.get("/", async (req, res) => {
 })
 
 userRouter.post("/", async (req, res) => {
-  try {
-    const { username, name, password } = req.body
+  const { username, name, password } = req.body
 
-    const saltRounds = 10
-    const passwordHash = await bcrypt.hash(password, saltRounds)
-
-    const user = new User({
-      username,
-      name,
-      passwordHash,
-    })
-
-    const savedUser = await user.save()
-
-    res.status(201).json(savedUser)
-  } catch (error) {
-    console.error("error creating user", error)
-    res
-      .status(500)
-      .json({ error: "something went wrong while creating a user" })
+  if (!username || !password) {
+    return res.status(400).json({ error: "username and password needed" })
   }
+  if (username.length <= 3 || password.length <= 3) {
+    return res
+      .status(400)
+      .json({ error: "username and password must be more than 3 characters" })
+  }
+
+  const saltRounds = 10
+  const passwordHash = await bcrypt.hash(password, saltRounds)
+
+  const user = new User({
+    username,
+    name,
+    passwordHash,
+  })
+
+  const savedUser = await user.save()
+
+  res.status(201).json(savedUser)
 })
 
 module.exports = userRouter
