@@ -20,18 +20,10 @@ blogRouter.get("/:id", async (req, res) => {
   }
 })
 
-const getToken = (request) => {
-  const authorization = request.get("authorization")
-  if (authorization && authorization.startsWith("Bearer ")) {
-    return authorization.replace("Bearer ", "")
-  }
-  return null
-}
-
 blogRouter.post("/", async (req, res) => {
   const { title, author, url, likes } = req.body
 
-  const token = jwt.verify(getToken(req), process.env.SECRET)
+  const token = jwt.verify(req.token, process.env.SECRET)
 
   let decodedToken = new mongoose.Types.ObjectId(token.id)
 
@@ -39,7 +31,6 @@ blogRouter.post("/", async (req, res) => {
     return res.status(400).json({ error: "token invalid" })
   }
   const user = await User.findById(decodedToken)
-  console.log(user)
   const content = {
     title,
     author,
