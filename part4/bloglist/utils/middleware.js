@@ -10,12 +10,19 @@ const requestLogger = (req, res) => {
 
 const errorHandler = (err, req, res, next) => {
   // logger.error(err.message)
-
+  if (err.name === "CastError") {
+    return res
+      .status(400)
+      .json({ error: "malformatted id", message: err.message })
+  }
   if (err.name === "ValidationError") {
     return res.status(400).json({ error: err.message })
   }
   if (err.name === "MongoServerError" && err.message.includes("E11000")) {
     return res.status(400).json({ error: "expected username to be unique" })
+  }
+  if (err.name === "JsonWebtokenError") {
+    return res.status(401).json({ error: "token invalid" })
   }
   next(err)
 }
