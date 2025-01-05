@@ -1,6 +1,8 @@
 const blogRouter = require("express").Router()
 const Blog = require("../models/blogModel")
 const User = require("../models/userModel")
+const jwt = require("jsonwebtoken")
+const mongoose = require("mongoose")
 
 blogRouter.get("/", async (req, res) => {
   const result = await Blog.find({}).populate("user", { username: 1, name: 1 })
@@ -18,10 +20,26 @@ blogRouter.get("/:id", async (req, res) => {
   }
 })
 
-blogRouter.post("/", async (req, res) => {
-  const { title, author, url, likes, userId } = req.body
+const getToken = (request) => {
+  const authorization = request.get("authorization")
+  if (authorization && authorization.startsWith("Bearer ")) {
+    return authorization.replace("Bearer ", "")
+  }
+  return null
+}
 
-  const user = await User.findById(userId)
+blogRouter.post("/", async (req, res) => {
+  const { title, author, url, likes } = req.body
+
+  const token = jwt.verify(getToken(req), process.env.SECRET)
+
+  let decodedToken = new mongoose.Types.ObjectId(token.id)
+
+  if (!decodedToken.id) {
+    return res.status(400).json({ error: "token invalid" })
+  }
+  const user = await User.findById(decodedToken)
+  console.log(user)
   const content = {
     title,
     author,
@@ -42,7 +60,6 @@ blogRouter.post("/", async (req, res) => {
   const result = blog.save()
   // add blog id to user
   user.blogs = user.blogs.concat(blog._id)
-  console.log(user.blogs)
   await user.save()
   return res.status(201).json(result)
 })
