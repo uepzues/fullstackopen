@@ -23,20 +23,22 @@ blogRouter.get("/:id", async (req, res) => {
 blogRouter.post("/", async (req, res) => {
   const { title, author, url, likes } = req.body
 
-  const token = jwt.verify(req.token, process.env.SECRET)
+  // console.log(req.user)
+  // const token = jwt.verify(req.token, process.env.SECRET)
 
-  let decodedToken = new mongoose.Types.ObjectId(token.id)
+  // let decodedToken = new mongoose.Types.ObjectId(token.id)
 
-  if (!decodedToken.id) {
-    return res.status(400).json({ error: "token invalid" })
-  }
-  const user = await User.findById(decodedToken)
+  // if (!decodedToken.id) {
+  //   return res.status(400).json({ error: "token invalid" })
+  // }
+  // console.log(req.token);
+  // const user = await User.findById(req.token)
   const content = {
     title,
     author,
     url,
     likes: likes || 0,
-    user: user._id,
+    user: req.user._id,
   }
 
   const blog = new Blog(content)
@@ -50,8 +52,8 @@ blogRouter.post("/", async (req, res) => {
 
   const result = blog.save()
   // add blog id to user
-  user.blogs = user.blogs.concat(blog._id)
-  await user.save()
+  req.user.blogs = req.user.blogs.concat(blog._id)
+  await req.user.save()
   return res.status(201).json(result)
 })
 
