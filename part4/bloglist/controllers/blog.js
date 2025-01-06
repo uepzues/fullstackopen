@@ -1,7 +1,5 @@
 const blogRouter = require("express").Router()
 const Blog = require("../models/blogModel")
-const User = require("../models/userModel")
-const jwt = require("jsonwebtoken")
 const mongoose = require("mongoose")
 
 blogRouter.get("/", async (req, res) => {
@@ -11,8 +9,10 @@ blogRouter.get("/", async (req, res) => {
 
 blogRouter.get("/:id", async (req, res) => {
   const id = req.params.id
-  const result = await Blog.findById(id)
 
+  let result = new mongoose.Types.ObjectId(id)
+
+  result = await Blog.findById(result)
   if (result) {
     res.status(200).json(result)
   } else {
@@ -23,16 +23,6 @@ blogRouter.get("/:id", async (req, res) => {
 blogRouter.post("/", async (req, res) => {
   const { title, author, url, likes } = req.body
 
-  // console.log(req.user)
-  // const token = jwt.verify(req.token, process.env.SECRET)
-
-  // let decodedToken = new mongoose.Types.ObjectId(token.id)
-
-  // if (!decodedToken.id) {
-  //   return res.status(400).json({ error: "token invalid" })
-  // }
-  // console.log(req.token);
-  // const user = await User.findById(req.token)
   const content = {
     title,
     author,
@@ -73,7 +63,6 @@ blogRouter.put("/:id", async (req, res) => {
     overwrite: true,
     context: "query",
   })
-  // logger.info("inside put", updatedBlog)
 
   if (!updatedBlog) {
     return res.status(400).send({ error: "blog not found" })
@@ -83,14 +72,27 @@ blogRouter.put("/:id", async (req, res) => {
 })
 
 blogRouter.delete("/:id", async (req, res) => {
-  const id = req.params.id
-  const result = await Blog.findByIdAndDelete(id)
+  const blogId = req.params.id
+  const user = req.user
 
-  if (!result) {
-    return res.status(400).send({ error: "blog not found" })
+  if (!user) {
+    return res.status(401).json({ error: "unauthorized missing/invalid token" })
   }
-  console.log("deleted post with id", id)
-  res.status(204).end()
+
+  const blog = await Blog.findById(blogId)
+
+  if (blogId.toString() === blog._id.toString()) {
+    console.log("id match")
+
+    await Blog.findByIdAndDelete(blogId)
+
+    console.log("deleted post with id", blogId)
+    return res
+      .status(204)
+      .end()
+  } else {
+    return res.status(500).json({ error: "error deleting blog" })
+  }
 })
 
 module.exports = blogRouter
