@@ -32,7 +32,7 @@ const errorHandler = (err, req, res, next) => {
 
 const tokenExtractor = (req, res, next) => {
   const authorization = req.get("authorization")
-  logger.info(authorization)
+
   if (authorization && authorization.startsWith("Bearer ")) {
     req.token = authorization.replace("Bearer ", "")
     return next()
@@ -42,25 +42,21 @@ const tokenExtractor = (req, res, next) => {
 }
 
 const userExtractor = async (req, res, next) => {
-  try {
-    if (!req.token) {
-      req.user = null
+  if (!req.token) {
+    req.user = null
+    return next()
+  } else {
+    let token = jwt.verify(req.token, process.env.SECRET)
+
+    token = new mongoose.Types.ObjectId(token.id)
+
+    if (token.id) {
+      req.user = await User.findById(token)
       return next()
     } else {
-      let token = jwt.verify(req.token, process.env.SECRET)
-
-      token = new mongoose.Types.ObjectId(token.id)
-
-      if (token.id) {
-        req.user = await User.findById(token)
-        return next()
-      } else {
-        req.user = null
-        return next()
-      }
+      req.user = null
+      return next()
     }
-  } catch (err) {
-    next(err)
   }
 }
 
