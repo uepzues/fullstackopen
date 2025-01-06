@@ -1,4 +1,7 @@
 const logger = require("./logger")
+const jwt = require("jsonwebtoken")
+const User = require("../models/userModel")
+const mongoose = require("mongoose")
 
 const requestLogger = (req, res) => {
   // const logger = require("./logger")
@@ -37,6 +40,30 @@ const tokenExtractor = (req, res, next) => {
   req.token = null
   return next()
 }
+
+const userExtractor = async (req, res, next) => {
+  try {
+    if (!req.token) {
+      req.user = null
+      return next()
+    } else {
+      let token = jwt.verify(req.token, process.env.SECRET)
+
+      token = new mongoose.Types.ObjectId(token.id)
+
+      if (token.id) {
+        req.user = await User.findById(token)
+        return next()
+      } else {
+        req.user = null
+        return next()
+      }
+    }
+  } catch (err) {
+    next(err)
+  }
+}
+
 const unknownEndpoint = (req, res) => {
   res.status(404).send({ error: "unknown endpoint" })
 }
@@ -46,4 +73,5 @@ module.exports = {
   errorHandler,
   unknownEndpoint,
   tokenExtractor,
+  userExtractor,
 }
