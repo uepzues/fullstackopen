@@ -37,7 +37,7 @@ const tokenExtractor = (req, res, next) => {
   if (authorization && authorization.startsWith("Bearer ")) {
     req.token = authorization.replace("Bearer ", "")
 
-    logger.info(req.token)
+    // logger.info("tokeExtractor", req.token)
     return next()
   }
   req.token = null
@@ -51,10 +51,12 @@ const userExtractor = async (req, res, next) => {
   } else {
     let token = jwt.verify(req.token, process.env.SECRET)
 
-    token = new mongoose.Types.ObjectId(token.id)
+    const tokenId = new mongoose.Types.ObjectId(token.id)
+    // logger.info("midware token", token)
+    if (tokenId) {
+      req.user = await User.findById(tokenId)
 
-    if (token.id) {
-      req.user = await User.findById(token)
+      // console.log("userExtractor", tokenId)
       return next()
     } else {
       req.user = null
