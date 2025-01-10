@@ -3,12 +3,13 @@ const jwt = require("jsonwebtoken")
 const User = require("../models/userModel")
 const mongoose = require("mongoose")
 
-const requestLogger = (req, res) => {
+const requestLogger = (req, res, next) => {
   // const logger = require("./logger")
   console.log("Method", req.method)
   console.log("Path", req.path)
   // console.log("Body", req.body)
   console.log("---")
+  next()
 }
 
 const errorHandler = (err, req, res, next) => {
@@ -35,6 +36,8 @@ const tokenExtractor = (req, res, next) => {
 
   if (authorization && authorization.startsWith("Bearer ")) {
     req.token = authorization.replace("Bearer ", "")
+
+    logger.info(req.token)
     return next()
   }
   req.token = null
