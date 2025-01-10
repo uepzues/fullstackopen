@@ -2,11 +2,6 @@ const User = require("../models/userModel")
 
 const userList = [
   {
-    username: "kims",
-    name: "Krimier Sanz",
-    password: "welcome",
-  },
-  {
     username: "dave",
     name: "David Pollow",
     password: "california",
