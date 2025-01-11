@@ -1,4 +1,4 @@
-const { describe, beforeEach, test, after } = require("node:test")
+const { describe, beforeEach, before, test, after } = require("node:test")
 const assert = require("node:assert")
 const User = require("../models/userModel")
 const Blog = require("../models/blogModel")
@@ -13,56 +13,57 @@ const logger = require("../utils/logger")
 const api = supertest(app)
 
 describe("4.23", () => {
-  beforeEach(async () => {
-    await User.deleteMany({})
-    await Blog.deleteMany({})
+  let token //save token here
+  beforeEach("token", async () => {
+    await User.deleteMany()
+    await Blog.deleteMany()
 
-    const password = "password"
+    //create user
     const saltRounds = 10
+    const password = "password"
+
     const passwordHash = await bcrypt.hash(password, saltRounds)
 
-    const user = new User({
+    const blogUser = {
       username: "kims",
       name: "Krimier",
       blogs: [],
       passwordHash,
-    })
+    }
 
-    await user.save()
+    await blogUser.save()
 
-    const blogList = blogHelper.blogList.map((blog) => {
-      return new Blog({
+    const blogUsers = await User.find({})
+    const blogUser1 = blogUsers[0]
+
+    // create blogs
+    const blogPosts = blogHelper.blogList.forEach((blog) => {
+      new Blog({
         title: blog.title,
         author: blog.author,
         url: blog.url,
         likes: blog.likes || 0,
-        user: user._id,
+        user: blogUser1._id,
       })
     })
 
-    for (let blog of blogList) {
+    for (let blog of blogPosts) {
       await blog.save()
-      user.blogs.push(blog._id)
+      blogUser.blogs = blog.push(blog._id)
+      await blogUser.save()
     }
-    logger.info("INSIDE BEach")
-    await user.save()
   })
 
-  describe("test", () => {
-    test("recieves a token", async () => {
-      const res = await api
-        .post("/")
-        .send({
-          username: "kims",
-          password: "password",
-        })
+  describe("test for token", () => {
+    test("token exists", async () => {
+      const req = await api
+        .post("/api/login")
+        .send({ username: "kims", password: "password" })
         .expect(200)
         .expect("Content-Type", /application\/json/)
 
-      const token = res.body.token
-      console.log("INSIDE TEST")
-      // assert(token, "should be defined")
-      assert.strictEqual(token.includes("Bearer"), true)
+      // console.log("Token", req.body)
+      assert(req.body.token, "token recieved")
     })
   })
 })
