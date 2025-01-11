@@ -61,9 +61,35 @@ describe("4.23", () => {
         .send({ username: "kims", password: "password" })
         .expect(200)
         .expect("Content-Type", /application\/json/)
-
-      // console.log("Token", req.body)
+      token = req.body.token
+      console.log("Token", req.body)
       assert(req.body.token, "token recieved")
+    })
+
+    test("adding post with token succeeds", async () => {
+
+      // const tokenReq = await api
+      //   .post("/api/login")
+      //   .send({ username: "kims", password: "password" })
+      //   .expect(200)
+      //   .expect("Content-Type", /application\/json/)
+
+console.log("asdfasdf", token);
+      const req = await api
+        .post("/api/blogs")
+        .set("Authorization", `Bearer ${token.toString()}`)
+        .send({
+          title: "This is a test title",
+          author: "testauthor",
+          url: "testurl",
+          likes: 12,
+        })
+        .expect(201)
+        .expect("Content-Type", /application\/json/)
+
+
+        console.log("test for post token", req.body);
+      assert(req.body)
     })
   })
 })
