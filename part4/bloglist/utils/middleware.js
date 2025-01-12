@@ -37,22 +37,22 @@ const errorHandler = (err, req, res, next) => {
 const tokenExtractor = (req, res, next) => {
   const authorization = req.get("authorization")
 
-  console.log("tokenExtractor check", req.body)
+  // console.log("tokenExtractor check", req.body)
 
   if (authorization && authorization.startsWith("Bearer")) {
     req.token = authorization.replace("Bearer ", "")
 
-    console.log("tokenExtractor: there is a authorization header")
+    // console.log("tokenExtractor: there is a authorization header")
   } else if (!authorization) {
     req.token = null
-    console.log("token null")
+    // console.log("token null")
   }
   next()
 }
 
 const userExtractor = async (req, res, next) => {
   if (!req.token) {
-    console.log("userExtractor: no token")
+    // console.log("userExtractor: no token")
 
     req.user = null
     return next()
@@ -62,13 +62,13 @@ const userExtractor = async (req, res, next) => {
     const tokenId = new mongoose.Types.ObjectId(token.id)
     // logger.info("midware token", token)
     if (tokenId) {
-      console.log("userExtractor", tokenId)
+      // console.log("userExtractor", tokenId)
 
       req.user = await User.findById(tokenId)
 
       return next()
     } else {
-      console.log("userExtractor no token")
+      // console.log("userExtractor no token")
 
       req.user = null
       return next()
