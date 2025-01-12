@@ -129,12 +129,17 @@ describe("4.23", () => {
 
     const user = await User.findOne({ username: "kims" })
 
-    const blog = await Blog.findOne({ user: user._id })
+    const blog0 = await Blog.findOne({ user: user._id })
+
+    // console.log("blog", blog0)
 
     await api
-      .delete(`/api/blogs/${blog._id}`)
+      .delete(`/api/blogs/${blog0._id}`)
       .set("Authorization", `Bearer ${token}`)
       .expect(204)
+
+    const blogs = await blogHelper.blogListInDb()
+    assert.strictEqual(blogs.length, blogHelper.blogList.length - 1)
   })
 
   test("update a blog", async () => {
