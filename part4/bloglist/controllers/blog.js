@@ -88,11 +88,11 @@ blogRouter.delete("/:id", async (req, res) => {
   const blog = await Blog.findById(blogId)
 
   if (blogId.toString() === blog._id.toString()) {
-    console.log("id match")
+    // console.log("id match")
 
     await Blog.findByIdAndDelete(blogId)
 
-    console.log("deleted post with id", blogId)
+    // console.log("deleted post with id", blogId)
     return res.status(204).end()
   } else {
     return res.status(500).json({ error: "error deleting blog" })
