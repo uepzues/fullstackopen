@@ -13,84 +13,75 @@ const logger = require("../utils/logger")
 const api = supertest(app)
 
 describe("4.23", () => {
-  let token //save token here
-  beforeEach("token", async () => {
-    await User.deleteMany()
-    await Blog.deleteMany()
+  beforeEach(async () => {
+    await User.deleteMany({})
+    await Blog.deleteMany({})
 
-    //create user
+    //create a user
     const saltRounds = 10
     const password = "password"
 
     const passwordHash = await bcrypt.hash(password, saltRounds)
 
-    const blogUser = {
+    const user = new User({
       username: "kims",
       name: "Krimier",
       blogs: [],
       passwordHash,
-    }
-
-    await blogUser.save()
-
-    const blogUsers = await User.find({})
-    const blogUser1 = blogUsers[0]
-
-    // create blogs
-    const blogPosts = blogHelper.blogList.forEach((blog) => {
-      new Blog({
-        title: blog.title,
-        author: blog.author,
-        url: blog.url,
-        likes: blog.likes || 0,
-        user: blogUser1._id,
-      })
     })
 
-    for (let blog of blogPosts) {
-      await blog.save()
-      blogUser.blogs = blog.push(blog._id)
-      await blogUser.save()
-    }
+    await user.save()
+
+    //create a blogs
+    const blogObjects = blogHelper.blogList.map(
+      (blog) =>
+        new Blog({
+          title: blog.title,
+          author: blog.author,
+          url: blog.url,
+          likes: blog.likes || 0,
+          user: user._id,
+        })
+    )
+
+    blogObjects.map(async (blog) => {
+      const savedBlog = await blog.save()
+      user.blogs = user.blogs.concat(savedBlog._id)
+    })
+    await user.save()
+
+    // await Promise.all(promiseArray)
   })
 
-  describe("test for token", () => {
-    test("token exists", async () => {
-      const req = await api
-        .post("/api/login")
-        .send({ username: "kims", password: "password" })
-        .expect(200)
-        .expect("Content-Type", /application\/json/)
-      token = req.body.token
-      console.log("Token", req.body)
-      assert(req.body.token, "token recieved")
-    })
+  test("blogs are returned as json", async () => {
+    await api
+      .get("/api/blogs")
+      .expect(200)
+      .expect("Content-Type", /application\/json/)
+  })
 
-    test("adding post with token succeeds", async () => {
+  test("test for token", async () => {
+    const newUser = {
+      username: "kims",
+      password: "password",
+    }
 
-      // const tokenReq = await api
-      //   .post("/api/login")
-      //   .send({ username: "kims", password: "password" })
-      //   .expect(200)
-      //   .expect("Content-Type", /application\/json/)
+    const res = await api.post("/api/login").send(newUser).expect(200)
 
-console.log("asdfasdf", token);
-      const req = await api
-        .post("/api/blogs")
-        .set("Authorization", `Bearer ${token.toString()}`)
-        .send({
-          title: "This is a test title",
-          author: "testauthor",
-          url: "testurl",
-          likes: 12,
-        })
-        .expect(201)
-        .expect("Content-Type", /application\/json/)
+    const token = res.body.token
 
+    const newBlog = {
+      title: "The best blog",
+      author: "author",
+      url: "url",
+      likes: 0,
+    }
 
-        console.log("test for post token", req.body);
-      assert(req.body)
-    })
+    await api
+      .post("/api/blogs")
+      .set("Authorization", `Bearer ${token}`)
+      .send(newBlog)
+      .expect(201)
   })
 })
 
@@ -191,5 +182,5 @@ console.log("asdfasdf", token);
 // })
 
 after(async () => {
-  await mongoose.connection.close()
+  await mongoose.disconnect()
 })

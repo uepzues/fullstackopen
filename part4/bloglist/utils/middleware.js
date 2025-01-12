@@ -28,37 +28,48 @@ const errorHandler = (err, req, res, next) => {
   if (err.name === "JsonWebtokenError") {
     return res.status(401).json({ error: "token invalid" })
   }
+  // if (err) {
+  //   return res.status(400).json({ error: err.message })
+  // }
   next(err)
 }
 
 const tokenExtractor = (req, res, next) => {
   const authorization = req.get("authorization")
 
-  if (authorization && authorization.startsWith("Bearer ")) {
+  console.log("tokenExtractor check", req.body)
+
+  if (authorization && authorization.startsWith("Bearer")) {
     req.token = authorization.replace("Bearer ", "")
 
-    // logger.info("tokeExtractor", req.token)
-    return next()
+    console.log("tokenExtractor: there is a authorization header")
+  } else if (!authorization) {
+    req.token = null
+    console.log("token null")
   }
-  req.token = null
-  return next()
+  next()
 }
 
 const userExtractor = async (req, res, next) => {
   if (!req.token) {
+    console.log("userExtractor: no token")
+
     req.user = null
     return next()
   } else {
-    let token = jwt.verify(req.token, process.env.SECRET)
+    const token = jwt.verify(req.token, process.env.SECRET)
 
     const tokenId = new mongoose.Types.ObjectId(token.id)
     // logger.info("midware token", token)
     if (tokenId) {
+      console.log("userExtractor", tokenId)
+
       req.user = await User.findById(tokenId)
 
-      // console.log("userExtractor", tokenId)
       return next()
     } else {
+      console.log("userExtractor no token")
+
       req.user = null
       return next()
     }
