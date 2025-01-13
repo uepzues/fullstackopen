@@ -1,7 +1,6 @@
 const blogRouter = require("express").Router()
 const Blog = require("../models/blogModel")
 const mongoose = require("mongoose")
-const logger = require("../utils/logger")
 
 blogRouter.get("/", async (req, res) => {
   const result = await Blog.find({}).populate("user", { username: 1, name: 1 })
@@ -17,7 +16,7 @@ blogRouter.get("/:id", async (req, res) => {
   if (result) {
     res.status(200).json(result)
   } else {
-    res.status(404).send({ error: "blog not found" })
+    res.status(404).json({ error: "blog not found" })
   }
 })
 
@@ -35,15 +34,15 @@ blogRouter.post("/", async (req, res) => {
 
   const blog = new Blog(content)
   if (!title) {
-    return res.status(400).send({ error: "Title required" })
+    return res.status(400).json({ error: "Title required" })
   }
 
   if (!url) {
-    return res.status(400).send({ error: "URL required" })
+    return res.status(400).json({ error: "URL required" })
   }
 
   if (!req.user) {
-    return res.status(400).send({ error: "user missing" })
+    return res.status(400).json({ error: "user missing" })
   }
 
   const result = blog.save()
@@ -71,7 +70,7 @@ blogRouter.put("/:id", async (req, res) => {
   })
 
   if (!updatedBlog) {
-    return res.status(400).send({ error: "blog not found" })
+    return res.status(400).json({ error: "blog not found" })
   }
 
   return res.status(200).json(updatedBlog)
