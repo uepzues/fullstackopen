@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "build:ui": "rm -rf build && cd ../notes2 && npm run build && cp -r build ../notes-backend",
+    "build:ui": "rm -rf dist && cd ../notes2 && npm run build && cp -r dist ../notes-backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
     "start": "cross-env NODE_ENV=production  node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
