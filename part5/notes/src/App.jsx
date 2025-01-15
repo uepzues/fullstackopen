@@ -44,15 +44,24 @@ export default function App() {
 
   const addNote = (e) => {
     e.preventDefault()
+
     const noteObject = {
       content: newNote,
       important: Math.random() < 0.5,
     }
 
-    noteService.create(noteObject).then((returnedNote) => {
-      setNotes(notes.concat(returnedNote))
-      setNewNote("")
-    })
+    noteService
+      .create(noteObject)
+      .then((returnedNote) => {
+        setNotes(notes.concat(returnedNote))
+        setNewNote("")
+      })
+      .catch((error) => {
+        setErrorMessage(error)
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 5000)
+      })
   }
 
   const deleteNote = (id) => {
@@ -85,6 +94,9 @@ export default function App() {
         password,
       })
 
+      console.log("user", user)
+
+      noteService.setToken(user.token)
       setUser(user)
       setUsername("")
       setPassword("")
@@ -141,11 +153,6 @@ export default function App() {
         </div>
       )}
 
-      <div>
-        <button onClick={() => setShowAll(!showAll)}>
-          show{showAll ? " important" : " all"}
-        </button>
-      </div>
       <ul>
         {notesToShow.map((note) => (
           <Note
