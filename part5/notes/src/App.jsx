@@ -21,6 +21,15 @@ export default function App() {
     })
   }, [])
 
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser")
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+      noteService.setToken(user.token)
+    }
+  }, [])
+
   const toggleImportanceOf = (id) => {
     const note = notes.find((n) => n.id === id)
     const changedNote = { content: note.content, important: !note.important }
@@ -94,7 +103,9 @@ export default function App() {
         password,
       })
 
-      console.log("user", user)
+      window.localStorage.setItem("loggedNoteappUser", JSON.stringify(user))
+
+      // console.log("user", user)
 
       noteService.setToken(user.token)
       setUser(user)
@@ -133,10 +144,20 @@ export default function App() {
   )
 
   const noteForm = () => (
-    <form onSubmit={addNote}>
-      <input value={newNote} onChange={handleNoteChange} />
-      <button type="submit">save</button>
-    </form>
+    <div>
+      <form onSubmit={addNote}>
+        <input value={newNote} onChange={handleNoteChange} />
+        <button type="submit">save</button>
+      </form>
+      <button
+        onClick={() => {
+          window.localStorage.removeItem("loggedNoteappUser")
+          setUser(null)
+        }}
+      >
+        logout
+      </button>
+    </div>
   )
 
   return (
@@ -148,7 +169,8 @@ export default function App() {
         loginForm()
       ) : (
         <div>
-          <p>{user.name} logged-in</p>
+          {/* {console.log(user)} */}
+          <p>{user.username} logged-in</p>
           {noteForm()}
         </div>
       )}
@@ -163,10 +185,10 @@ export default function App() {
           />
         ))}
       </ul>
-      <form onSubmit={addNote}>
+      {/* <form onSubmit={addNote}>
         <input type="text" value={newNote} onChange={handleNoteChange} />
         <button type="submit">save</button>
-      </form>
+      </form> */}
       <Footer />
     </div>
   )
