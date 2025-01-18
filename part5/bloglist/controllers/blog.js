@@ -30,8 +30,8 @@ blogRouter.post("/", async (req, res) => {
     return res.status(400).json({ error: "Title required" })
   }
 
-  if (!url) {
-    return res.status(400).json({ error: "URL required" })
+  if (!author) {
+    return res.status(400).json({ error: "Author required" })
   }
 
   const content = {
@@ -45,7 +45,7 @@ blogRouter.post("/", async (req, res) => {
 
   const blog = new Blog(content)
 
-  const result = blog.save()
+  const result = await blog.save()
   // add blog id to user
   req.user.blogs.concat(blog._id)
   await req.user.save()
