@@ -27,6 +27,12 @@ app.use(middleware.userExtractor)
 app.use("/api/login", loginRouter)
 app.use("/api/blogs", blogRouter)
 app.use("/api/users", userRouter)
+
+// Add this route to handle the root endpoint
+app.get("/", (req, res) => {
+  res.send("Welcome to the Blog API")
+})
+
 app.use(middleware.requestLogger)
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
