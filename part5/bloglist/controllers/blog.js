@@ -21,18 +21,11 @@ blogRouter.get("/:id", async (req, res) => {
 })
 
 blogRouter.post("/", async (req, res) => {
+  if (!req.user) {
+    return res.status(400).json({ error: "user missing" })
+  }
   const { title, author, url, likes } = req.body
 
-  const content = {
-    title,
-    author,
-    url,
-    likes: likes || 0,
-    user: req.user._id,
-  }
-  // console.log(req)
-
-  const blog = new Blog(content)
   if (!title) {
     return res.status(400).json({ error: "Title required" })
   }
@@ -41,9 +34,16 @@ blogRouter.post("/", async (req, res) => {
     return res.status(400).json({ error: "URL required" })
   }
 
-  if (!req.user) {
-    return res.status(400).json({ error: "user missing" })
+  const content = {
+    title,
+    author,
+    url,
+    likes: likes || 0,
+    user: req.user._id,
   }
+  console.log(req.user)
+
+  const blog = new Blog(content)
 
   const result = blog.save()
   // add blog id to user
