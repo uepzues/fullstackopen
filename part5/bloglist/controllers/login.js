@@ -12,7 +12,7 @@ loginRouter.post("/", async (req, res) => {
     user === null ? false : await bcrypt.compare(password, user.passwordHash)
 
   if (!(user && passwordCheck)) {
-    console.log("from loginrouter ")
+    console.log("from loginrouter cred failed")
     return res.status(401).json({ error: "invalid username or password" })
   }
 
