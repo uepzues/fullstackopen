@@ -16,7 +16,7 @@ const getBlogs = () => {
     throw new Error("Authorization token is missing. Please log in.")
   }
   return axios
-    .get(baseUrl, getConfig())
+    .get(baseUrl, { headers: { Authorization: token } })
     .then((res) => {
       console.log("Axios Response", res.data)
       return res.data
@@ -35,6 +35,9 @@ const createBlog = (blog) => {
     })
     .catch((err) => {
       console.log("Error", err)
+      throw new Error(
+        err.response?.data?.error || "Failed to create blog."
+      )
     })
 }
 
