@@ -8,6 +8,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [blogs, setBlogs] = useState([])
   const [notif, setNotif] = useState(null)
+  const [errNotif, setErrNotif] = useState(null)
   const [newBlog, setNewBlog] = useState({
     title: "",
     author: "",
@@ -65,21 +66,22 @@ function App() {
             })
             .catch((err) => {
               console.log("Error", err)
+              throw new Error({ Error: err })
             })
         }
       })
       .catch((err) => {
         console.log("ERROR", err.message)
-        setNotif("Wrong Credentials")
+        setErrNotif("Wrong Credentials")
         setTimeout(() => {
-          setNotif(null)
+          setErrNotif(null)
         }, 5000)
       })
   }
 
   const handleCreate = (e) => {
     e.preventDefault()
-    console.log("Create")
+    // console.log("Create")
 
     const blogObject = {
       title: newBlog.title,
@@ -92,23 +94,29 @@ function App() {
       .createBlog(blogObject)
       .then((blog) => {
         if (!blog.title || !blog.author) {
-          setNotif(blog.error)
+          console.log("create blog", blog)
+          setErrNotif("set notif error ", blog.error)
+          setTimeout(() => {
+            setErrNotif(null)
+          }, 5000)
           setBlogRefresh(!blogRefresh)
+          return
+        } else {
+          console.log("handle create Blog", blog)
+          setBlogs((prev) => [...prev, blog])
+          setNotif(`New Blog ${blog.title} by ${blog.author} created`)
           setTimeout(() => {
             setNotif(null)
           }, 5000)
-          return
+          setNewBlog({ title: "", author: "", url: "", user: "" })
+          setBlogRefresh(!blogRefresh)
         }
-        console.log("handle create Blog", blog)
-        setBlogs((prev) => [...prev, blog])
-        setNewBlog({ title: "", author: "", url: "", user: "" })
-        setBlogRefresh(!blogRefresh)
       })
       .catch((err) => {
         console.log("handle create error", err.message)
-        setNotif("Error creating blog")
+        setErrNotif("Title or Author must not be empty")
         setTimeout(() => {
-          setNotif(null)
+          setErrNotif(null)
         }, 5000)
       })
   }
@@ -198,10 +206,11 @@ function App() {
   )
 
   return (
-    <>
-      <div className="notif">{notif}</div>
+    <div className="main">
+      {errNotif && <div className="errNotif">{errNotif}</div>}
+      {notif && <div className="notif">{notif}</div>}
       <div>{user === null ? loginSection() : blogSection()}</div>
-    </>
+    </div>
   )
 }
 
