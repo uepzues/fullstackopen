@@ -23,7 +23,7 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  /* margin: 0; */
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -34,10 +34,7 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-label {
-  display: block;
-  margin: 1em 0;
-}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -68,4 +65,27 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+label {
+  display: block;
+  margin: 1em 0;
+}
+
+#root {
+  margin: auto;
+}
+
+.errNotif{
+  padding: 1rem 2rem;
+  border: 3px solid firebrick ;
+  border-radius: 20px;
+  color: firebrick;
+}
+
+.notif{
+  padding: 1rem 2rem;
+  border: 3px solid green ;
+  border-radius: 20px;
+  color: green;
 }
