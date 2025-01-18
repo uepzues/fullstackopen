@@ -7,17 +7,16 @@ const setToken = (newToken) => {
   token = `Bearer ${newToken}`
 }
 
+const getConfig = () => ({
+  headers: { Authorization: token },
+})
+
 const getBlogs = () => {
   if (!token) {
-    console.log("Token is null")
-    return
+    throw new Error("Authorization token is missing. Please log in.")
   }
-  const config = {
-    headers: { Authorization: token },
-  }
-
   return axios
-    .get(baseUrl, config)
+    .get(baseUrl, getConfig())
     .then((res) => {
       console.log("Axios Response", res.data)
       return res.data
@@ -27,4 +26,16 @@ const getBlogs = () => {
     })
 }
 
-export default { getBlogs, setToken }
+const createBlog = (blog) => {
+  return axios
+    .post(baseUrl, blog, getConfig())
+    .then((res) => {
+      console.log("Axios Response", res.data)
+      return res.data
+    })
+    .catch((err) => {
+      console.log("Error", err)
+    })
+}
+
+export default { getBlogs, setToken, createBlog }
