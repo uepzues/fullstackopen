@@ -8,6 +8,13 @@ function App() {
   const [user, setUser] = useState(null)
   const [blogs, setBlogs] = useState([])
   const [notif, setNotif] = useState(null)
+  const [newBlog, setNewBlog] = useState({
+    title: "",
+    author: "",
+    url: "",
+    user: "",
+  })
+  const [blogRefresh, setBlogRefresh] = useState(false)
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedBlogAppUser")
@@ -27,7 +34,7 @@ function App() {
           })
       }
     }
-  }, [])
+  }, [blogRefresh])
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -39,7 +46,7 @@ function App() {
         password,
       })
       .then((user) => {
-        console.log("user", user.name)
+        console.log("user", user)
         window.localStorage.setItem("loggedBlogAppUser", JSON.stringify(user))
         blogService.setToken(user.token)
         setUser(user)
@@ -64,6 +71,42 @@ function App() {
       .catch((err) => {
         console.log("ERROR", err.message)
         setNotif("Wrong Credentials")
+        setTimeout(() => {
+          setNotif(null)
+        }, 5000)
+      })
+  }
+
+  const handleCreate = (e) => {
+    e.preventDefault()
+    console.log("Create")
+
+    const blogObject = {
+      title: newBlog.title,
+      author: newBlog.author,
+      url: newBlog.url,
+      user: user._id,
+    }
+
+    blogService
+      .createBlog(blogObject)
+      .then((blog) => {
+        if (!blog.title || !blog.author) {
+          setNotif(blog.error)
+          setBlogRefresh(!blogRefresh)
+          setTimeout(() => {
+            setNotif(null)
+          }, 5000)
+          return
+        }
+        console.log("handle create Blog", blog)
+        setBlogs((prev) => [...prev, blog])
+        setNewBlog({ title: "", author: "", url: "", user: "" })
+        setBlogRefresh(!blogRefresh)
+      })
+      .catch((err) => {
+        console.log("handle create error", err.message)
+        setNotif("Error creating blog")
         setTimeout(() => {
           setNotif(null)
         }, 5000)
@@ -107,13 +150,47 @@ function App() {
       >
         Logout
       </button>
+
+      <h2>Create New</h2>
+      <form onSubmit={handleCreate}>
+        <label>
+          Title: &nbsp; &nbsp; &nbsp;
+          <input
+            type="text"
+            value={newBlog.title}
+            onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
+          />
+        </label>
+        <label>
+          Author: &nbsp;
+          <input
+            type="text"
+            value={newBlog.author}
+            onChange={(e) => setNewBlog({ ...newBlog, author: e.target.value })}
+          />
+        </label>
+        <label>
+          Url: &nbsp; &nbsp; &nbsp; &nbsp;
+          <input
+            type="text"
+            value={newBlog.url}
+            onChange={(e) => setNewBlog({ ...newBlog, url: e.target.value })}
+          />
+        </label>
+        <button>Create</button>
+      </form>
+
       <h2>Blogs</h2>
       <ul>
-        {!blogs.length ? (
+        {blogs.length === 0 ? (
           <li>No blogs</li>
         ) : (
           blogs.map((blog) => {
-            return <li key={blog.id}>{blog.title} by {blog.author}</li>
+            return (
+              <li key={blog._id}>
+                {blog.title} by {blog.author}
+              </li>
+            )
           })
         )}
       </ul>
