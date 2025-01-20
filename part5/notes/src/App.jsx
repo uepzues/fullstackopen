@@ -4,6 +4,9 @@ import noteService from "./services/notes"
 import Notification from "./components/Notification"
 import Footer from "./components/Footer"
 import loginUser from "./services/login"
+import LoginForm from "./components/LoginForm"
+import Togglable from "./components/Togglable"
+import NoteForm from "./components/NoteForm"
 
 export default function App() {
   const [notes, setNotes] = useState([])
@@ -13,6 +16,7 @@ export default function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [user, setUser] = useState(null)
+  const [loginVisible, setLoginVisible] = useState(false)
 
   useEffect(() => {
     noteService.getAll().then((initialNotes) => {
@@ -119,36 +123,25 @@ export default function App() {
     }
   }
 
-  const loginForm = () => (
-    <form onSubmit={handleLogin}>
-      <div>
-        username
-        <input
-          type="text"
-          value={username}
-          name="Username"
-          onChange={({ target }) => setUsername(target.value)}
+  const loginForm = () => {
+    return (
+      <Togglable buttonLabel="log in">
+        <LoginForm
+          username={username}
+          password={password}
+          handleUsernameChange={({ target }) => setUsername(target.value)}
+          handlePasswordChange={({ target }) => setPassword(target.value)}
+          handleSubmit={handleLogin}
         />
-      </div>
-      <div>
-        password
-        <input
-          type="password"
-          value={password}
-          name="Password"
-          onChange={({ target }) => setPassword(target.value)}
-        />
-      </div>
-      <button type="submit">login</button>
-    </form>
-  )
+      </Togglable>
+    )
+  }
 
   const noteForm = () => (
     <div>
-      <form onSubmit={addNote}>
-        <input value={newNote} onChange={handleNoteChange} />
-        <button type="submit">save</button>
-      </form>
+      <Togglable buttonLabel="new note">
+        <NoteForm />
+      </Togglable>
       <button
         onClick={() => {
           window.localStorage.removeItem("loggedNoteappUser")
@@ -169,12 +162,16 @@ export default function App() {
         loginForm()
       ) : (
         <div>
-          {/* {console.log(user)} */}
           <p>{user.username} logged-in</p>
           {noteForm()}
         </div>
       )}
 
+      {!showAll ? (
+        <button onClick={() => setShowAll(true)}>Show all</button>
+      ) : (
+        <button onClick={() => setShowAll(false)}>Show Important</button>
+      )}
       <ul>
         {notesToShow.map((note) => (
           <Note
