@@ -17,6 +17,15 @@ export default function App() {
     })
   }, [])
 
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser")
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+      noteService.setToken(user.token)
+    }
+  }, [])
+
   const toggleImportanceOf = (id) => {
     const note = notes.find((n) => n.id === id)
     const changedNote = { content: note.content, important: !note.important }
