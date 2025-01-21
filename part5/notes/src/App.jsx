@@ -10,13 +10,13 @@ import NoteForm from "./components/NoteForm"
 
 export default function App() {
   const [notes, setNotes] = useState([])
-  const [newNote, setNewNote] = useState("")
+  // const [newNote, setNewNote] = useState("")
   const [showAll, setShowAll] = useState(true)
   const [errorMessage, setErrorMessage] = useState(null)
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [user, setUser] = useState(null)
-  const [loginVisible, setLoginVisible] = useState(false)
+  // const [loginVisible, setLoginVisible] = useState(false)
 
   useEffect(() => {
     noteService.getAll().then((initialNotes) => {
@@ -55,21 +55,23 @@ export default function App() {
       })
   }
 
-  const addNote = (e) => {
-    e.preventDefault()
+  const addNote = (noteObject) => {
+    // e.preventDefault()
 
-    const noteObject = {
-      content: newNote,
-      important: Math.random() < 0.5,
-    }
+    // const noteObject = {
+    //   content: newNote,
+    //   important: Math.random() < 0.5,
+    // }
 
     noteService
       .create(noteObject)
       .then((returnedNote) => {
+        console.log("Note successfully created:", returnedNote)
         setNotes(notes.concat(returnedNote))
-        setNewNote("")
+        // setNewNote("")
       })
       .catch((error) => {
+        console.error("Error in note creation:", error)
         setErrorMessage(error)
         setTimeout(() => {
           setErrorMessage(null)
@@ -84,10 +86,10 @@ export default function App() {
     })
   }
 
-  const handleNoteChange = (e) => {
-    console.log(e.target.value)
-    setNewNote(e.target.value)
-  }
+  // const handleNoteChange = (e) => {
+  //   console.log(e.target.value)
+  //   setNewNote(e.target.value)
+  // }
 
   useEffect(() => {
     noteService.getAll().then((response) => {
@@ -139,9 +141,6 @@ export default function App() {
 
   const noteForm = () => (
     <div>
-      <Togglable buttonLabel="new note">
-        <NoteForm />
-      </Togglable>
       <button
         onClick={() => {
           window.localStorage.removeItem("loggedNoteappUser")
@@ -150,6 +149,9 @@ export default function App() {
       >
         logout
       </button>
+      <Togglable buttonLabel="new note">
+        <NoteForm createNote={addNote} />
+      </Togglable>
     </div>
   )
 
