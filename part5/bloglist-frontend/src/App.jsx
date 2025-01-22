@@ -4,6 +4,7 @@ import blogService from "../services/blogs"
 import LoginSection from "./components/LoginSection"
 import Togglable from "./components/Togglable"
 import BlogSection from "./components/BlogSection"
+import Blogs from "./components/Blogs"
 function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -118,7 +119,7 @@ function App() {
   const loginSection = () => (
     <div>
       <h2>Log in to application</h2>
-      <Togglable buttonLabel="Login" ref={visibleRef}>
+      <Togglable buttonLabel2="Cancel" buttonLabel1="Login" ref={visibleRef}>
         <LoginSection
           password={password}
           username={username}
@@ -142,29 +143,19 @@ function App() {
       >
         Logout
       </button>
-      <Togglable buttonLabel={"New Blog"} ref={visibleRef}>
+      <Togglable
+        buttonLabel2={"Cancel"}
+        buttonLabel1={"New Blog"}
+        ref={visibleRef}
+      >
         <BlogSection
-          // newBlog={newBlog}
-          // setNewBlog={setNewBlog}
           handleCreate={handleCreate}
           user={user}
         />
       </Togglable>
 
       <h2>Blogs</h2>
-      <ul>
-        {blogs.length === 0 ? (
-          <li>No blogs</li>
-        ) : (
-          blogs.map((blog) => {
-            return (
-              <li key={blog._id}>
-                {blog.title} by {blog.author}
-              </li>
-            )
-          })
-        )}
-      </ul>
+      <ul>{blogs.length === 0 ? <li>No blogs</li> : <Blogs blogs={blogs} />}</ul>
     </div>
   )
 
