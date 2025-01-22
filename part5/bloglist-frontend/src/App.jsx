@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import loginService from "../services/login"
 import blogService from "../services/blogs"
-
+import LoginSection from "./components/LoginSection"
+import Togglable from "./components/Togglable"
+import BlogSection from "./components/BlogSection"
 function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -16,6 +18,8 @@ function App() {
     user: "",
   })
   const [blogRefresh, setBlogRefresh] = useState(false)
+
+  const visibleRef = useRef()
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedBlogAppUser")
@@ -79,17 +83,7 @@ function App() {
       })
   }
 
-  const handleCreate = (e) => {
-    e.preventDefault()
-    // console.log("Create")
-
-    const blogObject = {
-      title: newBlog.title,
-      author: newBlog.author,
-      url: newBlog.url,
-      user: user._id,
-    }
-
+  const handleCreate = (blogObject) => {
     blogService
       .createBlog(blogObject)
       .then((blog) => {
@@ -122,28 +116,18 @@ function App() {
   }
 
   const loginSection = () => (
-    <form onSubmit={handleLogin}>
+    <div>
       <h2>Log in to application</h2>
-      <label>
-        username:
-        <input
-          type="text"
-          value={username}
-          placeholder="username"
-          onChange={(e) => setUsername(e.target.value)}
+      <Togglable buttonLabel="Login" ref={visibleRef}>
+        <LoginSection
+          password={password}
+          username={username}
+          setUsername={setUsername}
+          setPassword={setPassword}
+          onSubmit={handleLogin}
         />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <button>Login</button>
-    </form>
+      </Togglable>
+    </div>
   )
 
   const blogSection = () => (
@@ -158,35 +142,14 @@ function App() {
       >
         Logout
       </button>
-
-      <h2>Create New</h2>
-      <form onSubmit={handleCreate}>
-        <label>
-          Title: &nbsp; &nbsp; &nbsp;
-          <input
-            type="text"
-            value={newBlog.title}
-            onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
-          />
-        </label>
-        <label>
-          Author: &nbsp;
-          <input
-            type="text"
-            value={newBlog.author}
-            onChange={(e) => setNewBlog({ ...newBlog, author: e.target.value })}
-          />
-        </label>
-        <label>
-          Url: &nbsp; &nbsp; &nbsp; &nbsp;
-          <input
-            type="text"
-            value={newBlog.url}
-            onChange={(e) => setNewBlog({ ...newBlog, url: e.target.value })}
-          />
-        </label>
-        <button>Create</button>
-      </form>
+      <Togglable buttonLabel={"New Blog"} ref={visibleRef}>
+        <BlogSection
+          // newBlog={newBlog}
+          // setNewBlog={setNewBlog}
+          handleCreate={handleCreate}
+          user={user}
+        />
+      </Togglable>
 
       <h2>Blogs</h2>
       <ul>
