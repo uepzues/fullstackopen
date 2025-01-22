@@ -45,8 +45,6 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin-block: .2rem;
-
 }
 button:hover {
   border-color: #646cff;
@@ -78,16 +76,27 @@ label {
   margin: auto;
 }
 
-.errNotif{
+.errNotif {
   padding: 1rem 2rem;
-  border: 3px solid firebrick ;
+  border: 3px solid firebrick;
   border-radius: 20px;
   color: firebrick;
 }
 
-.notif{
+.notif {
   padding: 1rem 2rem;
-  border: 3px solid green ;
+  border: 3px solid green;
   border-radius: 20px;
   color: green;
+}
+
+.togButParent {
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+
+.toggleButton {
+  /* border: 3px solid red; */
+  margin: 0 auto;
 }
