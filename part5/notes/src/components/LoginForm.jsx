@@ -7,7 +7,7 @@ function LoginForm({
 }) {
   return (
     <div>
-      <h2>LoginForm</h2>
+      <h2>Log in</h2>
       <form onSubmit={handleSubmit}>
         <div>
           username
