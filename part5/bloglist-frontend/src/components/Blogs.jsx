@@ -17,7 +17,7 @@ function Blogs({ blogs }) {
 
   return (
     <>
-      {blogs.map((blog, index) => {
+      {blogs.map((blog) => {
         const isVisible = visibleBlogId === blog.id
         const showWhenVisible = { display: isVisible ? "" : "none" }
 
