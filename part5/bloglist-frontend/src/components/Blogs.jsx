@@ -1,5 +1,12 @@
-import Togglable from "./Togglable"
-function Blogs({ blogs, visibleRef }) {
+import { useState } from "react"
+
+function Blogs({ blogs }) {
+  const [visibleBlogId, setVisibleBlogId] = useState(null)
+
+  const toggleVisibility = (id) => {
+    setVisibleBlogId(visibleBlogId === id ? null : id)
+  }
+
   const blogStyle = {
     paddingTop: 10,
     paddingLeft: 2,
@@ -9,27 +16,32 @@ function Blogs({ blogs, visibleRef }) {
   }
 
   return (
-    <div>
-      {blogs.map((blog) => {
-        return (
-          <li key={blog._id}>
-            <span> {blog.title}</span>
+    <>
+      {blogs.map((blog, index) => {
+        const isVisible = visibleBlogId === blog.id
+        const showWhenVisible = { display: isVisible ? "" : "none" }
 
-            <Togglable
-              buttonLabel2="Hide"
-              buttonLabel1="Details"
-              ref={visibleRef}
+        return (
+          <li key={blog._id} style={blogStyle}>
+            <span>{blog.title}</span>
+            <button
+              onClick={() => {
+                console.log(blog.id)
+                return toggleVisibility(blog.id)
+              }}
             >
-              <div style={blogStyle}>
-                <p>Author:{blog.author}</p>
-                <p>Url: {blog.url}</p>
-                <p>Likes: {blog.likes}</p>
-              </div>
-            </Togglable>
+              {isVisible ? "Hide" : "Details"}
+            </button>
+
+            <div style={showWhenVisible}>
+              <p>Author: {blog.author}</p>
+              <p>Url: {blog.url}</p>
+              <p>Likes: {blog.likes}</p>
+            </div>
           </li>
         )
       })}
-    </div>
+    </>
   )
 }
 
