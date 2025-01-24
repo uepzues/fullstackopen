@@ -1,10 +1,10 @@
 import { useState } from "react"
 
-function Blogs({ blogs }) {
-  const [visibleBlogId, setVisibleBlogId] = useState(null)
+function Blogs({ blogs, handleLike }) {
+  const [blogId, setBlogId] = useState(null)
 
   const toggleVisibility = (id) => {
-    setVisibleBlogId(visibleBlogId === id ? null : id)
+    setBlogId(blogId === id ? null : id)
   }
 
   const blogStyle = {
@@ -18,12 +18,12 @@ function Blogs({ blogs }) {
   return (
     <>
       {blogs.map((blog) => {
-        const isVisible = visibleBlogId === blog.id
+        const isVisible = blogId === blog.id
         const showWhenVisible = { display: isVisible ? "" : "none" }
 
         return (
-          <li key={blog._id} style={blogStyle}>
-            <span>{blog.title}</span>
+          <li key={blog.id} style={blogStyle}>
+            <span>{blog.title}</span> by <span>{blog.author}</span>
             <button
               onClick={() => {
                 console.log(blog.id)
@@ -32,11 +32,15 @@ function Blogs({ blogs }) {
             >
               {isVisible ? "Hide" : "Details"}
             </button>
-
             <div style={showWhenVisible}>
-              <p>Author: {blog.author}</p>
               <p>Url: {blog.url}</p>
-              <p>Likes: {blog.likes}</p>
+              <p>
+                Likes: {blog.likes}{" "}
+                <span>
+                  <button onClick={() => handleLike(blog)}>Like</button>
+                </span>{" "}
+              </p>
+              <p>Added by: {blog.user.name}</p>
             </div>
           </li>
         )
