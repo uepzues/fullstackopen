@@ -116,16 +116,38 @@ function App() {
   }
 
   const handleLike = (blog) => {
-    console.log(blog)
+    // console.log(blog)
     blogService
       .updateBlog(blog.id, { ...blog, likes: blog.likes + 1 })
       .then((res) => {
-        console.log(res)
+        // console.log(res)
+        setNotif(`You liked ${blog.title}`)
+        setTimeout(() => {
+          setNotif(null)
+        }, 5000)
         setBlogRefresh(!blogRefresh)
       })
       .catch((err) => {
         console.log("Error", err)
       })
+  }
+
+  const handleRemove = (blog) => {
+    if (window.confirm(`Delete ${blog.title} by ${blog.author}`)) {
+      blogService
+        .removeBlog(blog.id)
+        .then(() => {
+          // console.log(res)
+          setNotif(`You deleted ${blog.title}`)
+          setTimeout(() => {
+            setNotif(null)
+          }, 5000)
+          setBlogRefresh(!blogRefresh)
+        })
+        .catch((err) => {
+          console.log("Error", err)
+        })
+    }
   }
 
   const loginSection = () => (
@@ -166,7 +188,11 @@ function App() {
 
       <h2>Blogs</h2>
       <ul>
-        <Blogs blogs={blogs} handleLike={handleLike} />
+        <Blogs
+          blogs={blogs}
+          handleLike={handleLike}
+          handleRemove={handleRemove}
+        />
       </ul>
     </div>
   )
