@@ -17,7 +17,7 @@ function Blogs({ blogs, handleLike }) {
 
   return (
     <>
-      {blogs.map((blog) => {
+      {[...blogs].sort((a, b) => b.likes - a.likes).map((blog) => {
         const isVisible = blogId === blog.id
         const showWhenVisible = { display: isVisible ? "" : "none" }
 
