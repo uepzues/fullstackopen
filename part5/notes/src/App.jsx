@@ -1,20 +1,20 @@
-import { useState, useEffect, useRef } from "react"
-import Note from "./components/Note"
-import noteService from "./services/notes"
-import Notification from "./components/Notification"
-import Footer from "./components/Footer"
-import loginUser from "./services/login"
-import LoginForm from "./components/LoginForm"
-import Togglable from "./components/Togglable"
-import NoteForm from "./components/NoteForm"
+import { useState, useEffect, useRef } from 'react'
+import Note from './components/Note'
+import noteService from './services/notes'
+import Notification from './components/Notification'
+import Footer from './components/Footer'
+import loginUser from './services/login'
+import LoginForm from './components/LoginForm'
+import Togglable from './components/Togglable'
+import NoteForm from './components/NoteForm'
 
 export default function App() {
   const [notes, setNotes] = useState([])
   // const [newNote, setNewNote] = useState("")
   const [showAll, setShowAll] = useState(true)
   const [errorMessage, setErrorMessage] = useState(null)
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
   // const [loginVisible, setLoginVisible] = useState(false)
 
@@ -26,7 +26,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser")
+    const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
@@ -60,12 +60,12 @@ export default function App() {
     noteService
       .create(noteObject)
       .then((returnedNote) => {
-        console.log("Note successfully created:", returnedNote)
+        console.log('Note successfully created:', returnedNote)
         setNotes(notes.concat(returnedNote))
         // setNewNote("")
       })
       .catch((error) => {
-        console.error("Error in note creation:", error)
+        console.error('Error in note creation:', error)
         setErrorMessage(error)
         setTimeout(() => {
           setErrorMessage(null)
@@ -103,16 +103,16 @@ export default function App() {
         password,
       })
 
-      window.localStorage.setItem("loggedNoteappUser", JSON.stringify(user))
+      window.localStorage.setItem('loggedNoteappUser', JSON.stringify(user))
 
       // console.log("user", user)
 
       noteService.setToken(user.token)
       setUser(user)
-      setUsername("")
-      setPassword("")
+      setUsername('')
+      setPassword('')
     } catch (exception) {
-      setErrorMessage("Wrong credentials")
+      setErrorMessage('Wrong credentials')
       setTimeout(() => {
         setErrorMessage(null)
       }, 5000)
@@ -139,7 +139,7 @@ export default function App() {
     <div>
       <button
         onClick={() => {
-          window.localStorage.removeItem("loggedNoteappUser")
+          window.localStorage.removeItem('loggedNoteappUser')
           setUser(null)
         }}
       >

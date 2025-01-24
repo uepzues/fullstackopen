@@ -1,5 +1,5 @@
-import axios from "axios"
-const baseUrl = "/api/blogs"
+import axios from 'axios'
+const baseUrl = '/api/blogs'
 
 let token = null
 
@@ -13,7 +13,7 @@ const getConfig = () => ({
 
 const getBlogs = () => {
   if (!token) {
-    throw new Error("Authorization token is missing. Please log in.")
+    throw new Error('Authorization token is missing. Please log in.')
   }
   return axios
     .get(baseUrl, { headers: { Authorization: token } })
@@ -22,7 +22,7 @@ const getBlogs = () => {
       return res.data
     })
     .catch((err) => {
-      console.log("Error", err)
+      console.log('Error', err)
     })
 }
 
@@ -34,8 +34,8 @@ const createBlog = (blog) => {
       return res.data
     })
     .catch((err) => {
-      console.log("Error", err)
-      throw new Error(err.response?.data?.error || "Failed to create blog.")
+      console.log('Error', err)
+      throw new Error(err.response?.data?.error || 'Failed to create blog.')
     })
 }
 
@@ -47,8 +47,8 @@ const updateBlog = (id, blog) => {
       return res.data
     })
     .catch((err) => {
-      console.log("Error", err)
-      throw new Error(err.response?.data?.error || "Failed to update blog.")
+      console.log('Error', err)
+      throw new Error(err.response?.data?.error || 'Failed to update blog.')
     })
 }
 
@@ -60,8 +60,8 @@ const removeBlog = (id) => {
       return res.data
     })
     .catch((err) => {
-      console.log("Error", err)
-      throw new Error(err.response?.data?.error || "Failed to delete blog.")
+      console.log('Error', err)
+      throw new Error(err.response?.data?.error || 'Failed to delete blog.')
     })
 }
 

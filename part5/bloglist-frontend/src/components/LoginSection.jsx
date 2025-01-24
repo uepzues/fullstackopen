@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 const LoginSection = ({
   onSubmit,
   setUsername,
@@ -28,6 +29,14 @@ const LoginSection = ({
       <button>Login</button>
     </form>
   )
+}
+
+LoginSection.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  setUsername: PropTypes.func.isRequired,
+  setPassword: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
 }
 
 export default LoginSection

@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 function Blogs({ blogs, handleLike, handleRemove }) {
   const [blogId, setBlogId] = useState(null)
@@ -10,7 +11,7 @@ function Blogs({ blogs, handleLike, handleRemove }) {
   const blogStyle = {
     paddingTop: 10,
     paddingLeft: 2,
-    border: "solid",
+    border: 'solid',
     borderWidth: 1,
     marginBottom: 5,
   }
@@ -21,7 +22,7 @@ function Blogs({ blogs, handleLike, handleRemove }) {
         .sort((a, b) => b.likes - a.likes)
         .map((blog) => {
           const isVisible = blogId === blog.id
-          const showWhenVisible = { display: isVisible ? "" : "none" }
+          const showWhenVisible = { display: isVisible ? '' : 'none' }
 
           return (
             <li key={blog.id} style={blogStyle}>
@@ -32,15 +33,15 @@ function Blogs({ blogs, handleLike, handleRemove }) {
                   return toggleVisibility(blog.id)
                 }}
               >
-                {isVisible ? "Hide" : "Details"}
+                {isVisible ? 'Hide' : 'Details'}
               </button>
               <div style={showWhenVisible}>
                 <p>Url: {blog.url}</p>
                 <p>
-                  Likes: {blog.likes}{" "}
+                  Likes: {blog.likes}{' '}
                   <span>
                     <button onClick={() => handleLike(blog)}>Like</button>
-                  </span>{" "}
+                  </span>{' '}
                 </p>
                 <p>Added by: {blog.user.name}</p>
                 <button onClick={() => handleRemove(blog)}>Remove</button>
@@ -50,6 +51,12 @@ function Blogs({ blogs, handleLike, handleRemove }) {
         })}
     </>
   )
+}
+
+Blogs.propTypes = {
+  blogs: PropTypes.array.isRequired,
+  handleLike: PropTypes.func.isRequired,
+  handleRemove: PropTypes.func.isRequired,
 }
 
 export default Blogs

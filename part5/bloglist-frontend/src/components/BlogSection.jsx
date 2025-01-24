@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 const BlogSection = ({ handleCreate, user }) => {
-  const [newBlog, setNewBlog] = useState({ title: "", author: "", url: "" })
+  const [newBlog, setNewBlog] = useState({ title: '', author: '', url: '' })
   const addBlog = (e) => {
     e.preventDefault()
     handleCreate({
@@ -10,7 +11,7 @@ const BlogSection = ({ handleCreate, user }) => {
       url: newBlog.url,
       user: user._id,
     })
-    setNewBlog({ title: "", author: "", url: "", user: "" })
+    setNewBlog({ title: '', author: '', url: '', user: '' })
   }
 
   return (
@@ -51,4 +52,8 @@ const BlogSection = ({ handleCreate, user }) => {
   )
 }
 
+BlogSection.propTypes = {
+  handleCreate: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+}
 export default BlogSection

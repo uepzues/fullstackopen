@@ -1,5 +1,5 @@
-import axios from "axios"
-const baseURL = "http://localhost:3003/api/notes"
+import axios from 'axios'
+const baseURL = 'http://localhost:3003/api/notes'
 
 let token = null
 
@@ -15,15 +15,15 @@ const getAll = () => {
 }
 
 const create = (newObject) => {
-  console.log("newObject:", newObject)
+  console.log('newObject:', newObject)
   if (!newObject || !newObject.content) {
-    console.error("Error: Note content cannot be blank or empty")
-    return Promise.reject("Note content cannot be blank or empty from create")
+    console.error('Error: Note content cannot be blank or empty')
+    return Promise.reject('Note content cannot be blank or empty from create')
   }
 
   if (!token) {
-    console.error("Error: User is not logged in")
-    return Promise.reject("User is not logged in")
+    console.error('Error: User is not logged in')
+    return Promise.reject('User is not logged in')
   }
 
   const config = {
@@ -33,7 +33,7 @@ const create = (newObject) => {
   return request
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error creating note:", error)
+      console.error('Error creating note:', error)
       // throw error
     })
 }
