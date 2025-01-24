@@ -1,10 +1,11 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState } from "react"
 import loginService from "../services/login"
 import blogService from "../services/blogs"
 import LoginSection from "./components/LoginSection"
 import Togglable from "./components/Togglable"
 import BlogSection from "./components/BlogSection"
 import Blogs from "./components/Blogs"
+
 function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -20,8 +21,6 @@ function App() {
   })
   const [blogRefresh, setBlogRefresh] = useState(false)
 
-  const visibleRef = useRef()
-
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedBlogAppUser")
     if (loggedUserJSON) {
@@ -32,7 +31,7 @@ function App() {
         blogService
           .getBlogs()
           .then((blogs) => {
-            console.log("App blogs", blogs)
+            // console.log("App blogs", blogs)
             setBlogs(blogs)
           })
           .catch((err) => {
@@ -116,10 +115,23 @@ function App() {
       })
   }
 
+  const handleLike = (blog) => {
+    console.log(blog)
+    blogService
+      .updateBlog(blog.id, { ...blog, likes: blog.likes + 1 })
+      .then((res) => {
+        console.log(res)
+        setBlogRefresh(!blogRefresh)
+      })
+      .catch((err) => {
+        console.log("Error", err)
+      })
+  }
+
   const loginSection = () => (
     <div>
       <h2>Log in to application</h2>
-      <Togglable buttonLabel2="Cancel" buttonLabel1="Login" ref={visibleRef}>
+      <Togglable buttonLabel1="Login" buttonLabel2="Cancel">
         <LoginSection
           password={password}
           username={username}
@@ -143,19 +155,19 @@ function App() {
       >
         Logout
       </button>
-      <Togglable
-        buttonLabel2={"Cancel"}
-        buttonLabel1={"New Blog"}
-        ref={visibleRef}
-      >
+      <Togglable buttonLabel1={"New Blog"} buttonLabel2={"Cancel"}>
         <BlogSection
+          newBlog={newBlog}
+          setNewBlog={setNewBlog}
           handleCreate={handleCreate}
           user={user}
         />
       </Togglable>
 
       <h2>Blogs</h2>
-      <ul>{blogs.length === 0 ? <li>No blogs</li> : <Blogs blogs={blogs} />}</ul>
+      <ul>
+        <Blogs blogs={blogs} handleLike={handleLike} />
+      </ul>
     </div>
   )
 
