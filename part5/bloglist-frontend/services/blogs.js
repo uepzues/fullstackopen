@@ -18,7 +18,7 @@ const getBlogs = () => {
   return axios
     .get(baseUrl, { headers: { Authorization: token } })
     .then((res) => {
-      console.log("Axios Response", res.data)
+      // console.log("Axios Response", res.data)
       return res.data
     })
     .catch((err) => {
@@ -30,15 +30,26 @@ const createBlog = (blog) => {
   return axios
     .post(baseUrl, blog, getConfig())
     .then((res) => {
-      console.log("Axios Response", res.data)
+      console.log("Axios Create", res.data)
       return res.data
     })
     .catch((err) => {
       console.log("Error", err)
-      throw new Error(
-        err.response?.data?.error || "Failed to create blog."
-      )
+      throw new Error(err.response?.data?.error || "Failed to create blog.")
     })
 }
 
-export default { getBlogs, setToken, createBlog }
+const updateBlog = (id, blog) => {
+  return axios
+    .put(`${baseUrl}/${id}`, blog, getConfig())
+    .then((res) => {
+      console.log("Axios Update", res.data)
+      return res.data
+    })
+    .catch((err) => {
+      console.log("Error", err)
+      throw new Error(err.response?.data?.error || "Failed to update blog.")
+    })
+}
+
+export default { getBlogs, setToken, createBlog, updateBlog }
