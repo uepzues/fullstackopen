@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Blogs({ blogs, handleLike }) {
+function Blogs({ blogs, handleLike, handleRemove }) {
   const [blogId, setBlogId] = useState(null)
 
   const toggleVisibility = (id) => {
@@ -17,34 +17,37 @@ function Blogs({ blogs, handleLike }) {
 
   return (
     <>
-      {[...blogs].sort((a, b) => b.likes - a.likes).map((blog) => {
-        const isVisible = blogId === blog.id
-        const showWhenVisible = { display: isVisible ? "" : "none" }
+      {[...blogs]
+        .sort((a, b) => b.likes - a.likes)
+        .map((blog) => {
+          const isVisible = blogId === blog.id
+          const showWhenVisible = { display: isVisible ? "" : "none" }
 
-        return (
-          <li key={blog.id} style={blogStyle}>
-            <span>{blog.title}</span> by <span>{blog.author}</span>
-            <button
-              onClick={() => {
-                console.log(blog.id)
-                return toggleVisibility(blog.id)
-              }}
-            >
-              {isVisible ? "Hide" : "Details"}
-            </button>
-            <div style={showWhenVisible}>
-              <p>Url: {blog.url}</p>
-              <p>
-                Likes: {blog.likes}{" "}
-                <span>
-                  <button onClick={() => handleLike(blog)}>Like</button>
-                </span>{" "}
-              </p>
-              <p>Added by: {blog.user.name}</p>
-            </div>
-          </li>
-        )
-      })}
+          return (
+            <li key={blog.id} style={blogStyle}>
+              <span>{blog.title}</span> by <span>{blog.author}</span>
+              <button
+                onClick={() => {
+                  console.log(blog.id)
+                  return toggleVisibility(blog.id)
+                }}
+              >
+                {isVisible ? "Hide" : "Details"}
+              </button>
+              <div style={showWhenVisible}>
+                <p>Url: {blog.url}</p>
+                <p>
+                  Likes: {blog.likes}{" "}
+                  <span>
+                    <button onClick={() => handleLike(blog)}>Like</button>
+                  </span>{" "}
+                </p>
+                <p>Added by: {blog.user.name}</p>
+                <button onClick={() => handleRemove(blog)}>Remove</button>
+              </div>
+            </li>
+          )
+        })}
     </>
   )
 }
