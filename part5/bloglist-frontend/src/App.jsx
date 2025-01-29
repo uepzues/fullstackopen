@@ -189,6 +189,7 @@ function App() {
       <h2>Blogs</h2>
       <ul>
         <Blogs
+          // key={blogs.id}
           blogs={blogs}
           handleLike={handleLike}
           handleRemove={handleRemove}

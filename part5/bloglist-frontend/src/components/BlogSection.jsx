@@ -9,6 +9,7 @@ const BlogSection = ({ handleCreate, user }) => {
       title: newBlog.title,
       author: newBlog.author,
       url: newBlog.url,
+      likes: 0,
       user: user._id,
     })
     setNewBlog({ title: '', author: '', url: '', user: '' })
@@ -21,6 +22,7 @@ const BlogSection = ({ handleCreate, user }) => {
         <label>
           Title: &nbsp; &nbsp; &nbsp;
           <input
+            placeholder="Title"
             type="text"
             value={newBlog.title}
             onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
@@ -29,6 +31,7 @@ const BlogSection = ({ handleCreate, user }) => {
         <label>
           Author: &nbsp;
           <input
+            placeholder="Author"
             type="text"
             value={newBlog.author}
             onChange={({ target }) =>
@@ -39,6 +42,7 @@ const BlogSection = ({ handleCreate, user }) => {
         <label>
           Url: &nbsp; &nbsp; &nbsp; &nbsp;
           <input
+            placeholder="URL"
             type="text"
             value={newBlog.url}
             onChange={({ target }) =>
