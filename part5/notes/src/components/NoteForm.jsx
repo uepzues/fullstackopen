@@ -15,10 +15,22 @@ function NoteForm({ createNote }) {
   }
 
   return (
-    <div>
+    <div className="formDiv">
       <h2>Create a new note</h2>
       <form onSubmit={addNote}>
-        <input value={newNote} onChange={(e) => setNewNote(e.target.value)} />
+        <input
+          value={newNote}
+          onChange={(e) => setNewNote(e.target.value)}
+          placeholder="write note content here"
+          id="note-input"
+        />
+        <input
+          value={''}
+          onChange={() => {
+            return
+          }}
+        />
+
         <button type="submit">save</button>
       </form>
     </div>
