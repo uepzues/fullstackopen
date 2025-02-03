@@ -67,15 +67,15 @@ notesRouter.put("/:id", async (req, res) => {
 
   res.json(updatedImportance)
 
-  // Note.findByIdAndUpdate(id, note, {
-  //   new: true,
-  //   runValidators: true,
-  //   context: "query",
-  // })
-  //   .then((updatedImportance) => {
-  //     res.json(updatedImportance)
-  //   })
-  //   .catch((err) => next(err))
+  Note.findByIdAndUpdate(id, note, {
+    new: true,
+    runValidators: true,
+    context: "query",
+  })
+    .then((updatedImportance) => {
+      res.json(updatedImportance)
+    })
+    .catch((err) => next(err))
 })
 
 notesRouter.delete("/:id", async (req, res) => {
@@ -85,12 +85,12 @@ notesRouter.delete("/:id", async (req, res) => {
   // console.log("deleted:", deletedNote.id)
   res.status(204).end()
 
-  // Note.findByIdAndDelete(id)
-  //   .then((deletedNote) => {
-  //     console.log(`deleted ${deletedNote.id}`)
-  //     res.json(deletedNote)
-  //   })
-  //   .catch((err) => console.log(err))
+  Note.findByIdAndDelete(id)
+    .then((deletedNote) => {
+      console.log(`deleted ${deletedNote.id}`)
+      res.json(deletedNote)
+    })
+    .catch((err) => console.log(err))
 })
 
 module.exports = notesRouter
