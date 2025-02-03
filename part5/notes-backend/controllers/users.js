@@ -16,17 +16,14 @@ userRouter.post("/", async (req, res) => {
   const saltRounds = 10
   const passwordHash = await bcrypt.hash(password, saltRounds)
 
-  const user = await User.findById(id)
 
-  const notes = new User({
+  const user = new User({
     username,
     name,
     passwordHash,
   })
 
-  const savedNote = await notes.save()
-  user.notes = user.notes.concat(savedNote._id)
-  await user.save()
+  const savedNote = await user.save()
   res.status(201).json(savedNote)
 })
 
