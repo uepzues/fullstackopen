@@ -27,11 +27,12 @@ function App() {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
       blogService.setToken(user.token)
+      console.log('User', user.token)
       if (user.token) {
         blogService
           .getBlogs()
           .then((blogs) => {
-            // console.log("App blogs", blogs)
+            console.log("App blogs", blogs)
             setBlogs(blogs)
           })
           .catch((err) => {
@@ -98,7 +99,7 @@ function App() {
         } else {
           console.log('handle create Blog', blog)
           setBlogs((prev) => [...prev, blog])
-          setNotif(`New Blog ${blog.title} by ${blog.author} created`)
+          setNotif(`New Blog ${blog.title} created`)
           setTimeout(() => {
             setNotif(null)
           }, 5000)
@@ -153,7 +154,9 @@ function App() {
   const loginSection = () => (
     <div>
       <h2>Log in to application</h2>
-      <Togglable buttonLabel1="Login" buttonLabel2="Cancel">
+      <Togglable
+        buttonLabel1='Login'
+        buttonLabel2='Cancel'>
         <LoginSection
           password={password}
           username={username}
@@ -173,11 +176,12 @@ function App() {
           console.log('Logout')
           window.localStorage.removeItem('loggedBlogAppUser')
           setUser(null)
-        }}
-      >
+        }}>
         Logout
       </button>
-      <Togglable buttonLabel1={'New Blog'} buttonLabel2={'Cancel'}>
+      <Togglable
+        buttonLabel1={'New Blog'}
+        buttonLabel2={'Cancel'}>
         <BlogSection
           newBlog={newBlog}
           setNewBlog={setNewBlog}
@@ -199,9 +203,9 @@ function App() {
   )
 
   return (
-    <div className="main">
-      {errNotif && <div className="errNotif">{errNotif}</div>}
-      {notif && <div className="notif">{notif}</div>}
+    <div className='main'>
+      {errNotif && <div className='errNotif'>{errNotif}</div>}
+      {notif && <div className='notif'>{notif}</div>}
       <div>{user === null ? loginSection() : blogSection()}</div>
     </div>
   )

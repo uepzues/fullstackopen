@@ -36,7 +36,10 @@ export default function App() {
 
   const toggleImportanceOf = (id) => {
     const note = notes.find((n) => n.id === id)
-    const changedNote = { content: note.content, important: !note.important }
+    const changedNote = {
+      content: note.content,
+      important: !note.important,
+    }
 
     noteService
       .update(id, changedNote)
@@ -46,12 +49,19 @@ export default function App() {
       })
       .catch((error) => {
         console.log(error)
-        setErrorMessage(
-          `Note '${note.content}' was already removed from server`
-        )
-        setTimeout(() => {
-          setErrorMessage(null)
-        }, 5000)
+        if (error.response.status === 500) {
+          setErrorMessage(
+            `Note '${note.content}' was already removed from server`
+          )
+          setTimeout(() => {
+            setErrorMessage(null)
+          }, 5000)
+        } else {
+          setErrorMessage(error.message)
+          setTimeout(() => {
+            setErrorMessage(null)
+          }, 5000)
+        }
       })
   }
 
@@ -121,7 +131,7 @@ export default function App() {
 
   const loginForm = () => {
     return (
-      <Togglable buttonLabel="log in">
+      <Togglable buttonLabel='log in'>
         <LoginForm
           username={username}
           password={password}
@@ -141,11 +151,12 @@ export default function App() {
         onClick={() => {
           window.localStorage.removeItem('loggedNoteappUser')
           setUser(null)
-        }}
-      >
+        }}>
         logout
       </button>
-      <Togglable buttonLabel="new note" ref={noteFormRef}>
+      <Togglable
+        buttonLabel='new note'
+        ref={noteFormRef}>
         <NoteForm createNote={addNote} />
       </Togglable>
     </div>

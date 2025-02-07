@@ -25,18 +25,22 @@ function Blogs({ blogs, handleLike, handleRemove }) {
           const showWhenVisible = { display: isVisible ? '' : 'none' }
 
           return (
-            <li key={blog.id} style={blogStyle} className="blog">
+            <li
+              key={blog.id}
+              style={blogStyle}
+              className='blog'>
               <span>{blog.title}</span> by <span>{blog.author}</span>
               <button
-                data-testid="view-button"
+                data-testid='view-button'
                 onClick={() => {
                   // console.log(blog.id)
                   return toggleVisibility(blog.id)
-                }}
-              >
-                {isVisible ? 'Hide' : 'Details'}
+                }}>
+                &nbsp; {isVisible ? 'Hide' : 'Details'} &nbsp;
               </button>
-              <div style={showWhenVisible} data-testid="blogDetails">
+              <div
+                style={showWhenVisible}
+                data-testid='blogDetails'>
                 <p>Url: {blog.url}</p>
                 <p>
                   Likes: {blog.likes}{' '}

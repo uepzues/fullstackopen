@@ -1,22 +1,22 @@
-const jwt = require("jsonwebtoken")
-const notesRouter = require("express").Router()
-const Note = require("../models/model")
-const User = require("../models/user")
+const jwt = require('jsonwebtoken')
+const notesRouter = require('express').Router()
+const Note = require('../models/model')
+const User = require('../models/user')
 
 const getTokenFrom = (request) => {
-  const authorization = request.get("authorization")
-  if (authorization && authorization.startsWith("Bearer ")) {
-    return authorization.replace("Bearer ", "")
+  const authorization = request.get('authorization')
+  if (authorization && authorization.startsWith('Bearer ')) {
+    return authorization.replace('Bearer ', '')
   }
   return null
 }
 
-notesRouter.get("/", async (req, res) => {
-  const notes = await Note.find({}).populate("user", { username: 1, name: 1 })
+notesRouter.get('/', async (req, res) => {
+  const notes = await Note.find({}).populate('user', { username: 1, name: 1 })
   res.json(notes)
 })
 
-notesRouter.get("/:id", async (req, res) => {
+notesRouter.get('/:id', async (req, res) => {
   const id = req.params.id
   const note = await Note.findById(id)
 
@@ -27,12 +27,12 @@ notesRouter.get("/:id", async (req, res) => {
   }
 })
 
-notesRouter.post("/", async (req, res) => {
+notesRouter.post('/', async (req, res) => {
   const { content, important } = req.body
 
   const decodedToken = jwt.verify(getTokenFrom(req), process.env.SECRET)
   if (!decodedToken.id) {
-    return res.status(401).json({ error: "token invalid" })
+    return res.status(401).json({ error: 'token invalid' })
   }
   const person = await User.findById(decodedToken.id)
 
@@ -50,35 +50,32 @@ notesRouter.post("/", async (req, res) => {
   res.status(201).json(savedNote)
 })
 
-notesRouter.put("/:id", async (req, res) => {
+notesRouter.put('/:id', (req, res, next) => {
   const id = req.params.id
   const { content, important } = req.body
 
   const note = {
     content,
     important,
+    updatedAt: new Date() // Ensure updatedAt is a Date object
   }
-
-  const updatedImportance = await Note.findByIdAndUpdate(id, note, {
-    new: true,
-    runValidators: true,
-    context: "query",
-  })
-
-  res.json(updatedImportance)
 
   Note.findByIdAndUpdate(id, note, {
     new: true,
     runValidators: true,
-    context: "query",
+    context: 'query',
   })
     .then((updatedImportance) => {
+      console.log(updatedImportance)
+      if (!updatedImportance) {
+        res.status(404).json({ error: 'note not found' }).end()
+      }
       res.json(updatedImportance)
     })
     .catch((err) => next(err))
 })
 
-notesRouter.delete("/:id", async (req, res) => {
+notesRouter.delete('/:id', async (req, res) => {
   const id = req.params.id
   await Note.findByIdAndDelete(id)
 

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 const noteSchema = new mongoose.Schema(
   {
@@ -6,22 +6,24 @@ const noteSchema = new mongoose.Schema(
     important: Boolean,
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
     },
   },
   {
-    timestamps: { createdAt: false, updatedAt: {date: new Date()} },
+    timestamps: true,
   }
 )
 
-noteSchema.set("toJSON", {
+noteSchema.set('toJSON', {
   transform: (document, ret) => {
     ret.id = ret._id.toString()
+    ret.createdAt = ret.createdAt.toISOString()
+    ret.updatedAt = ret.updatedAt.toISOString()
     delete ret._id
     delete ret.__v
   },
 })
 
-const Note = mongoose.model("Note", noteSchema)
+const Note = mongoose.model('Note', noteSchema)
 
 module.exports = Note
