@@ -1,13 +1,13 @@
-const blogRouter = require("express").Router()
-const Blog = require("../models/blogModel")
-const mongoose = require("mongoose")
+const blogRouter = require('express').Router()
+const Blog = require('../models/blogModel')
+const mongoose = require('mongoose')
 
-blogRouter.get("/", async (req, res) => {
-  const result = await Blog.find({}).populate("user", { username: 1, name: 1 })
+blogRouter.get('/', async (req, res) => {
+  const result = await Blog.find({}).populate('user', { username: 1, name: 1 })
   res.json(result)
 })
 
-blogRouter.get("/:id", async (req, res) => {
+blogRouter.get('/:id', async (req, res) => {
   const id = req.params.id
 
   let result = new mongoose.Types.ObjectId(id)
@@ -16,22 +16,22 @@ blogRouter.get("/:id", async (req, res) => {
   if (result) {
     res.status(200).json(result)
   } else {
-    res.status(404).json({ error: "blog not found" })
+    res.status(404).json({ error: 'blog not found' })
   }
 })
 
-blogRouter.post("/", async (req, res) => {
+blogRouter.post('/', async (req, res) => {
   if (!req.user) {
-    return res.status(400).json({ error: "user missing" })
+    return res.status(400).json({ error: 'user missing' })
   }
   const { title, author, url, likes } = req.body
 
   if (!title) {
-    return res.status(400).json({ error: "Title required" })
+    return res.status(400).json({ error: 'Title required' })
   }
 
   if (!author) {
-    return res.status(400).json({ error: "Author required" })
+    return res.status(400).json({ error: 'Author required' })
   }
 
   const content = {
@@ -52,7 +52,7 @@ blogRouter.post("/", async (req, res) => {
   return res.status(201).json(result)
 })
 
-blogRouter.put("/:id", async (req, res) => {
+blogRouter.put('/:id', async (req, res) => {
   const id = req.params.id
   const { title, author, url, likes } = req.body
   const blogPost = {
@@ -66,22 +66,22 @@ blogRouter.put("/:id", async (req, res) => {
     new: true,
     runValidators: true,
     overwrite: true,
-    context: "query",
+    context: 'query',
   })
 
   if (!updatedBlog) {
-    return res.status(400).json({ error: "blog not found" })
+    return res.status(400).json({ error: 'blog not found' })
   }
 
   return res.status(200).json(updatedBlog)
 })
 
-blogRouter.delete("/:id", async (req, res) => {
+blogRouter.delete('/:id', async (req, res) => {
   const blogId = req.params.id
   const user = req.user
-
+  console.log('blogrouter', user)
   if (!user) {
-    return res.status(401).json({ error: "unauthorized missing/invalid token" })
+    return res.status(401).json({ error: 'unauthorized missing/invalid token' })
   }
 
   const blog = await Blog.findById(blogId)
@@ -94,7 +94,7 @@ blogRouter.delete("/:id", async (req, res) => {
     // console.log("deleted post with id", blogId)
     return res.status(204).end()
   } else {
-    return res.status(500).json({ error: "error deleting blog" })
+    return res.status(500).json({ error: 'error deleting blog' })
   }
 })
 
