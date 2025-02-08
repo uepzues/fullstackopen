@@ -197,6 +197,7 @@ function App() {
           blogs={blogs}
           handleLike={handleLike}
           handleRemove={handleRemove}
+          user={user}
         />
       </ul>
     </div>
