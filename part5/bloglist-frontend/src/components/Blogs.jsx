@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 
-function Blogs({ blogs, handleLike, handleRemove }) {
+function Blogs({ blogs, handleLike, handleRemove, user }) {
   const [blogId, setBlogId] = useState(null)
 
   const toggleVisibility = (id) => {
@@ -29,7 +29,8 @@ function Blogs({ blogs, handleLike, handleRemove }) {
               key={blog.id}
               style={blogStyle}
               className='blog'>
-              <span>{blog.title}</span> by <span>{blog.author}</span>
+              <span className='blog-title'>{blog.title}</span> by{' '}
+              <span>{blog.author}</span>
               <button
                 data-testid='view-button'
                 onClick={() => {
@@ -49,7 +50,9 @@ function Blogs({ blogs, handleLike, handleRemove }) {
                   </span>{' '}
                 </p>
                 <p>Added by: {blog.user.name}</p>
-                <button onClick={() => handleRemove(blog)}>Remove</button>
+                {blog.user.username === user.username && (
+                  <button onClick={() => handleRemove(blog)}>Remove</button>
+                )}
               </div>
             </li>
           )
@@ -59,9 +62,10 @@ function Blogs({ blogs, handleLike, handleRemove }) {
 }
 
 Blogs.propTypes = {
-  blogs: PropTypes.array.isRequired,
+  blogs: PropTypes.array,
   handleLike: PropTypes.func,
   handleRemove: PropTypes.func,
+  user: PropTypes.object.isRequired,
 }
 
 export default Blogs
