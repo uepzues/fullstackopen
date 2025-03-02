@@ -1,16 +1,15 @@
 import ReactDOM from 'react-dom/client'
-import { legacy_createStore as createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App'
 import reducer from './reducers/anecdoteReducer'
 import filterReducer from './reducers/filterReducer'
+import { configureStore } from '@reduxjs/toolkit'
 
-const combinedReducer = combineReducers({
-  anecdotes: reducer,
-  filter: filterReducer,
-})
+const combinedReducer = {
+  reducer: { anecdotes: reducer, filter: filterReducer },
+}
 
-const store = createStore(combinedReducer)
+const store = configureStore(combinedReducer)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>

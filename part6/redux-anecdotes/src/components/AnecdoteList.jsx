@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import anecdoteService from '../services/services'
 import { initialAnecdotes, updateAnecdote } from '../reducers/anecdoteReducer'
-import Filter from './Filter'
 import { getFilteredAnecdotes } from '../reducers/filterReducer'
+import Filter from './Filter'
 
 export default function AnecdoteList() {
   const dispatch = useDispatch()
