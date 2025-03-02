@@ -2,10 +2,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import anecdoteService from '../services/services'
 import { initialAnecdotes, updateAnecdote } from '../reducers/anecdoteReducer'
+import Filter from './Filter'
+import { getFilteredAnecdotes } from '../reducers/filterReducer'
 
 export default function AnecdoteList() {
   const dispatch = useDispatch()
-  const anecdotes = useSelector((state) => state)
+  const anecdotes = useSelector(getFilteredAnecdotes)
 
   useEffect(() => {
     anecdoteService.getAll().then((anecdotes) => {
@@ -23,6 +25,7 @@ export default function AnecdoteList() {
 
   return (
     <>
+      <Filter />
       {anecdotes.map((anecdote) => (
         <div key={anecdote.id}>
           <div>{anecdote.content}</div>
