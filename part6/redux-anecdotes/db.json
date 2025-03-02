@@ -38,17 +38,22 @@
     {
       "id": "80f3",
       "content": "sfhgdfgh",
-      "votes": 0
+      "votes": 1
     },
     {
       "id": "675d",
       "content": "ghgfhfghfg",
-      "votes": 0
+      "votes": 1
     },
     {
       "id": "1354",
       "content": "ljkljkljkljkljkljkl",
       "votes": 6
+    },
+    {
+      "id": "aad2",
+      "content": "this is a test anecdote",
+      "votes": 7
     }
   ]
 }
