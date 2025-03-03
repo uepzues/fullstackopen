@@ -4,6 +4,7 @@ import anecdoteService from '../services/services'
 import { initialAnecdotes, updateAnecdote } from '../reducers/anecdoteReducer'
 import { getFilteredAnecdotes } from '../reducers/filterReducer'
 import Filter from './Filter'
+import { notif } from '../reducers/notificationReducer'
 
 export default function AnecdoteList() {
   const dispatch = useDispatch()
@@ -21,6 +22,11 @@ export default function AnecdoteList() {
     const changedAnecdote = { ...anecdote, votes: anecdote.votes + 1 }
     const updatedAnecdote = await anecdoteService.update(id, changedAnecdote)
     dispatch(updateAnecdote(updatedAnecdote))
+    dispatch(notif(updatedAnecdote))
+  }
+  const style = {
+    width: '100%',
+    overflow: 'auto',
   }
 
   return (
@@ -28,9 +34,9 @@ export default function AnecdoteList() {
       <Filter />
       {anecdotes.map((anecdote) => (
         <div key={anecdote.id}>
-          <div>{anecdote.content}</div>
+          <div style={style}>{anecdote.content}</div>
           <div>
-            has {anecdote.votes}
+            has {anecdote.votes}{' '}
             <button onClick={() => vote(anecdote.id)}>vote</button>
           </div>
         </div>
