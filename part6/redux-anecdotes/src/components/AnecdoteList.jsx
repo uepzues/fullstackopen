@@ -11,9 +11,12 @@ export default function AnecdoteList() {
   const anecdotes = useSelector(getFilteredAnecdotes)
 
   useEffect(() => {
-    anecdoteService.getAll().then((anecdotes) => {
+    const fetchAnecdotes = async () => {
+      const anecdotes = await anecdoteService.getAll()
       dispatch(initialAnecdotes(anecdotes))
-    })
+    }
+
+    fetchAnecdotes()
   }, [dispatch])
 
   const vote = async (id) => {
@@ -22,7 +25,7 @@ export default function AnecdoteList() {
     const changedAnecdote = { ...anecdote, votes: anecdote.votes + 1 }
     const updatedAnecdote = await anecdoteService.update(id, changedAnecdote)
     dispatch(updateAnecdote(updatedAnecdote))
-    dispatch(notif(updatedAnecdote))
+    dispatch(notif(updatedAnecdote, 3))
   }
   const style = {
     width: '100%',

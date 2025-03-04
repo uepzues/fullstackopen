@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { updateAnecdote } from './anecdoteReducer'
+import { updateAnecdote } from './anecdoteReducer.js'
 
 const notificationSlice = createSlice({
   name: 'notification',
@@ -14,22 +14,22 @@ const notificationSlice = createSlice({
   },
 })
 
-export const notif = (anecdote) => {
+export const notif = (anecdote, time) => {
   return async (dispatch) => {
     dispatch(updateAnecdote(anecdote))
     dispatch(setNotification(`you voted '${anecdote.content}'`))
     setTimeout(() => {
       dispatch(clearNotification())
-    }, 5000)
+    }, 1000 * time)
   }
 }
 
-export const notifCreate = (anecdote) => {
+export const notifCreate = (anecdote, time) => {
   return async (dispatch) => {
     dispatch(setNotification(`you created '${anecdote.content}'`))
     setTimeout(() => {
       dispatch(clearNotification())
-    }, 5000)
+    }, 1000 * time)
   }
 }
 

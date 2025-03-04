@@ -10,7 +10,7 @@ export default function AnecdoteForm() {
     e.target.content.value = ''
     const newAnecdote = await anecdoteService.create({ content, votes: 0 })
     dispatch(createAnecdote(newAnecdote))
-    dispatch(notifCreate(newAnecdote))
+    dispatch(notifCreate(newAnecdote, 3))
   }
 
   return (
