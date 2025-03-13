@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import BlogSection from '../components/BlogSection'
-import { expect } from 'vitest'
+import { expect, test, vi } from 'vitest'
 
 test('the form call the event handler with correct details', async () => {
   const handleCreate = vi.fn()

@@ -32,7 +32,7 @@ function App() {
         blogService
           .getBlogs()
           .then((blogs) => {
-            console.log("App blogs", blogs)
+            console.log('App blogs', blogs)
             setBlogs(blogs)
           })
           .catch((err) => {
