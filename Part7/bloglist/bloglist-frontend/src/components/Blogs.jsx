@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
 
-function Blogs({ blogs, handleLike, handleRemove, user }) {
+function Blogs({ handleLike, handleRemove, user }) {
   const [blogId, setBlogId] = useState(null)
 
   const toggleVisibility = (id) => {
     setBlogId(blogId === id ? null : id)
   }
+
+  const blogs = useSelector((state) => state.blogs)
 
   const blogStyle = {
     paddingTop: 10,

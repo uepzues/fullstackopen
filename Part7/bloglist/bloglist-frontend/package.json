@@ -13,12 +13,14 @@
     "format": "prettier ."
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "json-server": "^1.0.0-beta.3",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.26.10",

@@ -76,7 +76,7 @@ blogRouter.put('/:id', async (req, res) => {
   return res.status(200).json(updatedBlog)
 })
 
-blogRouter.delete('/:id', async (req, res) => {
+blogRouter.delete('/:blogId', async (req, res) => {
   const { blogId } = req.params
   const { user } = req
   console.log('blogrouter', user)

@@ -7,9 +7,10 @@ const setToken = (newToken) => {
   token = `Bearer ${newToken}`
 }
 
-const getConfig = () => ({
-  headers: { Authorization: token },
-})
+const getConfig = () => {
+  console.log(token)
+  return { headers: { Authorization: token } }
+}
 
 const getBlogs = () => {
   if (!token) {
@@ -30,7 +31,7 @@ const createBlog = (blog) => {
   return axios
     .post(baseUrl, blog, getConfig())
     .then((res) => {
-      // console.log("Axios Create", res.data)
+      console.log('Axios Create', res.data)
       return res.data
     })
     .catch((err) => {
