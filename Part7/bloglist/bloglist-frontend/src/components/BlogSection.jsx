@@ -1,8 +1,31 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types'
+import { useSelector, useDispatch } from 'react-redux'
+import { createBlog, fetchBlogs } from '../reducers/blogReducer'
+import {
+  setNotification,
+  clearNotification,
+} from '../reducers/notificationReducer'
 
-const BlogSection = ({ handleCreate, user }) => {
+const BlogSection = () => {
   const [newBlog, setNewBlog] = useState({ title: '', author: '', url: '' })
+
+  const dispatch = useDispatch()
+
+  const user = useSelector((state) => state.user.user)
+
+  const handleCreate = (blogObject) => {
+    dispatch(createBlog(blogObject))
+    dispatch(
+      setNotification(
+        `A new blog ${blogObject.title} by ${blogObject.author} added`
+      )
+    )
+    setTimeout(() => {
+      dispatch(clearNotification())
+    }, 5000)
+    dispatch(fetchBlogs())
+  }
+
   const addBlog = (e) => {
     e.preventDefault()
     handleCreate({
@@ -22,8 +45,8 @@ const BlogSection = ({ handleCreate, user }) => {
         <label>
           Title: &nbsp; &nbsp; &nbsp;
           <input
-            placeholder="Title"
-            type="text"
+            placeholder='Title'
+            type='text'
             value={newBlog.title}
             onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
           />
@@ -31,8 +54,8 @@ const BlogSection = ({ handleCreate, user }) => {
         <label>
           Author: &nbsp;
           <input
-            placeholder="Author"
-            type="text"
+            placeholder='Author'
+            type='text'
             value={newBlog.author}
             onChange={({ target }) =>
               setNewBlog({ ...newBlog, author: target.value })
@@ -42,8 +65,8 @@ const BlogSection = ({ handleCreate, user }) => {
         <label>
           Url: &nbsp; &nbsp; &nbsp; &nbsp;
           <input
-            placeholder="URL"
-            type="text"
+            placeholder='URL'
+            type='text'
             value={newBlog.url}
             onChange={({ target }) =>
               setNewBlog({ ...newBlog, url: target.value })
@@ -56,8 +79,4 @@ const BlogSection = ({ handleCreate, user }) => {
   )
 }
 
-BlogSection.propTypes = {
-  handleCreate: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-}
 export default BlogSection

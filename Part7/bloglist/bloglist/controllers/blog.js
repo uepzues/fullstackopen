@@ -47,7 +47,7 @@ blogRouter.post('/', async (req, res) => {
 
   const result = await blog.save()
   // add blog id to user
-  req.user.blogs.concat(blog._id)
+  req.user.blogs = req.user.blogs.concat(blog._id)
   await req.user.save()
   return res.status(201).json(result)
 })
@@ -72,6 +72,26 @@ blogRouter.put('/:id', async (req, res) => {
   if (!updatedBlog) {
     return res.status(400).json({ error: 'blog not found' })
   }
+
+  return res.status(200).json(updatedBlog)
+})
+
+blogRouter.put('/:id/comments', async (req, res) => {
+  const { id } = req.params
+  const { comments } = req.body
+
+  if (!comments) {
+    return res.status(400).json({ error: 'comment required' })
+  }
+
+  const blogPost = await Blog.findById(id)
+
+  if (!blogPost) {
+    return res.status(404).json({ error: 'blog not found' })
+  }
+
+  blogPost.comments = blogPost.comments.concat(comments)
+  const updatedBlog = await blogPost.save()
 
   return res.status(200).json(updatedBlog)
 })

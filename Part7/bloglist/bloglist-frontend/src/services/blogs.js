@@ -8,7 +8,7 @@ const setToken = (newToken) => {
 }
 
 const getConfig = () => {
-  console.log(token)
+  // console.log(token)
   return { headers: { Authorization: token } }
 }
 
@@ -31,7 +31,7 @@ const createBlog = (blog) => {
   return axios
     .post(baseUrl, blog, getConfig())
     .then((res) => {
-      console.log('Axios Create', res.data)
+      // console.log('Axios Create', res.data)
       return res.data
     })
     .catch((err) => {
@@ -43,6 +43,19 @@ const createBlog = (blog) => {
 const updateBlog = (id, blog) => {
   return axios
     .put(`${baseUrl}/${id}`, blog, getConfig())
+    .then((res) => {
+      // console.log("Axios Update", res.data)
+      return res.data
+    })
+    .catch((err) => {
+      console.log('Error', err)
+      throw new Error(err.response?.data?.error || 'Failed to update blog.')
+    })
+}
+
+const updateBlogComments = (blog) => {
+  return axios
+    .put(`${baseUrl}/${blog.id}/comments`, blog, getConfig())
     .then((res) => {
       // console.log("Axios Update", res.data)
       return res.data
@@ -66,4 +79,11 @@ const removeBlog = (id) => {
     })
 }
 
-export default { getBlogs, setToken, createBlog, updateBlog, removeBlog }
+export default {
+  getBlogs,
+  setToken,
+  createBlog,
+  updateBlog,
+  removeBlog,
+  updateBlogComments,
+}

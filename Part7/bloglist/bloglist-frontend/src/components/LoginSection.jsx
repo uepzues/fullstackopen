@@ -1,42 +1,53 @@
-import PropTypes from 'prop-types'
-const LoginSection = ({
-  onSubmit,
-  setUsername,
-  setPassword,
-  username,
-  password,
-}) => {
-  return (
-    <form onSubmit={onSubmit}>
-      <label>
-        username:
-        <input
-          type="text"
-          value={username}
-          placeholder="username"
-          onChange={({ target }) => setUsername(target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          placeholder="password"
-          onChange={({ target }) => setPassword(target.value)}
-        />
-      </label>
-      <button>Login</button>
-    </form>
-  )
-}
+import { useState } from 'react'
+import { loginUser } from '../reducers/userReducer'
+import { useDispatch } from 'react-redux'
+import Togglable from './Togglable'
+import { useNavigate } from 'react-router-dom'
 
-LoginSection.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  setUsername: PropTypes.func.isRequired,
-  setPassword: PropTypes.func.isRequired,
-  username: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
+const LoginSection = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    dispatch(loginUser({ username, password }))
+    setUsername('')
+    setPassword('')
+    navigate('/')
+  }
+
+  return (
+    <div>
+      <h2>Log in to application</h2>
+      <Togglable
+        buttonLabel1='Login'
+        buttonLabel2='Cancel'>
+        <form onSubmit={handleLogin}>
+          <label>
+            username:
+            <input
+              type='text'
+              value={username}
+              placeholder='username'
+              onChange={({ target }) => setUsername(target.value)}
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              type='password'
+              value={password}
+              placeholder='password'
+              onChange={({ target }) => setPassword(target.value)}
+            />
+          </label>
+          <button>Login</button>
+        </form>
+      </Togglable>
+    </div>
+  )
 }
 
 export default LoginSection

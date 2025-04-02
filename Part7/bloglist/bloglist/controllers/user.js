@@ -9,7 +9,8 @@ userRouter.get('/', async (req, res) => {
     author: 1,
     likes: 1,
   })
-  res.json(result)
+  console.log(result)
+  return res.json(result)
 })
 
 userRouter.post('/', async (req, res) => {
