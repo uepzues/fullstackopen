@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-// import Home from './Home'
+import { Routes, Route, Link } from 'react-router-dom'
 import Users from './Users'
 import Blogs from './Blogs'
 import { useDispatch, useSelector } from 'react-redux'
@@ -13,15 +12,16 @@ const Navigation = () => {
   const user = useSelector((state) => state.user.user)
 
   return (
-    <div>
+    <div className='container mx-auto'>
       {user && (
         <>
-          <div>
-            <Link to='/'>{user.name}</Link>
+          <div className='bg-sky-700 flex justify-center items-center gap-5 p-5 text-white uppercase font-bold mb-8 '>
+            <Link to={`/`}>{user.name}</Link>
             <Link to='/users'>Users</Link>
-            <Link to='/blogs'>Blogs</Link>
-            <h2>{`${user.name} logged in`}</h2>
+            <Link to='/'>Blogs</Link>
+            <h2 className='text-slate-900'>{`${user.name} logged in`}</h2>
             <button
+              className='flex items-center  bg-white p-2 rounded-lg hover:bg-slate-800 hover:text-white  text-slate-800 font-semibold uppercase '
               onClick={() => {
                 console.log('Logout')
                 dispatch(logoutUser())

@@ -37,16 +37,27 @@ const Blog = () => {
     }
   }
   return (
-    <div>
-      <h2>{blog.title}</h2>
-      <p>{blog.url}</p>
+    <div className='bg-slate-200 p-5 gap-5 flex flex-col items-center justify-center rounded-lg shadow-md'>
+      <h1 className='uppercase font-bold text-2xl mb-6'>Blog Post</h1>
+      <h2 className='font-semibold text-lg'>{blog.title}</h2>
+      <p className='underline'>{blog.url}</p>
       <p>Likes: {blog.likes}</p>
-      <p>added by: {blog.author}</p>
-      <button onClick={() => handleLike(blog)}>Like</button>
-      {user && user.username === blog.user.username && (
-        <button onClick={() => handleRemove(blog)}>Remove</button>
-      )}
-      <Comments user={user} blog={blog} />
+      <p>By: {blog.author}</p>
+      <div className='grid grid-flow-col gap-2 w-full'>
+        <button
+          onClick={() => handleLike(blog)}
+          className=' bg-slate-800 text-white p-2 rounded-xl mb-3 hover:bg-slate-600 hover:text-slate-800'>
+          Like
+        </button>
+        {user && user.username === blog.user.username && (
+          <button
+            onClick={() => handleRemove(blog)}
+            className=' bg-slate-800 text-white p-2 rounded-xl mb-3 hover:bg-slate-600 hover:text-slate-800 ml-5'>
+            Remove
+          </button>
+        )}
+      </div>
+      <Comments />
     </div>
   )
 }

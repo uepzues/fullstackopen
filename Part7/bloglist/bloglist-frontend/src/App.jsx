@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className='main'>
-      {notif && <div className='notif'>{notif}</div>}
+      {(user && notif !== null) && <div className='notif absolute bg-green-300 opacity-80 top-5 right-0 w-3/4 p-5 rounded-s-3xl shadow-md shadow-slate-950'>{notif}</div>}
       <Navigation />
 
       <div>{!user && <LoginSection />}</div>

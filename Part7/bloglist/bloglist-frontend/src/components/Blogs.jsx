@@ -13,22 +13,24 @@ function Blogs() {
 
   return (
     <div className='blogs'>
-      <h2>Blogs</h2>
-      {[...blogs]
-        .sort((a, b) => b.likes - a.likes)
-        .map((blog) => {
-          return (
-            <li
-              key={blog.id}
-              style={blogStyle}
-              className='blog'>
-              <Link to={`/blogs/${blog.id}`}>
-                <span className='blog-title'>{blog.title}</span> by{' '}
-                <span>{blog.author}</span>
-              </Link>
-            </li>
-          )
-        })}
+      <h2 className='uppercase font-bold text-2xl mb-3'>Blogs</h2>
+      <ul >
+        {[...blogs]
+          .sort((a, b) => b.likes - a.likes)
+          .map((blog) => {
+            return (
+              <li 
+                key={blog.id}
+                style={blogStyle}
+                className='blog odd:bg-slate-100 even:bg-sky-200 rounded-xl'>
+                <Link to={`/blogs/${blog.id}`}>
+                  <span className='blog-title underline font-semibold'>{blog.title}</span> by{' '}
+                  <span>{blog.author}</span>
+                </Link>
+              </li>
+            )
+          })}
+      </ul>
     </div>
   )
 }

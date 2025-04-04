@@ -40,20 +40,20 @@ const BlogSection = () => {
 
   return (
     <div>
-      <h2>Create New</h2>
+      <h2 className='uppercase text-xl font-bold text-center mb-5'>Create New</h2>
       <form onSubmit={addBlog}>
-        <label>
-          Title: &nbsp; &nbsp; &nbsp;
-          <input
+        <label className='font-semibold'>
+          Title:
+          <input className='placeholder:bg-slate-200 placeholder:indent-2 px-2 '
             placeholder='Title'
             type='text'
             value={newBlog.title}
             onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
           />
-        </label>
-        <label>
+        </label>&nbsp;&nbsp;&nbsp;
+        <label className='font-semibold'>
           Author: &nbsp;
-          <input
+          <input className='placeholder:bg-slate-200 placeholder:indent-2 px-2 '
             placeholder='Author'
             type='text'
             value={newBlog.author}
@@ -61,10 +61,10 @@ const BlogSection = () => {
               setNewBlog({ ...newBlog, author: target.value })
             }
           />
-        </label>
-        <label>
-          Url: &nbsp; &nbsp; &nbsp; &nbsp;
-          <input
+        </label>&nbsp; &nbsp; &nbsp;
+        <label className='font-semibold'>
+          Url: 
+          <input className='placeholder:bg-slate-200 placeholder:indent-2 px-2 '
             placeholder='URL'
             type='text'
             value={newBlog.url}
@@ -73,7 +73,7 @@ const BlogSection = () => {
             }
           />
         </label>
-        <button>Create</button>
+        <button className=' bg-slate-800 text-white p-2 rounded-xl mb-3'>Create</button>
       </form>
     </div>
   )

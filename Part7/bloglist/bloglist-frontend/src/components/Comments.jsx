@@ -51,17 +51,17 @@ const Comments = () => {
 
   return (
     <div className='comments'>
-      <h2>Comments</h2>
+      <h2 className='uppercase font-bold mb-2'>Comments</h2>
       <form onSubmit={handleCommentSubmit}>
         <input
           type='text'
           name='comment'
         />
-        <button>Submit</button>
+        <button className='ml-5 mb-5 bg-slate-800 px-5 py-2 text-white rounded-xl' >Submit</button>
       </form>
       <div>
-        {comments.map((comment) => {
-          return <p key={comment}>{comment}</p>
+        {comments.map((comment, index) => {
+          return <p key={index}>{comment}</p>
         })}
       </div>
     </div>
