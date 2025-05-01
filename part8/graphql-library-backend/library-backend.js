@@ -1,5 +1,7 @@
 import { ApolloServer } from '@apollo/server'
 import { startStandaloneServer } from '@apollo/server/standalone'
+import { GraphQLError } from 'graphql'
+import { v1 as uuid } from 'uuid'
 
 let authors = [
   {
@@ -99,6 +101,14 @@ const typeDefs = `
         allBooks(author: String, genre: String): [Book]!
         allAuthors: [Author]!
     }
+    type Mutation {
+      addBook (
+        title: String!
+        published: Int!
+        author: String!
+        genres: [String!]
+      ): Book
+    }
 `
 
 const resolvers = {
@@ -126,6 +136,32 @@ const resolvers = {
   Author: {
     bookCount: (root) => {
       return books.filter((book) => book.author === root.name).length
+    },
+  },
+  Mutation: {
+    addBook: (root, args) => {
+      if (!authors.find((author) => author.name === args.author)) {
+        const newAuthor = {
+          name: args.author,
+          id: uuid(),
+          born: null,
+        }
+        authors = [...authors, newAuthor]
+      }
+
+      if (books.find((book) => book.title === args.title)) {
+        throw new GraphQLError('Duplicate book', {
+          extensions: {
+            code: 'BAD_USER_INPUT',
+          },
+        })
+      }
+      const newBook = {
+        ...args,
+        id: uuid(),
+      }
+      books = [...books, newBook]
+      return newBook
     },
   },
 }
