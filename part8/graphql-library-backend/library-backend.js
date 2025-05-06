@@ -157,6 +157,7 @@ const resolvers = {
         throw new GraphQLError('Duplicate book', {
           extensions: {
             code: 'BAD_USER_INPUT',
+            invalidArgs: args.title,
           },
         })
       }
