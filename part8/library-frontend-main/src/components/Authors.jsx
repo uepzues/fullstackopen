@@ -1,4 +1,5 @@
 import SetBirthYear from './SetBirthYear'
+
 const Authors = ({ allAuthors }) => {
   if (!allAuthors) {
     return <div>No authors available</div>

@@ -1,23 +1,29 @@
-import { gql, useQuery } from '@apollo/client'
-import { ALL_BOOKS } from '../queries'
+import useFilteredBooks from './useFilteredBooks'
 
-const Books = () => {
-  const result = useQuery(ALL_BOOKS)
+export default function Books() {
+  const {
+    loading,
+    error,
+    filteredBooks,
+    allGenres,
+    selectedGenre,
+    filterByGenre,
+  } = useFilteredBooks()
 
-  if (result.loading) {
+  if (loading) {
     return <div>Loading...</div>
   }
 
-  if (result.error) {
-    return <div>Error: {result.error.message}</div>
+  if (error) {
+    return <div>Error: {error.message}</div>
   }
-
-  const books = [...result.data.allBooks]
 
   return (
     <div>
       <h2>books</h2>
-
+      <div>
+        in genre<h3>{selectedGenre || 'All'}</h3>
+      </div>
       <table>
         <tbody>
           <tr>
@@ -25,17 +31,29 @@ const Books = () => {
             <th>author</th>
             <th>published</th>
           </tr>
-          {books.map((a) => (
-            <tr key={a.title}>
-              <td>{a.title}</td>
-              <td>{a.author}</td>
-              <td>{a.published}</td>
+          {filteredBooks.map((b) => (
+            <tr key={b.id}>
+              <td>{b.title}</td>
+              <td>{b.author.name}</td>
+              <td>{b.published}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      <div>
+        {allGenres.map((genre, idx) => {
+          return (
+            <>
+              <button
+                key={idx}
+                onClick={() => filterByGenre(genre)}>
+                {genre}
+              </button>
+            </>
+          )
+        })}
+        <button onClick={() => filterByGenre('')}>All</button>
+      </div>
     </div>
   )
 }
-
-export default Books
