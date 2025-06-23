@@ -43,13 +43,11 @@ export default function Books() {
       <div>
         {allGenres.map((genre, idx) => {
           return (
-            <>
-              <button
-                key={idx}
-                onClick={() => filterByGenre(genre)}>
-                {genre}
-              </button>
-            </>
+            <button
+              key={idx}
+              onClick={() => filterByGenre(genre)}>
+              {genre}
+            </button>
           )
         })}
         <button onClick={() => filterByGenre('')}>All</button>
