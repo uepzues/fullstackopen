@@ -7,6 +7,7 @@ import { useQuery, ApolloClient, useApolloClient } from '@apollo/client'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { ALL_AUTHORS } from './queries'
 import { useEffect, useState } from 'react'
+import Notification from './components/Notification'
 
 const App = () => {
   const result = useQuery(ALL_AUTHORS)
@@ -33,60 +34,64 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter>
-      <div>
-        <Link to='/'>
-          <button>authors</button>
-        </Link>
-        <Link to={'/books'}>
-          <button>books</button>
-        </Link>
-
-        {token ? (
-          <>
-            <Link to={'/addBook'}>
-              <button>add book</button>
-            </Link>
-            <Link to={'/recommend'}>
-              <button>recommend</button>
-            </Link>
-            <button onClick={logout}>logout</button>
-          </>
-        ) : (
-          <Link to={'/login'}>
-            <button>login</button>
+    <>
+      <BrowserRouter>
+        <div>
+          <Link to='/'>
+            <button>authors</button>
           </Link>
-        )}
-      </div>
+          <Link to={'/books'}>
+            <button>books</button>
+          </Link>
 
-      <Routes>
-        <Route
-          path='/'
-          element={<Authors allAuthors={result.data.allAuthors} />}
-        />
-        <Route
-          path='/books'
-          element={<Books />}
-        />
-        <Route
-          path='/addBook'
-          element={<NewBook />}
-        />
-        <Route
-          path='/login'
-          element={
-            <LoginForm
-              setToken={setToken}
-              token={token}
-            />
-          }
-        />
-        <Route
-          path='/recommend'
-          element={<Recommendation />}
-        />
-      </Routes>
-    </BrowserRouter>
+          {token ? (
+            <>
+              <Link to={'/addBook'}>
+                <button>add book</button>
+              </Link>
+              <Link to={'/recommend'}>
+                <button>recommend</button>
+              </Link>
+              <button onClick={logout}>logout</button>
+            </>
+          ) : (
+            <Link to={'/login'}>
+              <button>login</button>
+            </Link>
+          )}
+        </div>
+
+        <Notification />
+
+        <Routes>
+          <Route
+            path='/'
+            element={<Authors allAuthors={result.data.allAuthors} />}
+          />
+          <Route
+            path='/books'
+            element={<Books />}
+          />
+          <Route
+            path='/addBook'
+            element={<NewBook />}
+          />
+          <Route
+            path='/login'
+            element={
+              <LoginForm
+                setToken={setToken}
+                token={token}
+              />
+            }
+          />
+          <Route
+            path='/recommend'
+            element={<Recommendation />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 
