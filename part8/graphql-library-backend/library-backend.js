@@ -19,7 +19,7 @@ mongoose
     console.log('error connection to MongoDB:', err.message)
   })
 
-const typeDefs = `
+const typeDefs = `#graphql
     type User {
       username: String!
       favouriteGenre: String!
