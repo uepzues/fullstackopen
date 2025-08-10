@@ -1,5 +1,4 @@
-
-const typeDefs = `graphql
+const typeDefs = `#graphql
     type User {
       username: String!
       favouriteGenre: String!
@@ -48,6 +47,6 @@ const typeDefs = `graphql
         password: String!
       ): Token
     }
-`
+`;
 
-export default typeDefs
+export default typeDefs;
