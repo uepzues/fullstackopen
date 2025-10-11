@@ -46,7 +46,7 @@ My solutions for the exercises of the [University of Helsinki](https://www.helsi
 | [5](https://github.com/uepzues/fullstackopen/tree/main/part5) | Done        | 23/23     |
 | [6](https://github.com/uepzues/fullstackopen/tree/main/part6) | Done        | 24/24     |
 | [7](https://github.com/uepzues/fullstackopen/tree/main/Part7) | Done        | 21/21     |
-| [8](https://github.com/uepzues/fullstackopen/tree/main/part8) | In Progress | 0/26     |
+| [8](https://github.com/uepzues/fullstackopen/tree/main/part8) | Done        | 26/26     |
 | [9](https://github.com/uepzues/fullstackopen/tree/main/part9) | In Progress        | 0/29     |
 
 ## Course certificates
@@ -54,3 +54,7 @@ My solutions for the exercises of the [University of Helsinki](https://www.helsi
 ### Full Stack Open: core course
 
 ![Full Stack Open core course Certificate](./img/certificate-fullstack.png)
+
+### FullStack Open: GraphQL
+
+![Full Stack Open GraphQL Certificate](./img/certificate-graphql.png)
