@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { ALL_AUTHORS, UPDATE_AUTHOR } from "../queries.js";
 import { useMutation } from "@apollo/client";
 import Select from "react-select";
+import "./SetBirthYear.css"
 
 export default function SetBirthYear({ authors }) {
   const [name, setName] = useState("");
@@ -40,19 +41,20 @@ export default function SetBirthYear({ authors }) {
 
   return (
     <div>
-      <form onSubmit={submit}>
+      <form className="formBirthYear" onSubmit={submit}>
         <Select
           options={options}
           value={name}
           onChange={(author) => setName(author)}
         />
-        born:{" "}
+        <br />
+        Born:{" "}
         <input
           type="text"
           value={born}
           onChange={({ target }) => setBorn(target.value)}
         />
-        <button>update author</button>
+        <button type="submit">update author</button>
       </form>
     </div>
   );

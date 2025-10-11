@@ -1,0 +1,18 @@
+.formNewBook{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.formNewBook input{
+    margin: 5px 0;
+}
+
+.genreInput{
+    text-align: right;
+}
+
+.buttonCreateBook{
+    margin-top: 10px;
+}

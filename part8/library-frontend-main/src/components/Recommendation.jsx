@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useFilteredBooks from "./useFilteredBooks";
 import { useQuery } from "@apollo/client";
 import { ME } from "../queries";
+import "./Recommendation.css"
 
 export default function Recommendation() {
   const { data: meData, loading: meLoading, error: meError } = useQuery(ME);
@@ -35,8 +36,8 @@ export default function Recommendation() {
 
   return (
     <div>
-      <div>
-        books in your favourite genre{" "}
+      <div className="recommendComponent">
+        Books in your favourite genre{" "}
         <h4>{selectedGenre || "Not Available"}</h4>
       </div>
       <table>

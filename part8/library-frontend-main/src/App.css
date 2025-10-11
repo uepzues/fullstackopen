@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: forestgreen;
+}
+
+button {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto 5px;
+  background-color: orange;
+}
+
+ button:active {
+  background-color: rgb(218, 163, 61);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 0 0 black;
+}
+
+h1 {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+ border-collapse: collapse;
+ margin-bottom: 10px;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(84, 172, 67);
+}
+
+th {
+  text-transform: capitalize;
+  width: 100px;
+  background-color: rgb(159, 231, 145);
+}
+
+th:first-child{
+    min-width: 150px;
+}
+
+td {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  padding: 3px;
+}
+
+td:not(:first-child){
+    text-align: center;
+}

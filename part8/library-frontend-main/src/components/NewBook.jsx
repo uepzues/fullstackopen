@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_BOOK, ALL_AUTHORS, ALL_BOOKS } from "../queries";
+import "./NewBook.css";
 
 const NewBook = () => {
   const [title, setTitle] = useState("");
@@ -61,30 +62,30 @@ const NewBook = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="formNewBook" onSubmit={handleSubmit}>
         <div>
-          title
+          title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <input
             value={title}
             onChange={({ target }) => setTitle(target.value)}
           />
         </div>
         <div>
-          author
+          author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <input
             value={author}
             onChange={({ target }) => setAuthor(target.value)}
           />
         </div>
         <div>
-          published
+          published &nbsp;
           <input
             type="number"
             value={published}
             onChange={({ target }) => setPublished(target.value)}
           />
         </div>
-        <div>
+        <div className="genreInput">
           <input
             value={genre}
             onChange={({ target }) => setGenre(target.value)}
@@ -94,7 +95,7 @@ const NewBook = () => {
           </button>
         </div>
         <div>genres: {genres.join(" ")}</div>
-        <button type="submit">create book</button>
+        <button className="buttonCreateBook" type="submit">create book</button>
       </form>
     </div>
   );

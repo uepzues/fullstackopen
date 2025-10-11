@@ -14,6 +14,7 @@ import { ALL_AUTHORS } from "./queries";
 import { useEffect, useState } from "react";
 import Notification from "./components/Notification";
 import { CreateForm } from "./components/CreateForm";
+import "./App.css"
 
 const App = () => {
   const result = useQuery(ALL_AUTHORS);
@@ -43,7 +44,7 @@ const App = () => {
 
   return (
     <>
-      <div>
+      <div className="navLinks">
         <Link to="/">
           <button>authors</button>
         </Link>

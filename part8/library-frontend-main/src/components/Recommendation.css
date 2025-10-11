@@ -1,0 +1,8 @@
+.recommendComponent{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.recommendComponent h4{
+    text-transform: capitalize;
+}

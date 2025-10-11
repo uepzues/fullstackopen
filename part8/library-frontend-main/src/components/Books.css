@@ -1,0 +1,16 @@
+.genreButtons {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.genreButtons button {
+  margin: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+}

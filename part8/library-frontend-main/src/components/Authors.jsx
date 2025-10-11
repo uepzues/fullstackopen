@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 const Authors = ({ allAuthors }) => {
   if (!allAuthors) {
-    return <div>No authors available</div>;
+    return <div className="noAuthors">No authors available</div>;
   }
   const authors = [...allAuthors];
 
   return (
     <>
-      <div>
-        <h2>authors</h2>
+      <div className="Authors">
+        <h1>authors</h1>
         <table>
           <tbody>
             <tr>

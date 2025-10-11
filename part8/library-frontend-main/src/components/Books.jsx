@@ -1,4 +1,5 @@
-import useFilteredBooks from './useFilteredBooks'
+import useFilteredBooks from "./useFilteredBooks";
+import "./Books.css"
 
 export default function Books() {
   const {
@@ -8,21 +9,26 @@ export default function Books() {
     allGenres,
     selectedGenre,
     filterByGenre,
-  } = useFilteredBooks()
+  } = useFilteredBooks();
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <div>Error: {error.message}</div>;
   }
 
   return (
     <div>
-      <h2>books</h2>
+      <h1>books</h1>
       <div>
-        <h3>{`In genre ${selectedGenre}` || 'All'}</h3>
+        {/* <h3>{`In genre ${selectedGenre}` || "All"}</h3> */}
+        {selectedGenre === "" ? (
+          <h2>All</h2>
+        ) : (
+          <h2>{`In genre ${selectedGenre}`}</h2>
+        )}
       </div>
       <table>
         <tbody>
@@ -40,18 +46,16 @@ export default function Books() {
           ))}
         </tbody>
       </table>
-      <div>
+      <div className="genreButtons">
         {allGenres.map((genre, idx) => {
           return (
-            <button
-              key={idx}
-              onClick={() => filterByGenre(genre)}>
+            <button key={idx} onClick={() => filterByGenre(genre)}>
               {genre}
             </button>
-          )
+          );
         })}
-        <button onClick={() => filterByGenre('')}>All</button>
+        <button onClick={() => filterByGenre("")}>All</button>
       </div>
     </div>
-  )
+  );
 }
