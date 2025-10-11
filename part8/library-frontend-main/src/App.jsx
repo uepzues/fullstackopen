@@ -1,3 +1,4 @@
+import "./App.css"
 import Authors from "./components/Authors";
 import Books from "./components/Books";
 import NewBook from "./components/NewBook";
@@ -14,7 +15,6 @@ import { ALL_AUTHORS } from "./queries";
 import { useEffect, useState } from "react";
 import Notification from "./components/Notification";
 import { CreateForm } from "./components/CreateForm";
-import "./App.css"
 
 const App = () => {
   const result = useQuery(ALL_AUTHORS);
