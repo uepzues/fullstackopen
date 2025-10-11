@@ -2,16 +2,18 @@ import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import { WebSocketServer } from "ws";
+import { useServer } from "graphql-ws/lib/use/ws";
 import express from "express";
 import cors from "cors";
 import http from "http";
-
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import User from "./models/userModel.js";
 import typeDefs from "./schema.js";
 import resolvers from "./resolvers.js";
 import dotenv from "dotenv";
+import dataLoaders from "./dataloaders.js";
 
 mongoose.set("strictQuery", false);
 
@@ -24,32 +26,67 @@ mongoose
     console.log("error connection to MongoDB:", err.message);
   });
 
+mongoose.set({ debug: true });
+
 const start = async () => {
   const app = express();
   const httpServer = http.createServer(app);
 
+  const wsServer = new WebSocketServer({
+    server: httpServer,
+    path: "/",
+  });
+
+  const schema = makeExecutableSchema({ typeDefs, resolvers });
+  const serverCleanup = useServer(
+    {
+      schema,
+      context: async (ctx, msg, args) => {
+        return { currentUser: null, dataLoaders };
+      },
+    },
+    wsServer
+  );
+
   const server = new ApolloServer({
-    schema: makeExecutableSchema({ typeDefs, resolvers }),
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    schema,
+    plugins: [
+      ApolloServerPluginDrainHttpServer({ httpServer }),
+      {
+        async serverWillStart() {
+          return {
+            async drainServer() {
+              await serverCleanup.dispose();
+            },
+          };
+        },
+      },
+    ],
   });
 
   await server.start();
 
   app.use(
+    cors({
+      origin: "http://localhost:5173",
+      credentials: true,
+    })
+  );
+  app.use(express.json());
+  app.use(
     "/",
-    cors(),
-    express.json(),
     expressMiddleware(server, {
       context: async ({ req }) => {
-        const auth = req ? req.headers.authorization : null;
+        let currentUser = null;
+        const auth = req?.headers?.authorization;
         if (auth && auth.startsWith("Bearer ")) {
           const decodedToken = jwt.verify(
             auth.substring(7),
             process.env.JWT_SECRET
           );
-          const currentUser = await User.findById(decodedToken.id);
-          return { currentUser };
+          currentUser = await User.findById(decodedToken.id);
         }
+        return { currentUser, dataLoaders };
       },
     })
   );

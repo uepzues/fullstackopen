@@ -22,7 +22,7 @@ export default function Books() {
     <div>
       <h2>books</h2>
       <div>
-        in genre<h3>{selectedGenre || 'All'}</h3>
+        <h3>{`In genre ${selectedGenre}` || 'All'}</h3>
       </div>
       <table>
         <tbody>

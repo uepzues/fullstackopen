@@ -3,6 +3,7 @@ const typeDefs = `#graphql
       username: String!
       favouriteGenre: String!
       id: ID!
+      author: Author!
     }
     type Token {
       value: String!
@@ -21,7 +22,7 @@ const typeDefs = `#graphql
         genres: [String!]!
     }
     type Query {
-        bookCount: Int!
+        booksCount: Int!
         authorCount: Int!
         allBooks(author: String, genre: String): [Book]!
         allAuthors: [Author]!
@@ -46,6 +47,10 @@ const typeDefs = `#graphql
         username: String!
         password: String!
       ): Token
+    }
+
+    type Subscription {
+      bookAdded: Book!
     }
 `;
 

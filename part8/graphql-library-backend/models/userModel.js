@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
   favouriteGenre: {
     type: String,
     minlength: 3,
+    required: true
   },
   author: [
     {
@@ -25,3 +26,4 @@ userSchema.plugin(mongooseUniqueValidator)
 const User = mongoose.model('User', userSchema)
 
 export default User
+ 

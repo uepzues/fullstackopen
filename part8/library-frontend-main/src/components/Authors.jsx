@@ -1,10 +1,11 @@
-import SetBirthYear from './SetBirthYear'
+import SetBirthYear from "./SetBirthYear";
+import PropTypes from "prop-types";
 
 const Authors = ({ allAuthors }) => {
   if (!allAuthors) {
-    return <div>No authors available</div>
+    return <div>No authors available</div>;
   }
-  const authors = [...allAuthors]
+  const authors = [...allAuthors];
 
   return (
     <>
@@ -31,7 +32,11 @@ const Authors = ({ allAuthors }) => {
         <SetBirthYear authors={authors} />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Authors
+Authors.propTypes = {
+  allAuthors: PropTypes.array,
+};
+
+export default Authors;
