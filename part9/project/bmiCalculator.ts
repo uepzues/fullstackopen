@@ -18,8 +18,21 @@ export function calculateBMI(h: number, w: number): string {
     range = "Morbidly Obese";
   }
 
-  return range + " range " 
-//   + value.toFixed(2);
+  return range + " range ";
+  //   + value.toFixed(2);
 }
 
-console.log(calculateBMI(190, 74));
+const parseArgs = (args: string[]) => {
+  if (args.length < 4) throw new Error("Not enough arguments");
+  if (args.length > 4) throw new Error("Too many arguments");
+  if (args.slice(2).filter((a) => isNaN(Number(a))).length >0)
+    throw new Error("Provide numbers only");
+  const argument = process.argv.slice(2).map(Number);
+  const heightInCm = argument[0];
+  const weightInKg = argument[1];
+
+  console.log(calculateBMI(heightInCm, weightInKg));
+};
+
+parseArgs(process.argv);
+// console.log(calculateBMI(190, 74));

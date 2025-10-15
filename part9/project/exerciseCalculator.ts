@@ -46,8 +46,21 @@ export default function calculateExercises(
   };
 }
 
+const parseArgs = (args: string[]) => {
+  if (args.length < 4) {
+    throw new Error("Not enough arguments");
+  }
+  if (args.length > 9) {
+    throw new Error("Too many arguments");
+  }
+  if (args.slice(2).map(Number).filter((a) => isNaN(a)).length > 0) {
+    throw new Error("Provide numbers only");
+  }
 
-// const hoursPerDayArray: number[] = process.argv.slice(2, -1).map(Number)
-// const target: number = Number(process.argv.slice(-1)[0])
-// console.log(calculateExercises(hoursPerDayArray, target));
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
+  const hoursPerDayArray: number[] = args.slice(2, -1).map(Number);
+  const target: number = Number(args.slice(-1)[0]);
+  console.log(calculateExercises(hoursPerDayArray, target));
+};
+
+parseArgs(process.argv);
+// console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
