@@ -5,10 +5,12 @@
   "license": "ISC",
   "author": "uepzues",
   "type": "module",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "bmiCalc": "ts-node bmiCalculator.ts",
-    "exerciseCalc": "ts-node exerciseCalculator.ts"
+    "exerciseCalc": "ts-node exerciseCalculator.ts",
+    "start": "ts-node index.ts",
+    "dev": "tsx index.ts"
   },
   "dependencies": {
     "acorn": "^8.15.0",
@@ -16,13 +18,16 @@
     "arg": "^4.1.3",
     "create-require": "^1.1.1",
     "diff": "^4.0.2",
+    "express": "^5.1.0",
     "make-error": "^1.3.6",
     "undici-types": "^7.14.0",
     "v8-compile-cache-lib": "^3.0.1",
     "yn": "^3.1.1"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
 }
