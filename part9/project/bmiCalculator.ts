@@ -38,12 +38,12 @@ if (require.main === module) {
     };
 
     parseArgs(process.argv);
-
   } catch (error: unknown) {
     let errorMessage = "Something went wrong";
     if (error instanceof Error) {
       errorMessage += "Error: " + error.message;
     }
+    console.log(errorMessage);
   }
 }
 
