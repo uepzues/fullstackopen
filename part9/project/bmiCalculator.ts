@@ -1,4 +1,4 @@
-export function calculateBMI(h: number, w: number): string {
+export default function calculateBMI(h: number, w: number): string {
   let range: string = "";
   const value: number = (w * 10000) / (h * h);
 
@@ -22,17 +22,29 @@ export function calculateBMI(h: number, w: number): string {
   // + value.toFixed(2);
 }
 
-const parseArgs = (args: string[]) => {
-  if (args.length < 4) throw new Error("Not enough arguments");
-  if (args.length > 4) throw new Error("Too many arguments");
-  if (args.slice(2).filter((a) => isNaN(Number(a))).length > 0)
-    throw new Error("Provide numbers only");
-  const argument = process.argv.slice(2).map(Number);
-  const heightInCm = argument[0];
-  const weightInKg = argument[1];
+if (require.main === module) {
+  try {
+    console.log("from cli");
+    const parseArgs = (args: string[]) => {
+      if (args.length < 4) throw new Error("Not enough arguments");
+      if (args.length > 4) throw new Error("Too many arguments");
+      if (args.slice(2).filter((a) => isNaN(Number(a))).length > 0)
+        throw new Error("Provide numbers only");
+      const argument = process.argv.slice(2).map(Number);
+      const heightInCm = argument[0];
+      const weightInKg = argument[1];
 
-  console.log(calculateBMI(heightInCm, weightInKg));
-};
+      console.log(calculateBMI(heightInCm, weightInKg));
+    };
 
-parseArgs(process.argv);
+    parseArgs(process.argv);
+
+  } catch (error: unknown) {
+    let errorMessage = "Something went wrong";
+    if (error instanceof Error) {
+      errorMessage += "Error: " + error.message;
+    }
+  }
+}
+
 // console.log(calculateBMI(190, 74));

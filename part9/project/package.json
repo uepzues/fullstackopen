@@ -4,7 +4,6 @@
   "description": "Full Stack Open exercise part9",
   "license": "ISC",
   "author": "uepzues",
-  "type": "module",
   "main": "index.ts",
   "scripts": {
     "bmiCalc": "ts-node bmiCalculator.ts",
