@@ -49,7 +49,7 @@ app.post("/exercises", (req, res) => {
   try {
     const { daily_exercises, target } = req.body as ExerciseData;
 
-    if (!daily_exercises || !target) {
+    if (daily_exercises === undefined || target === undefined) {
       return res.status(400).json({ error: "parameters missing" });
     }
 
