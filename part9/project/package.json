@@ -9,7 +9,7 @@
     "bmiCalc": "ts-node bmiCalculator.ts",
     "exerciseCalc": "ts-node exerciseCalculator.ts",
     "start": "ts-node index.ts",
-    "dev": "tsx index.ts",
+    "dev": "tsx --watch index.ts",
     "lint": "eslint ."
   },
   "dependencies": {
