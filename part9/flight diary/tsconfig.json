@@ -32,6 +32,7 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     // "noPropertyAccessFromIndexSignature": true,
+    "resolveJsonModule": true,
 
     // Recommended Options
     "strict": true,
@@ -41,12 +42,12 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true
-  }
+  },
 
   // Explicitly include your TypeScript source files so the compiler finds inputs.
   // Adjust the patterns below to match your project layout (e.g. "src/**/*").
   // "include": ["src/**/*", "**/*.ts", "**/*.tsx"],
 
   // Keep build output excluded
-  // "exclude": ["build"]
+  "exclude": ["build"]
 }
