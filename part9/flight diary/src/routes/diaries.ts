@@ -1,6 +1,6 @@
 import { Response } from "express";
-import { NonSensitiveDiaryEntry, DiaryEntry } from "../../types";
 import express from "express";
+import { NonSensitiveDiaryEntry, DiaryEntry } from "../../types";
 import diaryServices from "../services/diaryServices";
 
 const router = express.Router();
