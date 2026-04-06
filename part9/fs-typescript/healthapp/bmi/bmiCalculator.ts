@@ -2,13 +2,13 @@ const calculateBmi = (height: number, weight: number): string =>{
     const bmi = weight / (height/100)**2;
     switch(true){
         case bmi < 18.5:
-            return 'Underweight';
+            return 'Underweight range';
         case bmi >= 18.5 && bmi < 25:
-            return 'Normal weight';
+            return 'Normal range';
         case bmi >= 25 && bmi < 30:
-            return 'Overweight';
+            return 'Overweight range';
         default:
-            return 'Obese';
+            return 'Obese range';
     }
 }
 
