@@ -12,9 +12,7 @@ const calculateExercises = (arr: number[], target: number): Result=>{
     const ave = arr.reduce((acc, cur)=> acc + cur)/arr.length
 
     const getRating = (): [number, string] =>{
-            if (ave > target){
-                return [4, "You went above and beyond! Bravo!"]
-            } else if (target === ave){
+            if (target === ave){
                 return [3, "You met the target! Hurray!"]
             } else if( ave < target && ave > target * .5){
                 return [2, "Not too bad but could be better."]
