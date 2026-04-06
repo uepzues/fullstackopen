@@ -8,9 +8,11 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "calculateBmi": "tsc bmi/bmiCalculator.ts && node bmi/bmiCalculator.js"
+    "calculateBmi": "tsc && node bmi/bmiCalculator.js",
+    "calculateExercises": "tsc && node bmi/exerciseCalculator.js"
   },
   "devDependencies": {
+    "tsx": "^4.21.0",
     "typescript": "^6.0.2"
   }
 }

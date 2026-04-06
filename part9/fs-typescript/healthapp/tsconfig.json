@@ -3,5 +3,6 @@
     "noImplicitAny": true,
     "noEmit": false,
 
-  }
+  }, 
+  "include": ["bmi/*"]
 }
