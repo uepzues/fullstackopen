@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "noEmit": false,
+    "noEmit": true,
     "types": ["node"]
   },
   "include": ["bmi/**/*"]
