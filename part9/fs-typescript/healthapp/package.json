@@ -8,8 +8,8 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "calculateBmi": "tsx bmi/bmiCalculator.js",
-    "calculateExercises": "tsx bmi/exerciseCalculator.js"
+    "calculateBmi": "tsc && tsx bmi/bmiCalculator.js",
+    "calculateExercises": "tsc && tsx bmi/exerciseCalculator.js"
   },
   "devDependencies": {
     "@types/node": "^25.5.2",
