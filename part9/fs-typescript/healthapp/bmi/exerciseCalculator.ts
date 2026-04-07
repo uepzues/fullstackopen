@@ -1,3 +1,4 @@
+import {array} from "./utils/parseArgs.js"
 interface Result { 
   periodLength: number,//7
   trainingDays: number, //5
@@ -8,7 +9,13 @@ interface Result {
   average: number, //1.9285714285714286
 }
 
-const calculateExercises = (arr: number[], target: number): Result=>{
+
+
+const calculateExercises = (args: number[]): Result=>{
+    const arr = args.slice(1)
+    console.log('arr', arr)
+    const target = args[0]
+    console.log('target', target)
     const ave = arr.reduce((acc, cur)=> acc + cur)/arr.length
 
     const getRating = (): [number, string] =>{
@@ -23,7 +30,7 @@ const calculateExercises = (arr: number[], target: number): Result=>{
 
     const result = {
         periodLength: arr.length,
-        trainingDays: arr.filter(num=> num===0).length,
+        trainingDays: arr.filter(num=> num!==0).length,
         success: ave >= target,
         rating: getRating()[0],
         ratingDescription: getRating()[1],
@@ -34,4 +41,5 @@ const calculateExercises = (arr: number[], target: number): Result=>{
     return result
 }
 
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2))
+
+console.log(calculateExercises(array))

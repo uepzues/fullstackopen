@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noImplicitAny": true,
     "noEmit": false,
-
-  }, 
-  "include": ["bmi/*"]
+    "types": ["node"]
+  },
+  "include": ["bmi/**/*"]
 }

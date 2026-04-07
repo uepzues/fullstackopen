@@ -1,11 +1,12 @@
-"use strict";
-const calculateExercises = (arr, target) => {
+import { array } from "./utils/parseArgs.js";
+const calculateExercises = (args) => {
+    const arr = args.slice(1);
+    console.log('arr', arr);
+    const target = args[0];
+    console.log('target', target);
     const ave = arr.reduce((acc, cur) => acc + cur) / arr.length;
     const getRating = () => {
-        if (ave > target) {
-            return [4, "You went above and beyond! Bravo!"];
-        }
-        else if (target === ave) {
+        if (target === ave) {
             return [3, "You met the target! Hurray!"];
         }
         else if (ave < target && ave > target * .5) {
@@ -17,7 +18,7 @@ const calculateExercises = (arr, target) => {
     };
     const result = {
         periodLength: arr.length,
-        trainingDays: arr.filter(num => num === 0).length,
+        trainingDays: arr.filter(num => num !== 0).length,
         success: ave >= target,
         rating: getRating()[0],
         ratingDescription: getRating()[1],
@@ -26,4 +27,4 @@ const calculateExercises = (arr, target) => {
     };
     return result;
 };
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
+console.log(calculateExercises(array));
