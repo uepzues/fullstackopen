@@ -1,4 +1,4 @@
-import {array} from "./utils/parseArgs"
+import {array} from "./utils/parseArgs.ts"
 interface Result { 
   periodLength: number,//7
   trainingDays: number, //5

@@ -9,11 +9,16 @@
   "scripts": {
     "tsc": "tsc",
     "calculateBmi": "tsc && tsx bmi/bmiCalculator.js",
-    "calculateExercises": "tsc && tsx bmi/exerciseCalculator.js"
+    "calculateExercises": "tsc && tsx bmi/exerciseCalculator.js",
+    "dev": "tsc && tsx index.ts"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^25.5.2",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
