@@ -8,9 +8,10 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "calculateBmi": "tsc && tsx bmi/bmiCalculator.js",
-    "calculateExercises": "tsc && tsx bmi/exerciseCalculator.js",
-    "dev": "tsc && tsx index.ts"
+    "calculateBmi": "tsx bmi/bmiCalculator.ts",
+    "calculateExercises": "tsx exercise/exerciseCalculator.ts",
+    "dev": "tsx --watch index.ts",
+    "start": "tsc && node dist/index.js"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
