@@ -1,0 +1,30 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "multiply": "tsx multiplier.ts",
+    "start": "tsc && node dist/index.js",
+    "dev": "tsx --watch index.ts",
+    "lint": "eslint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "eslint": "^10.2.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
