@@ -5,7 +5,7 @@ interface Result {
 }
 const calculateBmi = (height: string, weight: string): Result => {
   if (!height || !weight) {
-    console.log('please enter height and weight')
+    console.log('please enter height and weight');
     throw new Error('malformatted parameters');
   }
 
