@@ -1,19 +1,74 @@
-import { type NewPatientEntry } from './types.ts';
+import { Gender, type NewPatientEntry } from './types.ts';
 
-export const parseNewPatientEntry = (object: unknown) => {
+export const parseNewPatientEntry = (object: unknown): NewPatientEntry => {
   if (!object || typeof object !== 'object') {
     throw new Error('Incorrect or missing data.');
   }
+  if (
+    'name' in object &&
+    'dateOfBirth' in object &&
+    'ssn' in object &&
+    'gender' in object &&
+    'occupation' in object
+  ) {
+    const newPatientEntry: NewPatientEntry = {
+      name: parseName(object.name),
+      dateOfBirth: parseDate(object.dateOfBirth),
+      ssn: parseSsn(object.ssn),
+      gender: parseGender(object.gender),
+      occupation: parseOccupation(object.occupation),
+    };
 
-  const newPatientEntry: NewPatientEntry = {
-    name: 'test name',
-    dateOfBirth: 'dob',
-    ssn: 'ssn',
-    gender: 'male',
-    occupation: 'job',
-  };
+    return newPatientEntry;
+  }
+  throw new Error('Incorrect data: Some fields are missing.');
+};
 
-  return newPatientEntry;
+const isString = (str: unknown): str is string => {
+  return typeof str === 'string' || str instanceof String;
+};
+
+const parseName = (name: unknown) => {
+  if (!name || !isString(name)) {
+    throw new Error('Incorrect or missing' + name);
+  }
+  return name;
+};
+
+const isDate = (date: string): boolean => {
+  return Boolean(Date.parse(date));
+};
+
+const parseDate = (date: unknown) => {
+  if (!isString(date) || !isDate(date)) {
+    throw new Error('Incorrect or missing' + date);
+  }
+  return date;
+};
+
+const parseSsn = (ssn: unknown): string => {
+  if (!isString(ssn)) {
+    throw new Error('Incorrect or missing' + ssn);
+  }
+  return ssn;
+};
+
+const parseOccupation = (job: unknown): string => {
+  if (!isString(job)) {
+    throw new Error('Incorrect or missing' + job);
+  }
+  return job;
+};
+
+const isGender = (param: string): param is Gender => {
+  return (Object.values(Gender) as string[]).includes(param);
+};
+
+const parseGender = (gender: unknown): Gender => {
+  if (!isString(gender) || !isGender(gender)) {
+    throw new Error('Incorrect or missing' + gender);
+  }
+  return gender;
 };
 
 export default { parseNewPatientEntry };
