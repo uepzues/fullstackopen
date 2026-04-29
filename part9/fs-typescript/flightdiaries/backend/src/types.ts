@@ -26,7 +26,7 @@ export const NewEntrySchema = z.object({
 });
 
 export interface DiaryEntry extends NewDiaryEntry {
-  id: number;
+  id: number
 }
 
 export type NonSensitiveDiaryEntry = Omit<DiaryEntry, 'comment'>;
