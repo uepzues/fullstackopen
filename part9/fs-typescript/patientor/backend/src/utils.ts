@@ -1,3 +1,4 @@
+import z from 'zod';
 import { Gender, type NewPatientEntry } from './types.ts';
 
 export const parseNewPatientEntry = (object: unknown): NewPatientEntry => {
@@ -30,7 +31,7 @@ const isString = (str: unknown): str is string => {
 
 const parseName = (name: unknown) => {
   if (!name || !isString(name)) {
-    throw new Error('Incorrect or missing' + name);
+    throw new Error('Incorrect or missing name ' + name);
   }
   return name;
 };
@@ -41,21 +42,21 @@ const isDate = (date: string): boolean => {
 
 const parseDate = (date: unknown) => {
   if (!isString(date) || !isDate(date)) {
-    throw new Error('Incorrect or missing' + date);
+    throw new Error('Incorrect or missing date' + date);
   }
   return date;
 };
 
 const parseSsn = (ssn: unknown): string => {
   if (!isString(ssn)) {
-    throw new Error('Incorrect or missing' + ssn);
+    throw new Error('Incorrect or missing ssn' + ssn);
   }
   return ssn;
 };
 
 const parseOccupation = (job: unknown): string => {
   if (!isString(job)) {
-    throw new Error('Incorrect or missing' + job);
+    throw new Error('Incorrect or missing occupation' + job);
   }
   return job;
 };
@@ -66,7 +67,7 @@ const isGender = (param: string): param is Gender => {
 
 const parseGender = (gender: unknown): Gender => {
   if (!isString(gender) || !isGender(gender)) {
-    throw new Error('Incorrect or missing' + gender);
+    throw new Error('Incorrect or missing gender' + gender);
   }
   return gender;
 };

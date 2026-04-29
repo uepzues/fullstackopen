@@ -1,8 +1,11 @@
-import express, { type Response } from 'express';
+import express, { type Request, type Response } from 'express';
 import diaryService from '../services/diaryService.ts';
-import type { NonSensitiveDiaryEntry } from '../types.ts';
-import parseNewDiaryEntry from '../utils.ts';
-
+import {
+  type DiaryEntry,
+  type NewDiaryEntry,
+  type NonSensitiveDiaryEntry,
+} from '../types.ts';
+import { errorMiddleware, newDiaryParser } from '../middleware.ts';
 const router = express.Router();
 
 router.get('/:id', (req, res) => {
@@ -19,18 +22,18 @@ router.get('/', (_req, res: Response<NonSensitiveDiaryEntry[]>) => {
   res.send(diaryService.getNonSensitiveEntries());
 });
 
-router.post('/', (req, res) => {
-  try {
-    const newDiaryEntry = parseNewDiaryEntry(req.body);
-    const addedEntry = diaryService.addDiary(newDiaryEntry);
+router.post(
+  '/',
+  newDiaryParser,
+  (
+    req: Request<unknown, unknown, NewDiaryEntry>,
+    res: Response<DiaryEntry>,
+  ) => {
+    const addedEntry = diaryService.addDiary(req.body);
     res.json(addedEntry);
-  } catch (error: unknown) {
-    let errorMessage = 'Something went wrong.';
-    if (error instanceof Error) {
-      errorMessage += ' Error: ' + error.message;
-    }
-    res.status(400).send(errorMessage);
-  }
-});
+  },
+);
+
+router.use(errorMiddleware);
 
 export default router;
