@@ -1,17 +1,14 @@
-import { type ContentProps } from "./types";
+import { type ContentProps } from './types';
+import Part from './Part';
 
-
-
-export const Content = ({ courseContent }: ContentProps) => {
+export const Content =({courseContent}: ContentProps)=>{
   return (
     <div>
-      {courseContent.map((part, idx) => (
-        <p key={idx}>
-          <strong>{part.name}</strong> {part.exerciseCount}
-        </p>
+      {courseContent.map(part => (
+        <Part key={part.name} part={part} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Content
+export default Content;
