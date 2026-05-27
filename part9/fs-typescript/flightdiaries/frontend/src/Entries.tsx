@@ -10,7 +10,7 @@ export default function Entries({diaries}: EntryProps) {
               <p>{d.date}</p>
               <p>{d.weather}</p>
               <p>{d.visibility}</p>
-              <p>{d.comment}</p>
+              {/* <p>{d.comment}</p> */}
             </li>
           </ul>
         );

@@ -1,15 +1,35 @@
-export type Weather = 'sunny' | 'rainy' | 'cloudy' | 'windy' | 'stormy';
+import { z } from 'zod';
 
-export type Visibility = 'great' | 'good' | 'ok' | 'poor';
+export const weatherSchema = z.enum([
+  'sunny',
+  'rainy',
+  'cloudy',
+  'windy',
+  'stormy',
+]);
 
-export interface Diary {
-  id: string;
-  date: string;
-  weather: Weather;
-  visibility: Visibility;
-  comment?: string;
-}
+export const visibilitySchema = z.enum(['great', 'good', 'ok', 'poor']);
+
+export const diarySchema = z.object({
+  id: z.number(),
+  date: z.string(),
+  weather: weatherSchema,
+  visibility: visibilitySchema,
+  comment: z.string().optional(),
+});
+
+export const diariesSchema = z.array(diarySchema);
+
+export type Diary = z.infer<typeof diarySchema>;
 
 export interface EntryProps {
-  diaries: Diary[]
+  diaries: Diary[];
+}
+
+export interface DiaryStore {
+  // diaries: Diary[];
+  diariesWithComments: Diary[];
+  // fetchDiaries: () => Promise<void>;
+  fetchDiariesWithComments: () => Promise<void>;
+  addDiary: (diary: Omit<Diary, 'id'>) => void;
 }
