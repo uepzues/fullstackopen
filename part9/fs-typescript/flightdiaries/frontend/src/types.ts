@@ -6,13 +6,17 @@ export const weatherSchema = z.enum([
   'cloudy',
   'windy',
   'stormy',
-]);
+], {
+  error: 'Incorrect weather: sunny, rainy, cloudy, windy, stormy'
+});
 
-export const visibilitySchema = z.enum(['great', 'good', 'ok', 'poor']);
+export const visibilitySchema = z.enum(['great', 'good', 'ok', 'poor'], {
+  error: 'Incorrect visibility: great, good, ok, poor'
+});
 
 export const diarySchema = z.object({
   id: z.number(),
-  date: z.string(),
+  date: z.string().min(1, 'Date is required'),
   weather: weatherSchema,
   visibility: visibilitySchema,
   comment: z.string().optional(),

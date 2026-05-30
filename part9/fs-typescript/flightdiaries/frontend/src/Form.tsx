@@ -22,7 +22,7 @@ export default function Form() {
     };
   }, [error, clearError]);
 
-  const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const form = event.currentTarget;
@@ -38,7 +38,7 @@ export default function Form() {
 
     try {
       const parsedEntry = diarySchema.omit({ id: true }).parse(newDiaryEntry);
-      addDiary(parsedEntry);
+      await addDiary(parsedEntry);
       form.reset();
     } catch (err) {
       if (err instanceof ZodError) {
@@ -47,19 +47,76 @@ export default function Form() {
     }
   };
   return (
-    <div>
-      <h1>Add Entry</h1>
-      {error && <div className="error">{error}</div>}
-      <form onSubmit={handleSubmit}>
-        date: <input type="text" name="date" />
-        <br />
-        visibility: <input type="text" name="visibility" />
-        <br />
-        weather: <input type="text" name="weather" />
-        <br />
-        comment: <input type="text" name="comment" />
-        <br />
-        <button type="submit">add</button>
+    <div className="form-container">
+      <h1>Add New Entry</h1>
+      {error && (
+        <div className="error-banner">
+          <svg className="error-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+          </svg>
+          <span className="error-message">{error}</span>
+        </div>
+      )}
+      <form onSubmit={handleSubmit} className="diary-form">
+        <div className="form-group">
+          <label htmlFor="date" className="field-label">Date</label>
+          <input type="date" id="date" name="date" className="text-input" />
+        </div>
+
+        <div className="form-group">
+          <span className="field-label">Visibility</span>
+          <div className="radio-group">
+            <label className="radio-label">
+              <input type="radio" name="visibility" value="great" />
+              <span className="radio-button-custom">Great</span>
+            </label>
+            <label className="radio-label">
+              <input type="radio" name="visibility" value="good" />
+              <span className="radio-button-custom">Good</span>
+            </label>
+            <label className="radio-label">
+              <input type="radio" name="visibility" value="ok" />
+              <span className="radio-button-custom">Ok</span>
+            </label>
+            <label className="radio-label">
+              <input type="radio" name="visibility" value="poor" />
+              <span className="radio-button-custom">Poor</span>
+            </label>
+          </div>
+        </div>
+
+        <div className="form-group">
+          <span className="field-label">Weather</span>
+          <div className="radio-group">
+            <label className="radio-label">
+              <input type="radio" name="weather" value="sunny" />
+              <span className="radio-button-custom">Sunny</span>
+            </label>
+            <label className="radio-label">
+              <input type="radio" name="weather" value="rainy" />
+              <span className="radio-button-custom">Rainy</span>
+            </label>
+            <label className="radio-label">
+              <input type="radio" name="weather" value="cloudy" />
+              <span className="radio-button-custom">Cloudy</span>
+            </label>
+            <label className="radio-label">
+              <input type="radio" name="weather" value="windy" />
+              <span className="radio-button-custom">Windy</span>
+            </label>
+            <label className="radio-label">
+              <input type="radio" name="weather" value="stormy" />
+              <span className="radio-button-custom">Stormy</span>
+            </label>
+          </div>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="comment" className="field-label">Comment</label>
+          <input type="text" id="comment" name="comment" placeholder="Optional notes about the flight..." className="text-input" />
+        </div>
+
+        <button type="submit" className="submit-btn">Add Entry</button>
       </form>
     </div>
   );

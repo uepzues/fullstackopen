@@ -39,3 +39,138 @@
 .modal button:hover {
   background-color: #f5f5f5;
 }
+
+.diaries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.diary-card {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  text-align: left;
+}
+
+.diary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.diary-card:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.diary-card-header {
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 10px;
+}
+
+.diary-date {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.diary-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.diary-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.stat-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: capitalize;
+}
+
+/* Weather Badges */
+.weather-sunny {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.weather-rainy {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.weather-cloudy {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.weather-windy {
+  background-color: #ccfbf1;
+  color: #0d9488;
+}
+
+.weather-stormy {
+  background-color: #f3e8ff;
+  color: #7c3aed;
+}
+
+/* Visibility Badges */
+.visibility-great {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.visibility-good {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.visibility-ok {
+  background-color: #fef9c3;
+  color: #ca8a04;
+}
+
+.visibility-poor {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.diary-card-footer {
+  margin-top: auto;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.view-details-btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+  transition: color 0.2s;
+}
+
+.diary-card:hover .view-details-btn {
+  color: #1d4ed8;
+}

@@ -15,23 +15,41 @@ export default function Entries({ diaries }: EntryProps) {
 
   return (
     <>
-      <div>
+      <div className="diaries-grid">
         {diaries.map((d) => (
-          <ul key={d.id}>
-            <li>
-              <a
-                href="#"
-                onClick={(event) => {
-                  event.preventDefault();
-                  openModal(d);
-                }}
-              >
-                <p>{d.date}</p>
-              </a>
-              <p>{d.weather}</p>
-              <p>{d.visibility}</p>
-            </li>
-          </ul>
+          <div
+            key={d.id}
+            className="diary-card"
+            onClick={() => openModal(d)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                openModal(d);
+              }
+            }}
+          >
+            <div className="diary-card-header">
+              <span className="diary-date">{d.date}</span>
+            </div>
+            <div className="diary-card-body">
+              <div className="diary-stat">
+                <span className="stat-label">Weather</span>
+                <span className={`stat-badge weather-${d.weather}`}>
+                  {d.weather}
+                </span>
+              </div>
+              <div className="diary-stat">
+                <span className="stat-label">Visibility</span>
+                <span className={`stat-badge visibility-${d.visibility}`}>
+                  {d.visibility}
+                </span>
+              </div>
+            </div>
+            <div className="diary-card-footer">
+              <span className="view-details-btn">View Details →</span>
+            </div>
+          </div>
         ))}
       </div>
 
