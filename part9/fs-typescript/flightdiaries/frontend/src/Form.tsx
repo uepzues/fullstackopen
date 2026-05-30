@@ -1,8 +1,26 @@
+import { useEffect } from 'react';
 import { diarySchema } from './types';
 import { useDiaryStore } from './diaryStore';
+import { ZodError } from 'zod';
+import { formatZodError } from './utils/zodHelpers';
+import './Form.css';
 
 export default function Form() {
   const addDiary = useDiaryStore((state) => state.addDiary);
+  const error = useDiaryStore((state) => state.error);
+  const clearError = useDiaryStore((state) => state.clearError);
+
+  useEffect(() => {
+    if (!error) return;
+
+    const timeout = setTimeout(() => {
+      clearError();
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [error, clearError]);
 
   const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -18,15 +36,20 @@ export default function Form() {
       comment: formData.get('comment') as string,
     };
 
-    const parsedEntry = diarySchema.omit({ id: true }).parse(newDiaryEntry);
-
-    addDiary(parsedEntry);
-
-    form.reset();
+    try {
+      const parsedEntry = diarySchema.omit({ id: true }).parse(newDiaryEntry);
+      addDiary(parsedEntry);
+      form.reset();
+    } catch (err) {
+      if (err instanceof ZodError) {
+        useDiaryStore.getState().setError(formatZodError(err));
+      }
+    }
   };
   return (
     <div>
       <h1>Add Entry</h1>
+      {error && <div className="error">{error}</div>}
       <form onSubmit={handleSubmit}>
         date: <input type="text" name="date" />
         <br />

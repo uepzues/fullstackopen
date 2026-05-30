@@ -4,9 +4,7 @@ import { useDiaryStore } from './diaryStore';
 
 export default function Diaries() {
 
-  // const diaries = useDiaryStore((state) => state.diaries);
   const wComments = useDiaryStore((state) => state.diariesWithComments);
-  // const fetchDiaries = useDiaryStore((state) => state.fetchDiaries);
   const fetchDiariesWithComments = useDiaryStore(
     (state) => state.fetchDiariesWithComments,
   );

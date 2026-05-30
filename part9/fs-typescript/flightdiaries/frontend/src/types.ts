@@ -27,9 +27,10 @@ export interface EntryProps {
 }
 
 export interface DiaryStore {
-  // diaries: Diary[];
   diariesWithComments: Diary[];
-  // fetchDiaries: () => Promise<void>;
   fetchDiariesWithComments: () => Promise<void>;
   addDiary: (diary: Omit<Diary, 'id'>) => void;
+  error: string | null;
+  clearError: () => void;
+  setError: (error: string) => void;
 }
