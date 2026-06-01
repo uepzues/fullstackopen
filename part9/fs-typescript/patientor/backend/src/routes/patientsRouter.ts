@@ -13,6 +13,13 @@ router.get('/', (_req, res: Response<NonSensitivePatientEntry[]>) => {
   res.send(patientsService.getPatientsNonSensitive());
 });
 
+router.get('/:id', (req: Request, res: Response<Patient>) => {
+  const { id } = req.params as { id: string };
+  const patient = patientsService.findPatientById(id);
+  res.json(patient)
+
+});
+
 router.post(
   '/',
   newPatientParser,
