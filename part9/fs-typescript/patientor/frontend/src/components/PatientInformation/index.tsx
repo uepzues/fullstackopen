@@ -13,11 +13,13 @@ import {
 } from '@mui/material';
 import { Male, Female, Transgender } from '@mui/icons-material';
 import { Gender } from '../../types';
+import { Diagnosis } from '../../types';
+import diagnosesService from '../../services/diagnoses';
 
 const PatientInformation = () => {
   const { id } = useParams();
   const [patient, setPatient] = useState<Patient | null>(null);
-  
+  const [diagnoses, setDiagnoses] = useState<Diagnosis[]>([]);
 
   const renderGenderIcon = (gender: Gender) => {
     switch (gender) {
@@ -45,6 +47,20 @@ const PatientInformation = () => {
     };
     fetchPatient();
   }, [id]);
+
+  useEffect(() => {
+    const fetchDiagnoses = async () => {
+      if (!patient) return;
+      const diagnosesData = await diagnosesService.getDiagnoses();
+      setDiagnoses(diagnosesData);
+    };
+    fetchDiagnoses();
+  }, [patient]);
+
+  const renderDiagnosisName = (code: string) => {
+    const diagnosis = diagnoses.find((d) => d.code === code);
+    return diagnosis ? diagnosis.name : code;
+  };
 
   return (
     <div>
@@ -127,11 +143,24 @@ const PatientInformation = () => {
                   primary={entry.description}
                   secondary={entry.date}
                 />
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'start',
+                  }}
+                >
                   {entry.diagnosisCodes?.map((code) => (
                     <ListItemText
                       key={code}
-                      primary={code}
+                      primary={
+                        <>
+                          <Typography sx={{ fontWeight: 'bold', display: 'inline' }}>
+                            {code}
+                          </Typography>{' '}
+                          {renderDiagnosisName(code)}
+                        </>
+                      }
                     />
                   ))}
                 </Box>
