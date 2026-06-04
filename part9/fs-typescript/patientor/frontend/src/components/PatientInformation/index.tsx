@@ -2,13 +2,22 @@ import { useParams } from 'react-router-dom';
 import { Patient } from '../../types';
 import { useEffect, useState } from 'react';
 import patientService from '../../services/patients';
-import { Box, Container, Typography } from '@mui/material';
+import {
+  Box,
+  Container,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from '@mui/material';
 import { Male, Female, Transgender } from '@mui/icons-material';
 import { Gender } from '../../types';
 
 const PatientInformation = () => {
   const { id } = useParams();
   const [patient, setPatient] = useState<Patient | null>(null);
+  
 
   const renderGenderIcon = (gender: Gender) => {
     switch (gender) {
@@ -89,6 +98,46 @@ const PatientInformation = () => {
               {patient?.dateOfBirth}
             </Typography>
           </Box>
+        </Box>
+      </Container>
+      <Divider sx={{ marginY: 2 }} />
+      <Container>
+        <Box>
+          {patient && patient?.entries.length > 0 && (
+            <Typography
+              variant="h6"
+              fontWeight={600}
+            >
+              Entries
+            </Typography>
+          )}
+        </Box>
+        <Box>
+          <List sx={{ display: 'flex', flexDirection: 'column' }}>
+            {patient?.entries.map((entry) => (
+              <ListItem
+                key={entry.id}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'start',
+                }}
+              >
+                <ListItemText
+                  primary={entry.description}
+                  secondary={entry.date}
+                />
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                  {entry.diagnosisCodes?.map((code) => (
+                    <ListItemText
+                      key={code}
+                      primary={code}
+                    />
+                  ))}
+                </Box>
+              </ListItem>
+            ))}
+          </List>
         </Box>
       </Container>
     </div>
