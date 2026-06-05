@@ -4,6 +4,8 @@ import {
   type NewPatientEntry,
   type Patient,
   type NonSensitivePatientEntry,
+  type EntryWithoutId,
+  type Entry,
 } from '../types.ts';
 import { errorMiddleware, newPatientParser } from '../middleware.ts';
 
@@ -28,6 +30,13 @@ router.post(
     res.json(patientEntry);
   },
 );
+
+router.post('/:id/entries', (req: Request<{id: string}, unknown, EntryWithoutId>, res: Response<Entry>)=>{
+  const { id } = req.params;
+  const { body } = req;
+  const entry = patientsService.addPatientEntry(id, body);
+  res.json(entry);
+} )
 
 router.use(errorMiddleware);
 

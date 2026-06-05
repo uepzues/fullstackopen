@@ -1,18 +1,16 @@
 import { z } from 'zod';
 
-export interface Diagnosis {
-  code: string;
-  name: string;
-  latin?: string;
-}
+const Diagnosis = z.object({
+  code: z.string(),
+  name: z.string(),
+  latin: z.string().optional(),
+});
 
-export const Gender = {
-  Male: 'male',
-  Female: 'female',
-  Other: 'other',
-} as const;
+export type Diagnosis = z.infer<typeof Diagnosis>;
 
-export type Gender = (typeof Gender)[keyof typeof Gender];
+const Gender = z.enum(['male', 'female', 'other']);
+
+export type Gender = z.infer<typeof Gender>;
 
 export const HealthCheckRating = {
   Healthy: 0,
@@ -33,12 +31,17 @@ const BaseEntry = z.object({
 });
 
 const HealthCheckEntry = BaseEntry.extend({
-  type: 'HealthCheck',
-  healthCheckRating: HealthCheckRating,
+  type: z.literal('HealthCheck'),
+  healthCheckRating: z.union([
+    z.literal(HealthCheckRating.Healthy),
+    z.literal(HealthCheckRating.LowRisk),
+    z.literal(HealthCheckRating.HighRisk),
+    z.literal(HealthCheckRating.CriticalRisk),
+  ]),
 });
 
 const OccupationalHealthcareEntry = BaseEntry.extend({
-  type: 'OccupationalHealthcare',
+  type: z.literal('OccupationalHealthcare'),
   employerName: z.string(),
   sickLeave: z
     .object({
@@ -49,7 +52,7 @@ const OccupationalHealthcareEntry = BaseEntry.extend({
 });
 
 const HospitalEntry = BaseEntry.extend({
-  type: 'Hospital',
+  type: z.literal('Hospital'),
   discharge: z
     .object({
       date: z.string(),
@@ -68,7 +71,7 @@ export const NewPatientEntry = z.object({
   name: z.string(),
   dateOfBirth: z.iso.date(),
   ssn: z.string().optional(),
-  gender: z.enum(Gender),
+  gender: Gender,
   occupation: z.string(),
   entries: z.array(Entry),
 });
@@ -83,3 +86,8 @@ export type NewPatientEntry = z.infer<typeof NewPatientEntry>;
 
 export type Entry = z.infer<typeof Entry>;
 
+type UnionOmit<T, K extends string | number | symbol> = T extends unknown
+  ? Omit<T, K>
+  : never;
+
+export type EntryWithoutId = UnionOmit<Entry, 'id'>;
