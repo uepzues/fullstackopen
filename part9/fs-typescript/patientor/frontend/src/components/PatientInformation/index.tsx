@@ -6,20 +6,15 @@ import {
   Box,
   Container,
   Divider,
-  List,
-  ListItem,
-  ListItemText,
   Typography,
 } from '@mui/material';
 import { Male, Female, Transgender } from '@mui/icons-material';
 import { Gender } from '../../types';
-import { Diagnosis } from '../../types';
-import diagnosesService from '../../services/diagnoses';
+import EntryDetails from './Entries';
 
 const PatientInformation = () => {
   const { id } = useParams();
   const [patient, setPatient] = useState<Patient | null>(null);
-  const [diagnoses, setDiagnoses] = useState<Diagnosis[]>([]);
 
   const renderGenderIcon = (gender: Gender) => {
     switch (gender) {
@@ -48,19 +43,6 @@ const PatientInformation = () => {
     fetchPatient();
   }, [id]);
 
-  useEffect(() => {
-    const fetchDiagnoses = async () => {
-      if (!patient) return;
-      const diagnosesData = await diagnosesService.getDiagnoses();
-      setDiagnoses(diagnosesData);
-    };
-    fetchDiagnoses();
-  }, [patient]);
-
-  const renderDiagnosisName = (code: string) => {
-    const diagnosis = diagnoses.find((d) => d.code === code);
-    return diagnosis ? diagnosis.name : code;
-  };
 
   return (
     <div>
@@ -93,22 +75,19 @@ const PatientInformation = () => {
           </Box>
           <Box>
             <Typography variant="body1">
-              <Typography sx={{ fontWeight: 'bold', display: 'inline' }}>
-                {' '}
+              <Typography component="span" sx={{ fontWeight: 'bold' }}>
                 SSN:{' '}
               </Typography>
               {patient?.ssn}
             </Typography>
             <Typography variant="body1">
-              <Typography sx={{ fontWeight: 'bold', display: 'inline' }}>
-                {' '}
+              <Typography component="span" sx={{ fontWeight: 'bold' }}>
                 Occupation:{' '}
               </Typography>
               {patient?.occupation}
             </Typography>
             <Typography variant="body1">
-              <Typography sx={{ fontWeight: 'bold', display: 'inline' }}>
-                {' '}
+              <Typography component="span" sx={{ fontWeight: 'bold' }}>
                 Date of Birth:{' '}
               </Typography>
               {patient?.dateOfBirth}
@@ -117,58 +96,7 @@ const PatientInformation = () => {
         </Box>
       </Container>
       <Divider sx={{ marginY: 2 }} />
-      <Container>
-        <Box>
-          {patient && patient?.entries.length > 0 && (
-            <Typography
-              variant="h6"
-              fontWeight={600}
-            >
-              Entries
-            </Typography>
-          )}
-        </Box>
-        <Box>
-          <List sx={{ display: 'flex', flexDirection: 'column' }}>
-            {patient?.entries.map((entry) => (
-              <ListItem
-                key={entry.id}
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'start',
-                }}
-              >
-                <ListItemText
-                  primary={entry.description}
-                  secondary={entry.date}
-                />
-                <Box
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'start',
-                  }}
-                >
-                  {entry.diagnosisCodes?.map((code) => (
-                    <ListItemText
-                      key={code}
-                      primary={
-                        <>
-                          <Typography sx={{ fontWeight: 'bold', display: 'inline' }}>
-                            {code}
-                          </Typography>{' '}
-                          {renderDiagnosisName(code)}
-                        </>
-                      }
-                    />
-                  ))}
-                </Box>
-              </ListItem>
-            ))}
-          </List>
-        </Box>
-      </Container>
+      {patient && <EntryDetails patient={patient} />}
     </div>
   );
 };
