@@ -19,9 +19,6 @@ export const HealthCheckRating = {
   CriticalRisk: 3,
 } as const;
 
-export type HealthCheckRating =
-  (typeof HealthCheckRating)[keyof typeof HealthCheckRating];
-
 const BaseEntry = z.object({
   id: z.string(),
   description: z.string(),
@@ -73,8 +70,11 @@ export const NewPatientEntry = z.object({
   ssn: z.string().optional(),
   gender: Gender,
   occupation: z.string(),
-  entries: z.array(Entry),
+  entries: z.array(Entry).optional(),
 });
+
+export type HealthCheckRating =
+  (typeof HealthCheckRating)[keyof typeof HealthCheckRating];
 
 export interface Patient extends NewPatientEntry {
   id: string;

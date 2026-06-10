@@ -19,7 +19,6 @@ router.get('/:id', (req: Request, res: Response<Patient>) => {
   const { id } = req.params as { id: string };
   const patient = patientsService.findPatientById(id);
   res.json(patient);
-
 });
 
 router.post(
@@ -31,12 +30,18 @@ router.post(
   },
 );
 
-router.post('/:id/entries', (req: Request<{id: string}, unknown, EntryWithoutId>, res: Response<Entry>)=>{
-  const { id } = req.params;
-  const { body } = req;
-  const entry = patientsService.addPatientEntry(id, body);
-  res.json(entry);
-} )
+router.post(
+  '/:id/entries',
+  (
+    req: Request<{ id: string }, unknown, EntryWithoutId>,
+    res: Response<Entry>,
+  ) => {
+    const { id } = req.params;
+    const { body } = req;
+    const entry = patientsService.addPatientEntry(id, body);
+    res.json(entry);
+  },
+);
 
 router.use(errorMiddleware);
 

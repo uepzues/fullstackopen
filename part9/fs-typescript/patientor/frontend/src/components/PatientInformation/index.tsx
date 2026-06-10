@@ -2,15 +2,10 @@ import { useParams } from 'react-router-dom';
 import { Patient } from '../../types';
 import { useEffect, useState } from 'react';
 import patientService from '../../services/patients';
-import {
-  Box,
-  Container,
-  Divider,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Divider, Typography } from '@mui/material';
 import { Male, Female, Transgender } from '@mui/icons-material';
 import { Gender } from '../../types';
-import EntryDetails from './Entries';
+import Entries from './Entries';
 
 const PatientInformation = () => {
   const { id } = useParams();
@@ -43,7 +38,6 @@ const PatientInformation = () => {
     fetchPatient();
   }, [id]);
 
-
   return (
     <div>
       <Container>
@@ -75,19 +69,28 @@ const PatientInformation = () => {
           </Box>
           <Box>
             <Typography variant="body1">
-              <Typography component="span" sx={{ fontWeight: 'bold' }}>
+              <Typography
+                component="span"
+                sx={{ fontWeight: 'bold' }}
+              >
                 SSN:{' '}
               </Typography>
               {patient?.ssn}
             </Typography>
             <Typography variant="body1">
-              <Typography component="span" sx={{ fontWeight: 'bold' }}>
+              <Typography
+                component="span"
+                sx={{ fontWeight: 'bold' }}
+              >
                 Occupation:{' '}
               </Typography>
               {patient?.occupation}
             </Typography>
             <Typography variant="body1">
-              <Typography component="span" sx={{ fontWeight: 'bold' }}>
+              <Typography
+                component="span"
+                sx={{ fontWeight: 'bold' }}
+              >
                 Date of Birth:{' '}
               </Typography>
               {patient?.dateOfBirth}
@@ -96,7 +99,7 @@ const PatientInformation = () => {
         </Box>
       </Container>
       <Divider sx={{ marginY: 2 }} />
-      {patient && <EntryDetails patient={patient} />}
+      {patient && <Entries patient={patient} setPatient={setPatient} />}
     </div>
   );
 };

@@ -2,16 +2,24 @@ import { useEffect, useState } from 'react';
 import { Diagnosis, Entry, Patient } from '../../types';
 import { Container, Box, Typography, Stack, Button } from '@mui/material';
 import diagnosesService from '../../services/diagnoses';
-import HospitalEntry from './HospitalEntry';
-import HealthCheckEntry from './HealthCheckEntry';
-import OccupationalHealthcareEntry from './OccupationalHealthcareEntry';
+import Hospital from './Hospital';
+import HealthCheck from './HealthCheck';
+import OccupationalHealthcare from './OccupationalHealthcare';
+import AddEntriesForm from '../AddEntriesForm';
 
-const Entries = ({ patient }: { patient: Patient }) => {
+interface Props {
+  patient: Patient;
+  setPatient: (patient: Patient) => void;
+}
+
+const Entries = ({ patient, setPatient }: Props) => {
   const [diagnoses, setDiagnoses] = useState<Diagnosis[] | null>(null);
+  const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchDiagnoses = async () => {
       if (!patient) return;
+
       const diagnosesData = await diagnosesService.getDiagnoses();
       setDiagnoses(diagnosesData);
     };
@@ -28,21 +36,21 @@ const Entries = ({ patient }: { patient: Patient }) => {
     switch (entry.type) {
       case 'Hospital':
         return (
-          <HospitalEntry
+          <Hospital
             entry={entry}
             diagnoses={diagnoses}
           />
         );
       case 'HealthCheck':
         return (
-          <HealthCheckEntry
+          <HealthCheck
             entry={entry}
             diagnoses={diagnoses}
           />
         );
       case 'OccupationalHealthcare':
         return (
-          <OccupationalHealthcareEntry
+          <OccupationalHealthcare
             entry={entry}
             diagnoses={diagnoses}
           />
@@ -54,24 +62,47 @@ const Entries = ({ patient }: { patient: Patient }) => {
 
   return (
     <Container>
-      <Box>
-        {patient && patient?.entries.length > 0 && (
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        {patient && patient?.entries?.length > 0 && (
           <Typography
+            display={'inline'}
             variant="h6"
             fontWeight={600}
           >
             Entries
           </Typography>
         )}
+        {!isFormOpen && (
+          <Button
+            sx={{ display: 'inline', textTransform: 'capitalize' }}
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              setIsFormOpen((prev) => !prev);
+            }}
+          >
+            Add New Entry
+          </Button>
+        )}
       </Box>
+      {isFormOpen && (
+        <AddEntriesForm
+          open={isFormOpen}
+          onClose={() => {
+            setIsFormOpen(false);
+          }}
+          setPatient={setPatient}
+          patient={patient}
+          diagnoses={diagnoses || []}
+        />
+      )}
       <Box>
         <Stack>
-          {patient.entries.map((entry) => (
+          {patient.entries?.map((entry) => (
             <Box key={entry.id}>{entryDetails(entry)}</Box>
           ))}
         </Stack>
       </Box>
-      <Button variant="contained" color="primary" onClick={() => { }}>Add Entry</Button>
     </Container>
   );
 };

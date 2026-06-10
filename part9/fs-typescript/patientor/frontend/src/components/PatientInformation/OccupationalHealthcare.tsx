@@ -7,7 +7,7 @@ interface OccupationalHealthcareEntryProps {
   diagnoses: Diagnosis[] | null;
 }
 
-const OccupationalHealthcareEntryComponent = ({
+const OccupationalHealthcare = ({
   entry,
   diagnoses,
 }: OccupationalHealthcareEntryProps) => {
@@ -30,20 +30,17 @@ const OccupationalHealthcareEntryComponent = ({
           <strong>{entry.date}</strong>
         </Typography>
         <Work color="primary" />
-        <Typography
-          variant="body1"
-          sx={{ fontWeight: 'bold' }}
-        >
-          {entry.employerName}
-        </Typography>
       </Box>
+
       <Typography
         variant="body2"
         sx={{ fontStyle: 'italic', mb: 1 }}
       >
         {entry.description}
       </Typography>
-
+      <Typography variant="body2">
+        <strong>Employer:</strong> {entry.employerName}
+      </Typography>
       {entry.diagnosisCodes && entry.diagnosisCodes.length > 0 && (
         <Box sx={{ mb: 1 }}>
           <Typography
@@ -90,4 +87,4 @@ const OccupationalHealthcareEntryComponent = ({
   );
 };
 
-export default OccupationalHealthcareEntryComponent;
+export default OccupationalHealthcare;

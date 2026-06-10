@@ -1,22 +1,36 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Listing patients', () => {
-  test('should show column headers Name, Gender and Occupation', async ({ page }) => {
+  test('should show column headers Name, Gender and Occupation', async ({
+    page,
+  }) => {
     await page.goto('/');
-    await expect(page.getByRole('columnheader', { name: 'Name' })).toBeVisible();
-    await expect(page.getByRole('columnheader', { name: 'Gender' })).toBeVisible();
-    await expect(page.getByRole('columnheader', { name: 'Occupation' })).toBeVisible();
+    await expect(
+      page.getByRole('columnheader', { name: 'Name' }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole('columnheader', { name: 'Gender' }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole('columnheader', { name: 'Occupation' }),
+    ).toBeVisible();
   });
 
   test('should list seed patients', async ({ page }) => {
     await page.goto('/');
-    await expect(page.getByRole('link', { name: 'John McClane' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Martin Riggs' })).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: 'John McClane' }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: 'Martin Riggs' }),
+    ).toBeVisible();
   });
 });
 
 test.describe('Adding a patient', () => {
-  test('should open modal and add a new patient that appears in the list', async ({ page }) => {
+  test('should open modal and add a new patient that appears in the list', async ({
+    page,
+  }) => {
     const patientName = `E2E Patient ${Date.now()}`;
     await page.goto('/');
 
@@ -38,12 +52,16 @@ test.describe('Adding a patient', () => {
 });
 
 test.describe('Showing patient info', () => {
-  test('should navigate to patient detail page and show patient information', async ({ page }) => {
+  test('should navigate to patient detail page and show patient information', async ({
+    page,
+  }) => {
     await page.goto('/');
     await page.getByRole('link', { name: 'John McClane' }).click();
 
     await expect(page).toHaveURL(/\/patients\/.+/);
-    await expect(page.getByRole('heading', { name: /John McClane/ })).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: /John McClane/ }),
+    ).toBeVisible();
     await expect(page.getByText('090786-122X')).toBeVisible();
     await expect(page.getByText('New york city cop')).toBeVisible();
   });

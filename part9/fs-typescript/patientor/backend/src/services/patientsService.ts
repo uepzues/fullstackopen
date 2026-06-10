@@ -33,7 +33,10 @@ const findPatientById = (id: string): Patient | undefined => {
   return patientEntries.find((patient) => patient.id === id);
 };
 
-const addPatientEntry = (patientId: string, detailsEntry: EntryWithoutId): Entry => {
+const addPatientEntry = (
+  patientId: string,
+  detailsEntry: EntryWithoutId,
+): Entry => {
   const newEntry: Entry = {
     ...detailsEntry,
     id: uuid(),
@@ -42,6 +45,10 @@ const addPatientEntry = (patientId: string, detailsEntry: EntryWithoutId): Entry
   const patient = patientEntries.find((p) => p.id === patientId);
   if (!patient) {
     throw new Error('Patient not found');
+  }
+
+  if (!patient.entries) {
+    patient.entries = [];
   }
 
   patient.entries.push(newEntry);

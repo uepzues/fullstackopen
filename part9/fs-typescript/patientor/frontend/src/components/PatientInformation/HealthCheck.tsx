@@ -7,7 +7,7 @@ interface HealthCheckEntryProps {
   diagnoses: Diagnosis[] | null;
 }
 
-const HealthCheckEntry = ({ entry, diagnoses }: HealthCheckEntryProps) => {
+const HealthCheck = ({ entry, diagnoses }: HealthCheckEntryProps) => {
   const renderDiagnosisName = (code: string) => {
     const diagnosis = diagnoses?.find((d) => d.code === code);
     return diagnosis ? diagnosis.name : code;
@@ -82,18 +82,26 @@ const HealthCheckEntry = ({ entry, diagnoses }: HealthCheckEntryProps) => {
         </Box>
       )}
 
-      <Box sx={{ mt: 1.5, pt: 1, borderTop: '1px dashed #ccc' }} display="flex" alignItems="center" gap={1}>
+      <Box
+        sx={{ mt: 1.5, pt: 1, borderTop: '1px dashed #ccc' }}
+        display="flex"
+        alignItems="center"
+        gap={1}
+      >
         <Typography variant="body2">
           <strong>Health Check Rating:</strong>
         </Typography>
         {healthCheckRatingIcon(entry.healthCheckRating)}
       </Box>
 
-      <Typography variant="body2" sx={{ mt: 1 }}>
+      <Typography
+        variant="body2"
+        sx={{ mt: 1 }}
+      >
         <strong>Diagnosed by:</strong> {entry.specialist}
       </Typography>
     </Box>
   );
 };
 
-export default HealthCheckEntry;
+export default HealthCheck;
