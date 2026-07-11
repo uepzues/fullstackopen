@@ -2,7 +2,7 @@ name: Patientor E2E Tests
 
 on:
   push:
-    branches: [main, master]
+    branches: [xmain, xmaster]
 
 jobs:
   test:
