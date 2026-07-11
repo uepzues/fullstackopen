@@ -34,6 +34,9 @@ My solutions for the exercises of the [University of Helsinki](https://www.helsi
 ### Part 9: TypeScript
 - Introduction to TypeScript that is a typed superset of Javascript. TypeScript offers static typing, enhancing code quality by catching errors at compile-time, improving code maintainability, and enabling better IDE support.
 
+### Part 10: React Native
+- Extend React to mobile ecosystems and design native user interfaces and integrate data with GraphQL.
+
 ## My course progress
 
 | Part           | Status      | Exercises |
@@ -48,7 +51,7 @@ My solutions for the exercises of the [University of Helsinki](https://www.helsi
 | [7](https://github.com/uepzues/fullstackopen/tree/main/Part7) | Done        | 21/21     |
 | [8](https://github.com/uepzues/fullstackopen/tree/main/part8) | Done        | 26/26     |
 | [9](https://github.com/uepzues/fullstackopen/tree/main/part9) | Done        | 34/34     |
-
+| [10](https://github.com/uepzues/fullstackopen-react-native)  | Done         | 28/29     |
 ## Course certificates
 
 ### Full Stack Open: core course
