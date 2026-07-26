@@ -51,7 +51,7 @@ My solutions for the exercises of the [University of Helsinki](https://www.helsi
 | [7](https://github.com/uepzues/fullstackopen/tree/main/Part7) | Done        | 21/21     |
 | [8](https://github.com/uepzues/fullstackopen/tree/main/part8) | Done        | 26/26     |
 | [9](https://github.com/uepzues/fullstackopen/tree/main/part9) | Done        | 34/34     |
-| [10](https://github.com/uepzues/fullstackopen-react-native)  | Done         | 28/29     |
+| [10](https://github.com/uepzues/fullstackopen-react-native)  | Done         | 30/30     |
 ## Course certificates
 
 ### Full Stack Open: core course
@@ -65,3 +65,7 @@ My solutions for the exercises of the [University of Helsinki](https://www.helsi
 ### Full Stack Open: Typescript
 
 ![Full Stack Open Typescript Certificate](./img/certificate-fullstack-typescript.png)
+
+### Full Stack Open: React Native
+
+![Full Stack Open: React Native Certificate](.img/certificate-fullstack-react-native.png)
