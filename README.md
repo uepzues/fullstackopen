@@ -68,4 +68,4 @@ My solutions for the exercises of the [University of Helsinki](https://www.helsi
 
 ### Full Stack Open: React Native
 
-![Full Stack Open: React Native Certificate](.img/certificate-fullstack-react-native.png)
+![Full Stack Open: React Native Certificate](./img/certificate-fullstack-react-native.png)
